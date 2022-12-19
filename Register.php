@@ -73,7 +73,7 @@
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-c4bb">
       <div class="u-clearfix u-sheet u-sheet-1">
-
+<br><br>
 <div class="container">
   <div class="title">Crée un compte</div>
   <div class="content">
@@ -104,26 +104,8 @@
           <input type="password" placeholder="mdp123" required>
         </div>
       </div>
-      <p><b>Modalitée de payement :</b></p>
-      <div class="payment-details">
-        <div class="input-box">
-          <span class="details">Type de carte de paiement</span>
-          <input type="text" placeholder="Visa" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Numéro de carte de paiement</span>
-          <input type="text" placeholder="1234 5678 9012 3456" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Date d'expiration</span>
-          <input type="text" placeholder="01/2022" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Code de sécurité</span>
-          <input type="password" placeholder="123" required>
-        </div>
-      </div>
-      
+
+      <p> Déjà inscrit? <a href="login.php">Cliques ici</a></p>
       <div class="button">
         <input type="submit" value="Inscription">
       </div>

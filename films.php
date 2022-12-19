@@ -30,69 +30,136 @@
 
 
 
-
-
-    <style>
-      form {
-  /* Utilisez une police de caractères légère et une couleur de police claire */
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
-
-  /* Ajoutez un fond blanc et une bordure grise */
+  <style>
+    .container {
+  max-width: 700px;
+  width: 100%;
   background-color: #fff;
-  border: 1px solid #ccc;
-
-  /* Ajoutez un peu d'espace autour du formulaire */
-  padding: 20px;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   margin: 0 auto;
-  max-width: 600px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
 }
 
-label {
-  /* Utilisez une police de caractères légère et une couleur de police foncée */
-  font-family: 'Open Sans', sans-serif;
-  color: #666;
-
-  /* Ajoutez un peu d'espace en dessous de chaque étiquette */
-  margin-bottom: 10px;
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
   display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
-
-input[type="number"],
-input[type="date"],
-select {
-  /* Utilisez une police de caractères légère et une couleur de police foncée */
-  font-family: 'Open Sans', sans-serif;
-  color: #666;
-
-  /* Ajoutez un fond blanc et une bordure grise */
-  background-color: #fff;
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
   border: 1px solid #ccc;
-
-  /* Ajoutez un peu de marge et de padding à l'intérieur de chaque champ de saisie */
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 100%;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #DB545A;;
 }
 
-input[type="submit"] {
-  /* Utilisez une police de caractères légère et une couleur de police claire */
-  font-family: 'Open Sans', sans-serif;
-  color: #fff;
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   /*background: linear-gradient(135deg, #71b7e6, #9b59b6); */
+   background-color: #DB545A;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  /*background: linear-gradient(-135deg, #71b7e6, #9b59b6);*/
+  background-color: grey;
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
 
-  /* Ajoutez un fond bleu foncé et une bordure bleu clair */
-  background-color: #006699;
-  border: 1px solid #0099cc;
 
-  /* Ajoutez un peu de marge et de padding à l'intérieur du bouton */
-  padding: 10px 20px;
-  margin-top: 20px;
-  width: 100%;
 
-  /* Ajoutez un peu d'ombre au bouton */
-  box
+
+  </style>
+
   
-    </style>
 
 
 
@@ -200,42 +267,53 @@ input[type="submit"] {
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-4" id="sec-0592">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-text u-text-default u-text-1">Réservez ici</h1>
-      </div>
+      <br><br><br>
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-a19f">
       
-      <form>
 
-        <label for="basic-ticket-quantity">Nombre de places (Basic):</label><br>
+
+
+
+
+
+
+      <div class="container">
+    <div class="title">Réservez ici</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+          <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
         <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="0"><br>
-        <br>
-        <label for="vip-ticket-quantity">Nombre de places (VIP):</label><br>
-        <input type="number" id="vip-ticket-quantity" name="vip-ticket-quantity" min="0"><br>
-        <br>
-        <label for="mobility-reduced-ticket-quantity">Nombre de places (P.M.R.):</label><br>
-        <input type="number" id="mobility-reduced-ticket-quantity" name="mobility-reduced-ticket-quantity" min="0"><br>
-        <br>
-        <label for="ticket-date">Date:</label><br>
+          </div>
+          <div class="input-box">
+          <label for="ticket-date">Date:</label>
         <input type="date" id="ticket-date" name="ticket-date"><br>
-        <br>
-        <label for="ticket-time">Horaire:</label><br>
-        <select id="ticket-time" name="ticket-time">
+          </div>
+
+          <div class="input-box">
+          <label for="ticket-time">Horaire:</label>
+          <select id="ticket-time" name="ticket-time">
           <option value="15:00">15h</option>
           <option value="17:00">17h</option>
           <option value="21:30">21h30</option>
-        </select><br>
-        <br>
-        <label for="ticket-movie">Nom du film:
-        <br>
-        <input type="submit" value="Acheter le ticket">
-      </form> 
+          </select><br>
+          </div>
+
+
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Réserver">
+        </div>
+      </form>
 
 
 
 
     </section>
+    <br><br><br>
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
