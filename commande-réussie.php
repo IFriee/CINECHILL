@@ -108,7 +108,7 @@
             </colgroup>
             <thead class="u-grey-50 u-table-header u-table-header-1">
               <tr style="height: 29px;">
-                <th class="u-border-1 u-border-grey-50 u-table-cell"> Type de place</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell"> Film</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Nombre de places</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Prix unitaire</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Point de fidelité</th>
@@ -117,26 +117,13 @@
             </thead>
             <tbody class="u-table-body u-table-body-1">
               <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#​Basic</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#Avatar,la vois de l'eau</td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#3</td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#8</td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#3</td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#15/11/22</td>
               </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> PMR</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#1</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#4</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#5</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#​15/11/22</td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> VIP</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#2</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#13</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#10</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#​15/11/22</td>
-              </tr>
+             
               <tr style="height: 46px;">
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-21">
                   <span style="font-weight: 700;"> TOTAL</span>
