@@ -74,45 +74,62 @@
     <section class="u-clearfix u-section-1" id="sec-c4bb">
       <div class="u-clearfix u-sheet u-sheet-1">
 
-          <div class="container">
-    <div class="title">Crée un compte</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Nom</span>
-            <input type="text" placeholder="Bryant" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Prénom</span>
-            <input type="text" placeholder="Kobe" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="kobe.bryant@hotmail.be" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Pseudo</span>
-            <input type="text" placeholder="The_Black_Mamba" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Mot de passe</span>
-            <input type="text" placeholder="mdp123" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirmer mot de passe</span>
-            <input type="text" placeholder="mdp123" required>
-          </div>
+<div class="container">
+  <div class="title">Crée un compte</div>
+  <div class="content">
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Nom</span>
+          <input type="text" placeholder="Bryant" required>
         </div>
-        
-        <div class="button">
-          <input type="submit" value="Inscription">
+        <div class="input-box">
+          <span class="details">Prénom</span>
+          <input type="text" placeholder="Kobe" required>
         </div>
-      </form>
-    </div>
-  </div>
-
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="kobe.bryant@hotmail.be" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Pseudo</span>
+          <input type="text" placeholder="The_Black_Mamba" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Mot de passe</span>
+          <input type="password" placeholder="mdp123" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Confirmer mot de passe</span>
+          <input type="password" placeholder="mdp123" required>
+        </div>
       </div>
+      <p><b>Modalitée de payement :</b></p>
+      <div class="payment-details">
+        <div class="input-box">
+          <span class="details">Type de carte de paiement</span>
+          <input type="text" placeholder="Visa" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Numéro de carte de paiement</span>
+          <input type="text" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Date d'expiration</span>
+          <input type="text" placeholder="01/2022" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Code de sécurité</span>
+          <input type="password" placeholder="123" required>
+        </div>
+      </div>
+      
+      <div class="button">
+        <input type="submit" value="Inscription">
+      </div>
+    </form>
+  </div>
+</div>
     </section>
     
     
