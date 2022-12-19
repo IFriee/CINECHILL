@@ -27,6 +27,77 @@
     <meta property="og:title" content="films">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+
+
+
+
+
+    <style>
+      form {
+  /* Utilisez une police de caractères légère et une couleur de police claire */
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+
+  /* Ajoutez un fond blanc et une bordure grise */
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  /* Ajoutez un peu d'espace autour du formulaire */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+label {
+  /* Utilisez une police de caractères légère et une couleur de police foncée */
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+
+  /* Ajoutez un peu d'espace en dessous de chaque étiquette */
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="number"],
+input[type="date"],
+select {
+  /* Utilisez une police de caractères légère et une couleur de police foncée */
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+
+  /* Ajoutez un fond blanc et une bordure grise */
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  /* Ajoutez un peu de marge et de padding à l'intérieur de chaque champ de saisie */
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  /* Utilisez une police de caractères légère et une couleur de police claire */
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+
+  /* Ajoutez un fond bleu foncé et une bordure bleu clair */
+  background-color: #006699;
+  border: 1px solid #0099cc;
+
+  /* Ajoutez un peu de marge et de padding à l'intérieur du bouton */
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 100%;
+
+  /* Ajoutez un peu d'ombre au bouton */
+  box
+  
+    </style>
+
+
+
+
+
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
@@ -134,84 +205,36 @@
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-a19f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
-          <ul class="u-border-2 u-border-grey-80 u-spacing-10 u-tab-list u-unstyled" role="tablist">
-            <li class="u-tab-item" role="presentation">
-              <a class="active u-active-grey-80 u-button-style u-grey-10 u-tab-link u-text-active-palette-2-base u-text-black u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true">Date</a>
-            </li>
-            <li class="u-tab-item" role="presentation">
-              <a class="u-active-grey-80 u-button-style u-grey-10 u-tab-link u-text-active-palette-2-base u-text-black u-tab-link-2" id="link-tab-14b7" href="#tab-14b7" role="tab" aria-controls="tab-14b7" aria-selected="false">Heure</a>
-            </li>
-            <li class="u-tab-item" role="presentation">
-              <a class="u-active-grey-80 u-button-style u-grey-10 u-tab-link u-text-active-palette-2-base u-text-black u-tab-link-3" id="link-tab-2917" href="#tab-2917" role="tab" aria-controls="tab-2917" aria-selected="false">Place</a>
-            </li>
-          </ul>
-          <div class="u-tab-content">
-            <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
-              <div class="u-container-layout u-valign-top u-container-layout-1">
-                <h4 class="u-text u-text-default u-text-1">Basic Settings</h4>
-                <div class="u-expanded-width u-table u-table-responsive u-table-1">
-                  <table class="u-table-entity">
-                    <colgroup>
-                      <col width="25%">
-                      <col width="25%">
-                      <col width="25%">
-                      <col width="25%">
-                    </colgroup>
-                    <tbody class="u-table-alt-grey-5 u-table-body">
-                      <tr style="height: 51px;">
-                        <td class="u-table-cell">Column 1</td>
-                        <td class="u-table-cell">Column 2</td>
-                        <td class="u-table-cell">Column 3</td>
-                        <td class="u-table-cell">Column 4</td>
-                      </tr>
-                      <tr style="height: 51px;">
-                        <td class="u-table-cell">Row 1</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                      </tr>
-                      <tr style="height: 51px;">
-                        <td class="u-table-cell">Row 2</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                      </tr>
-                      <tr style="height: 51px;">
-                        <td class="u-table-cell">Row 3</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                      </tr>
-                      <tr style="height: 52px;">
-                        <td class="u-table-cell">Row 4</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                        <td class="u-table-cell">Description</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="u-align-left u-container-style u-tab-pane u-white u-tab-pane-2" id="tab-14b7" role="tabpanel" aria-labelledby="link-tab-14b7">
-              <div class="u-container-layout u-valign-top u-container-layout-2">
-                <p class="u-text u-text-default u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
-                  <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&nbsp;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                </p>
-              </div>
-            </div>
-            <div class="u-container-style u-tab-pane u-white u-tab-pane-3" id="tab-2917" role="tabpanel" aria-labelledby="link-tab-2917">
-              <div class="u-container-layout u-container-layout-3">
-                <h4 class="u-text u-text-default u-text-3">Be The First To Review This Product!</h4>
-                <p class="u-text u-text-default u-text-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                <a href="" class="u-btn u-button-style u-btn-1">write product review</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      <form>
+
+        <label for="basic-ticket-quantity">Nombre de places (Basic):</label><br>
+        <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="0"><br>
+        <br>
+        <label for="vip-ticket-quantity">Nombre de places (VIP):</label><br>
+        <input type="number" id="vip-ticket-quantity" name="vip-ticket-quantity" min="0"><br>
+        <br>
+        <label for="mobility-reduced-ticket-quantity">Nombre de places (P.M.R.):</label><br>
+        <input type="number" id="mobility-reduced-ticket-quantity" name="mobility-reduced-ticket-quantity" min="0"><br>
+        <br>
+        <label for="ticket-date">Date:</label><br>
+        <input type="date" id="ticket-date" name="ticket-date"><br>
+        <br>
+        <label for="ticket-time">Horaire:</label><br>
+        <select id="ticket-time" name="ticket-time">
+          <option value="15:00">15h</option>
+          <option value="17:00">17h</option>
+          <option value="21:30">21h30</option>
+        </select><br>
+        <br>
+        <label for="ticket-movie">Nom du film:
+        <br>
+        <input type="submit" value="Acheter le ticket">
+      </form> 
+
+
+
+
     </section>
     
     
