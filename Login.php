@@ -88,7 +88,10 @@
             <input type="text" placeholder="mdp123" required>
           </div>
         </div>
-        
+
+
+        <p> Pas encore inscrit? <a href="register.php">Cliques ici</a></p>
+
         <div class="button">
           <input type="submit" value="Se connecter">
         </div>
