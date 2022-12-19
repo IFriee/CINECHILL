@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>admin</title>
+    <title>Mode de payement</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="admin.css" media="screen">
+<link rel="stylesheet" href="payement.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400">
     
     
     <script type="application/ld+json">{
@@ -21,7 +20,7 @@
 		"logo": "images/Plandetravail1.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="admin">
+    <meta property="og:title" content="Login">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -72,18 +71,46 @@
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-2e03">
+    <section class="u-clearfix u-section-1" id="sec-c4bb">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-custom-font u-text u-text-default u-text-1">Menu <span class="u-text-palette-2-base">ADMINISTRATEUR</span>
-        </h3>
-        <a href="commande-réussie.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">vers page commande réussie</a>
-        <a href="Login.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">vers page Login</a>
-        <a href="Register.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page Register</a>
-        <a href="films.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page film</a>
 
-        <a href="payement.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page modalite de payement</a>
-
+<div class="container">
+  <div class="title">Modalité de payement</div>
+  <div class="content">
+    <form action="#">
+      <div class="user-details">
+        
+        <div class="input-box">
+          <span class="details">Confirmez votre mot de passe</span>
+          <input type="password" placeholder="mdp123" required>
+        </div>
       </div>
+      <p><b>Modalitée de payement :</b></p>
+      <div class="payment-details">
+        <div class="input-box">
+          <span class="details">Type de carte de paiement</span>
+          <input type="text" placeholder="Visa" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Numéro de carte de paiement</span>
+          <input type="text" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Date d'expiration</span>
+          <input type="text" placeholder="01/2022" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Code de sécurité</span>
+          <input type="password" placeholder="123" required>
+        </div>
+      </div>
+      
+      <div class="button">
+        <input type="submit" value="Mise à jour des modalitées de payement">
+      </div>
+    </form>
+  </div>
+</div>
     </section>
     
     

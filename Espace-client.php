@@ -93,29 +93,35 @@
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity u-table-entity-1">
             <colgroup>
-              <col width="28.5%">
-              <col width="71.5%">
+              <col width="19.1%">
+              <col width="47.9%">
+              <col width="33%">
             </colgroup>
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
                 <td class="u-table-cell">#Wengler</td>
+                <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-grey-40 u-table-cell u-table-cell-3">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-4">#Eliott</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5">#Eliott</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Email</td>
                 <td class="u-table-cell">#Eliott@mail</td>
+                <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
               </tr>
-              <tr style="height: 48px;">
-                <td class="u-grey-40 u-table-cell u-table-cell-7">Moyen de payement</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-8">#paypal</td>
+              <tr style="height: 59px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-10">Moyen de payement</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-11">#paypal</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-12"><u><a href="payement.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Mot de passe</td>
                 <td class="u-table-cell">#12321234</td>
+                <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
               </tr>
             </tbody>
           </table>
@@ -128,19 +134,19 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">4</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">72</h1>
                 <p class="u-text u-text-2">Films déja vu chez nous !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">54</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">100</h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">43</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">87</h1>
                 <p class="u-text u-text-default u-text-6">Places achetée</p>
               </div>
             </div>
