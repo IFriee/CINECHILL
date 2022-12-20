@@ -59,8 +59,6 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="
-        
-        
 
 
         Espace-client.php" 

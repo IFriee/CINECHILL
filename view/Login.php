@@ -78,15 +78,15 @@
           <div class="container">
     <div class="title">S'identifier</div>
     <div class="content">
-      <form action="#">
+      <form action="../controller/traitement_login.php" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Pseudo</span>
-            <input type="text" placeholder="The_Black_Mamba" required>
+            <input name="pseudo" type="text" placeholder="The_Black_Mamba" required>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
-            <input type="text" placeholder="mdp123" required>
+            <input name="password" type="password" placeholder="mdp123" required>
           </div>
         </div>
 

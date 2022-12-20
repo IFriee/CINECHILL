@@ -9,6 +9,7 @@ include('../model/insert.php');
 if (Verifier_mdp($_POST['password'])){
 	if (comparer_mdp($_POST['password'], $_POST['password_verify'])){
 		$hashed_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+		echo $_POST['password'];
 		unset($_POST['password']);
 		unset($_POST['password_verify']);
 		if (verifier_email($_POST['email'])){
@@ -16,8 +17,7 @@ if (Verifier_mdp($_POST['password'])){
 				if (Verifier_nom_prenom($_POST['nom'], $_POST['prenom'])){
 					if(Verifier_date_naissance($_POST['date_naissance'])){
 						add_user($db, $_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $hashed_password, $_POST['email'], $_POST['date_naissance']);
-						header('Location: ../view/Login.php');
-						echo $_SESSION['erreur'];
+						//header('Location: ../view/Login.php');
 						exit();
 					}
 				}
