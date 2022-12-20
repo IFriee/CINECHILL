@@ -1,3 +1,9 @@
+<?php 
+include "../model/connection.php";
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +85,7 @@
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-34b5">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base">#Eliott</span>.
+        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo "prenom_user"//.($_POST['prenom_user']) ?></span>.
         </h1>
       </div>
     </section>
@@ -100,27 +106,27 @@
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
-                <td class="u-table-cell">#Wengler</td>
+                <td class="u-table-cell"><?php echo "nom_user" //.($_POST['nom_user']) ?></td>
                 <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-5">#Eliott</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo "prenom_user" //.($_POST['prenom_user']) ?></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Email</td>
-                <td class="u-table-cell">#Eliott@mail</td>
+                <td class="u-table-cell"><?php echo "mail_user" //.($_POST['mail_user']) ?></td>
                 <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 59px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-10">Moyen de payement</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-11">#paypal</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-11"><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-12"><u><a href="payement.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell">#12321234</td>
+                <td class="u-table-cell"><?php echo "password_user" //.($_POST['password_user']) ?></td>
                 <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
               </tr>
             </tbody>
@@ -134,19 +140,19 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">72</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "3" //.nbr_film() ?></h1>
                 <p class="u-text u-text-2">Films déja vu chez nous !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">100</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "5" //.($_POST['prenom_user']) ?></h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000">87</h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "9" //.($_POST['prenom_user']) ?></h1>
                 <p class="u-text u-text-default u-text-6">Places achetée</p>
               </div>
             </div>
