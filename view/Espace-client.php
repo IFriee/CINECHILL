@@ -1,6 +1,8 @@
 <?php 
-include "../model/connection.php";
 session_start();
+include "../model/connection.php";
+include "../model/read.php";
+
 ?>
 
 
@@ -85,7 +87,7 @@ session_start();
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-34b5">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo "prenom_user"//.($_POST['prenom_user']) ?></span>.
+        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo $user['pseudo_user']; ?></span>.
         </h1>
       </div>
     </section>
@@ -106,17 +108,17 @@ session_start();
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
-                <td class="u-table-cell"><?php echo "nom_user" //.($_POST['nom_user']) ?></td>
+                <td class="u-table-cell"><?php echo $user['nom_user'];  ?></td>
                 <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo "prenom_user" //.($_POST['prenom_user']) ?></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo $user['prenom_user']; ?></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Email</td>
-                <td class="u-table-cell"><?php echo "mail_user" //.($_POST['mail_user']) ?></td>
+                <td class="u-table-cell"><?php echo $user['mail_user']; ?></td>
                 <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 59px;">
@@ -126,7 +128,7 @@ session_start();
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell"><?php echo "password_user" //.($_POST['password_user']) ?></td>
+                <td class="u-table-cell"><?php echo $user['password_user'];  ?></td>
                 <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
               </tr>
             </tbody>
@@ -146,7 +148,7 @@ session_start();
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "72" //.($_POST['prenom_user']) ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo $user['fidelite_user'];  ?></h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
