@@ -82,7 +82,7 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Pseudo</span>
-            <input type="text" placeholder="The_Black_Mamba" required>
+            <input name="pseudo" type="text" placeholder="The_Black_Mamba" required>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
