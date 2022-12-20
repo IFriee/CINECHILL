@@ -113,6 +113,18 @@
       </div>
 
       <p> Déjà inscrit? <a href="login.php">Cliques ici</a></p>
+
+
+
+      <div class="error-message">
+        <?php
+              echo "message d'erreur ici (ligne 120)"; 
+         ?>
+
+
+
+
+  </div>
       <div class="button">
         <input type="submit" value="Inscription">
       </div>
