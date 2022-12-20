@@ -109,7 +109,7 @@ include "../model/read.php";
             <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Pseudo</td>
                 <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['pseudo_user']; ?></b></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
@@ -129,17 +129,17 @@ include "../model/read.php";
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Email</td>
                 <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['mail_user']; ?></b></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="films.php">Modifier</a></u></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 59px;">
                 <td class="u-table-cell">Moyen de payement</td>
-                <td class="u-table-cell"><b><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></b></td>
+                <td class="u-table-cell"><b><?php echo "en cours" //.($_POST['prenom_user']) ?></b></td>
                 <td class="u-table-cell"><u><a href="payement.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Mot de passe</td>
                 <td class="u-grey-40 u-table-cell u-table-cell-5"><b> ********* </b></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-6"><u><a href="films.php">Modifier</a></u></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"><u><a href="erreur404.php">Modifier</a></u></td>
               </tr>
             </tbody>
           </table>

@@ -87,7 +87,7 @@
       <div class="u-align-center u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Téléchargez ici votre ticket</h2>
         <p class="u-text u-text-2">Vous pouvez soit imprimer votre ticket soit le montrer sur votre téléphone au gichet.</p>
-        <a href="#" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1">Votre ticket PDF</a>
+        <a href="erreur404.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1">Votre ticket PDF</a>
       </div>
     </section>
     <section class="u-clearfix u-section-3" id="sec-5594">
