@@ -177,4 +177,9 @@ form .payment-details {
 
 .payment-details .input-box input:focus,
 .payment-details .input-box input:valid{
-border-color: #DB545A;;
+border-color: #DB545A;}
+
+.error-message{
+  color: red;
+  border-color: red;
+}

@@ -80,7 +80,7 @@
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="1024" data-image-height="1024" data-href="admin.php" title="admin"></div>
-                  <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="1125" data-image-height="1120" data-href="https://www.shutterstock.com/fr/video/clip-1055016110-gay-couple-kissing-lying-on-bed-lgbt" data-target="_blank"></div>
+                  <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="1125" data-image-height="1120" data-href="https://chat.openai.com/chat" data-target="_blank"></div>
                   <h2 class="u-custom-font u-text u-text-default u-text-1">à propos</h2>
                   <p class="u-text u-text-2">Ce site est un exercice dans le cadre de nos études en informatique à l'ifosup de Wavre .<br>Rien n'est fonctionnel et le cinéma et le site sont fictifs.
                   </p>
