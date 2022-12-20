@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
+  <?php
+  session_start();
+  ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -77,31 +80,35 @@
 <div class="container">
   <div class="title">Crée un compte</div>
   <div class="content">
-    <form action="#">
+    <form action="../controller/traitement_inscription.php" method="post">
       <div class="user-details">
         <div class="input-box">
           <span class="details">Nom</span>
-          <input type="text" placeholder="Bryant" required>
+          <input name="nom" type="text" placeholder="Bryant" required>
         </div>
         <div class="input-box">
           <span class="details">Prénom</span>
-          <input type="text" placeholder="Kobe" required>
+          <input name="prenom" type="text" placeholder="Kobe" required>
         </div>
         <div class="input-box">
           <span class="details">Email</span>
-          <input type="text" placeholder="kobe.bryant@hotmail.be" required>
+          <input name="email" type="text" placeholder="kobe.bryant@hotmail.be" required>
         </div>
         <div class="input-box">
           <span class="details">Pseudo</span>
-          <input type="text" placeholder="The_Black_Mamba" required>
+          <input name="pseudo" type="text" placeholder="The_Black_Mamba" required>
         </div>
         <div class="input-box">
           <span class="details">Mot de passe</span>
-          <input type="password" placeholder="mdp123" required>
+          <input name="password" type="password" placeholder="mdp123" required>
         </div>
         <div class="input-box">
           <span class="details">Confirmer mot de passe</span>
-          <input type="password" placeholder="mdp123" required>
+          <input name="password_verify" type="password" placeholder="mdp123" required>
+        </div>
+        <div class="input-box">
+          <span class="details">date de naissance</span>
+          <input name="date_naissance" type="date" placeholder="mdp123" required>
         </div>
       </div>
 
