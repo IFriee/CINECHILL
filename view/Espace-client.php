@@ -106,36 +106,47 @@ include "../model/read.php";
               <col width="33%">
             </colgroup>
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+            <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Pseudo</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['pseudo_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
+              </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
-                <td class="u-table-cell"><?php echo $user['nom_user'];  ?></td>
+                <td class="u-table-cell"><b><?php echo $user['nom_user'];  ?></b></td>
                 <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo $user['prenom_user']; ?></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['prenom_user']; ?></b></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Email</td>
-                <td class="u-table-cell"><?php echo $user['mail_user']; ?></td>
-                <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
-              </tr>
-              <tr style="height: 59px;">
-                <td class="u-grey-40 u-table-cell u-table-cell-10">Moyen de payement</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-11"><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-12"><u><a href="payement.php">Modifier</a></u></td>
+                <td class="u-table-cell">Date de naissance</td>
+                <td class="u-table-cell"><b><?php echo $user['date_naissance_user']; ?></b></td>
+                <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell" type="password"><?php echo $user['password_user'];  ?></td>
-                <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Email</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['mail_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="films.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 59px;">
+                <td class="u-table-cell">Moyen de payement</td>
+                <td class="u-table-cell"><b><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></b></td>
+                <td class="u-table-cell"><u><a href="payement.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Mot de passe</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b> ********* </b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"><u><a href="films.php">Modifier</a></u></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
+    <br><br>
     <section class="u-clearfix u-grey-80 u-section-4" id="sec-fe43">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">

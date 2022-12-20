@@ -71,7 +71,7 @@ function pseudo_verify($db, $pseudo){
 function afficher_pseudo_connecte($db) {
   // Vérifie si l'utilisateur est connecté
   if (!isset($_SESSION['id_user'])) {
-    echo "Vous n'êtes pas connecté.";
+    echo "Veuillez vous reconnecter";
     return;
   }
 
