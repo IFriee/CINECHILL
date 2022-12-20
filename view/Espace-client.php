@@ -128,7 +128,7 @@ include "../model/read.php";
               </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell"><?php echo $user['password_user'];  ?></td>
+                <td class="u-table-cell" type="password"><?php echo $user['password_user'];  ?></td>
                 <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
               </tr>
             </tbody>
