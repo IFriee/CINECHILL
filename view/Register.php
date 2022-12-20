@@ -107,7 +107,7 @@
           <input name="password_verify" type="password" placeholder="mdp123" required>
         </div>
         <div class="input-box">
-          <span class="details">date de naissance</span>
+          <span class="details">Date de naissance</span>
           <input name="date_naissance" type="date" placeholder="mdp123" required>
         </div>
       </div>
