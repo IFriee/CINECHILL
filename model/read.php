@@ -60,4 +60,46 @@ function pseudo_verify($db, $pseudo){
 
 //PD^Xc0ks\O
 
+
+
+//-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+
+
+
+function afficher_pseudo_connecte($db) {
+  // Vérifie si l'utilisateur est connecté
+  if (!isset($_SESSION['id_user'])) {
+    echo "Veuillez vous reconnecter";
+    return;
+  }
+
+  // Récupère l'identifiant de l'utilisateur connecté
+  $id = $_SESSION['id_user'];
+
+  // Exécute une requête SQL pour récupérer tous les champs de l'utilisateur
+  $query = "SELECT * FROM user_tab WHERE id_user = (:post_id)";
+  $query_params = array(':post_id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+  $user = $result[0];
+
+  // Affiche le tableau des informations de l'utilisateur 
+  //print_r($user);
+  return $user;
+}
+
+
+// Récupère le pseudo de l'utilisateur connecté dans le tableau $user
+$user = afficher_pseudo_connecte($db);
+
+
 ?>
