@@ -97,11 +97,15 @@ session_start();
         <p> Pas encore inscrit? <a href="register.php">Cliques ici</a></p>
 
         <div class="error-message">
+ 
+
+        <p> Pas encore inscrit? <a href="register.php">Cliques ici</a></p>
+
         <?php
               echo "message d'erreur ici (ligne 120)"; 
          ?>
 
-        </div>
+
         <div class="button">
           <input type="submit" value="Se connecter">
         </div>
