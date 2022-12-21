@@ -37,6 +37,8 @@ include "../model/read.php";
     <meta property="og:title" content="Espace client">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+    <style>
+    </style>
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
@@ -191,11 +193,11 @@ include "../model/read.php";
             </colgroup>
             <thead class="u-grey-50 u-table-header u-table-header-1">
               <tr style="height: 80px;">
-                <th class="u-grey-80 u-table-cell u-table-cell-1">Film</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-2">Nbrs de places</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-3">Point de fidelité gagné</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-4">Date</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-5">Prix total de commande</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Film</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Nbrs de places</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Point de fidelité gagné</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Date</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Prix total de commande</th>
               </tr>
             </thead>
             <tbody class="u-table-body">

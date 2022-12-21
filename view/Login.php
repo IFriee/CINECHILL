@@ -93,7 +93,10 @@ session_start();
             <input name="password" type="password" placeholder="mdp123" required>
           </div>
         </div>
-
+        <div class="error-message">
+        <?php
+              echo "message d'erreur ici (ligne 120)"; 
+         ?>
 
         <p> Pas encore inscrit? <a href="register.php">Cliques ici</a></p>
 

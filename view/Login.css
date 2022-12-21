@@ -143,3 +143,8 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+
+.error-message{
+  color: red;
+  border-color: red;
+}
