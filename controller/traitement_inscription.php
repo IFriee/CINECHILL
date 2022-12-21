@@ -17,7 +17,7 @@ if (Verifier_mdp($_POST['password'])){
 				if (Verifier_nom_prenom($_POST['nom'], $_POST['prenom'])){
 					if(Verifier_date_naissance($_POST['date_naissance'])){
 						add_user($db, $_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $hashed_password, $_POST['email'], $_POST['date_naissance']);
-						//header('Location: ../view/Login.php');
+						header('Location: ../view/Login.php');
 						exit();
 					}
 				}

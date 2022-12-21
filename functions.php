@@ -10,6 +10,7 @@ function Afficher($string){
 
 function comparer_mdp($mdp1, $mdp2){
   if ($mdp1 == $mdp2){
+    unset($_SESSION['erreur']);
     return true;
   }
   $_SESSION['erreur'] = "Les mots de passes ne correspondent pas";
@@ -32,6 +33,7 @@ function Verifier_mdp($mdp){
         if (preg_match($special, $mdp)){
           if (preg_match($upper_case, $mdp)){
             if (strlen($mdp) >= 8){
+              unset($_SESSION['erreur']);
               return true;
             } else {
               $_SESSION['erreur'] = $erreur_taille_mdp;
@@ -60,6 +62,7 @@ function Verifier_nom_prenom($nom, $prenom){
   $erreur = "Le nom et le prenom doivent contenir une majuscule au début et ne pas contenir das nombres";
   if (preg_match($upper_case, $nom[0]) && preg_match($upper_case, $prenom[0])){
     if (!preg_match($digital, $nom) && !preg_match($digital, $prenom)){
+      unset($_SESSION['erreur']);
       return true;
     }
   }
@@ -82,6 +85,7 @@ function Verifier_date_naissance($date_naissance){
   $date_actuelle = explode('-', date('Y-m-d'));
 
   if ($date_explode[0] < $date_actuelle[0]) {
+    unset($_SESSION['erreur']);
     return true;
   } else {
     $_SESSION['erreur'] = $erreur_age;
@@ -99,6 +103,7 @@ function Check_date_exception($date) {
 
 function verifier_email($email){
   if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    unset($_SESSION['erreur']);
     return true;
   } else {
       $_SESSION['erreur'] = "L'email est invalide";
