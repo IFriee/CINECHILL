@@ -21,7 +21,7 @@
 		"@type": "Organization",
 		"name": "CINECHILL",
 		"logo": "images/Plandetravail1.png"
-}</script>
+    }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Login">
     <meta property="og:description" content="">
