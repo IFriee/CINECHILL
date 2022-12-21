@@ -1,6 +1,8 @@
 <?php 
-include "../model/connection.php";
 session_start();
+include "../model/connection.php";
+include "../model/read.php";
+
 ?>
 
 
@@ -35,6 +37,8 @@ session_start();
     <meta property="og:title" content="Espace client">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+    <style>
+    </style>
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
@@ -85,7 +89,7 @@ session_start();
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-34b5">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo "prenom_user"//.($_POST['prenom_user']) ?></span>.
+        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo $user['pseudo_user']; ?></span>.
         </h1>
       </div>
     </section>
@@ -104,36 +108,47 @@ session_start();
               <col width="33%">
             </colgroup>
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+            <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Pseudo</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['pseudo_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
+              </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
-                <td class="u-table-cell"><?php echo "nom_user" //.($_POST['nom_user']) ?></td>
+                <td class="u-table-cell"><b><?php echo $user['nom_user'];  ?></b></td>
                 <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo "prenom_user" //.($_POST['prenom_user']) ?></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['prenom_user']; ?></b></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Email</td>
-                <td class="u-table-cell"><?php echo "mail_user" //.($_POST['mail_user']) ?></td>
-                <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
-              </tr>
-              <tr style="height: 59px;">
-                <td class="u-grey-40 u-table-cell u-table-cell-10">Moyen de payement</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-11"><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-12"><u><a href="payement.php">Modifier</a></u></td>
+                <td class="u-table-cell">Date de naissance</td>
+                <td class="u-table-cell"><b><?php echo $user['date_naissance_user']; ?></b></td>
+                <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell"><?php echo "password_user" //.($_POST['password_user']) ?></td>
-                <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Email</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['mail_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 59px;">
+                <td class="u-table-cell">Moyen de payement</td>
+                <td class="u-table-cell"><b><?php echo "en cours" //.($_POST['prenom_user']) ?></b></td>
+                <td class="u-table-cell"><u><a href="payement.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Mot de passe</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b> ********* </b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"><u><a href="erreur404.php">Modifier</a></u></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
+    <br><br>
     <section class="u-clearfix u-grey-80 u-section-4" id="sec-fe43">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
@@ -146,7 +161,7 @@ session_start();
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "72" //.($_POST['prenom_user']) ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo $user['fidelite_user'];  ?></h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
@@ -178,11 +193,11 @@ session_start();
             </colgroup>
             <thead class="u-grey-50 u-table-header u-table-header-1">
               <tr style="height: 80px;">
-                <th class="u-grey-80 u-table-cell u-table-cell-1">Film</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-2">Nbrs de places</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-3">Point de fidelité gagné</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-4">Date</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-5">Prix total de commande</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Film</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Nbrs de places</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Point de fidelité gagné</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Date</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Prix total de commande</th>
               </tr>
             </thead>
             <tbody class="u-table-body">

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,7 +93,10 @@
             <input name="password" type="password" placeholder="mdp123" required>
           </div>
         </div>
-
+        <div class="error-message">
+        <?php
+              echo "message d'erreur ici (ligne 120)"; 
+         ?>
 
         <p> Pas encore inscrit? <a href="register.php">Cliques ici</a></p>
 
