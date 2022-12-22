@@ -101,10 +101,11 @@ include "../model/read.php";
 
 
         <?php
-              echo "message d'erreur ici (ligne 120)"; 
+          if (isset($_SESSION['erreur'])){
+            echo '<div class="error-message">'.$_SESSION['erreur'].'</div>';
+          }
+               
          ?>
-        <div class="error-message">
-        </div>
         <div class="button">
           <input type="submit" value="Se connecter">
         </div>
