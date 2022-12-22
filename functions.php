@@ -59,7 +59,7 @@ function Verifier_mdp($mdp){
 function Verifier_nom_prenom($nom, $prenom){
   $upper_case = '/[A-Z]/';
   $digital = '/\d/';
-  $erreur = "Le nom et le prenom doivent contenir une majuscule au début et ne pas contenir das nombres";
+  $erreur = "Le nom et le prenom doivent contenir une majuscule au début et ne pas contenir des nombres";
   if (preg_match($upper_case, $nom[0]) && preg_match($upper_case, $prenom[0])){
     if (!preg_match($digital, $nom) && !preg_match($digital, $prenom)){
       unset($_SESSION['erreur']);
@@ -67,8 +67,6 @@ function Verifier_nom_prenom($nom, $prenom){
     }
   }
   $_SESSION['erreur'] = $erreur;
-  header('Location: ../view/page_inscription.php');
-  exit();
 }
 
 function Verifier_date_naissance($date_naissance){

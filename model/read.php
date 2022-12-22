@@ -41,6 +41,7 @@ function login_verify($db, $pseudo, $password){
 
 function pseudo_verify($db, $pseudo){
   $query = "SELECT COUNT(*) AS verif FROM user_tab WHERE pseudo_user = (:post_pseudo)";
+  $pseudo = trim($pseudo);
   $query_params = array(':post_pseudo' => $pseudo);
   try
   {
@@ -51,6 +52,7 @@ function pseudo_verify($db, $pseudo){
       die("Failed query : " . $ex->getMessage());
   }
   $result = $stmt->fetchall();
+  $result = $result[0];
   if ($result['verif'] > 0){
     $_SESSION['erreur'] = "Le pseudo existe déjà";
     return false;
@@ -101,6 +103,7 @@ function afficher_pseudo_connecte($db) {
 function redirect_if_connect($db) {
   // Vérifie si l'utilisateur est connecté
   if (!isset($_SESSION['id_user'])) {
+    unset($_SESSION['erreur']);
     header('Location: ../view/Login.php');
     exit();
   }

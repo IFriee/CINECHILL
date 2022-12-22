@@ -118,17 +118,12 @@ include "../model/read.php";
 
       <p> Déjà inscrit? <a href="login.php">Cliques ici</a></p>
 
-
-
-      <div class="error-message">
         <?php
-              echo "message d'erreur ici (ligne 120)"; 
+          if (isset($_SESSION['erreur'])){
+            echo '<div class="error-message">'.$_SESSION['erreur'].'</div>';
+          }
+               
          ?>
-
-
-
-
-  </div>
       <div class="button">
         <input type="submit" value="Inscription">
       </div>
