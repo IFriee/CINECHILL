@@ -98,8 +98,27 @@ function afficher_pseudo_connecte($db) {
 }
 
 
+<<<<<<< Updated upstream
 // Récupère le pseudo de l'utilisateur connecté dans le tableau $user
 $user = afficher_pseudo_connecte($db);
+=======
+function redirect_if_connect($db) {
+  // Vérifie si l'utilisateur est connecté
+  if (!isset($_SESSION['id_user'])) {
+    unset($_SESSION['erreur']);
+    header('Location: ../view/Login.php');
+    exit();
+  }
+  header('Location: ../view/Espace-client.php');
+  exit();
+}
+
+//-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+
+
+>>>>>>> Stashed changes
 
 
 ?>

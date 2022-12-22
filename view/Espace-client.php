@@ -133,6 +133,12 @@ include "../model/read.php";
               </tr>
             </tbody>
           </table>
+          <br>
+          <div class=deco>
+            <form action="../model/logout.php" method="post">
+            <button type="submit">Déconnexion</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
