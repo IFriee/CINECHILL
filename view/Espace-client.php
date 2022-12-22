@@ -152,6 +152,10 @@ $user = afficher_pseudo_connecte($db);
         </div>
       </div>
     </section>
+    <div class="deco">$
+      <a href="../model/logout.php"> Se deconnecter </a>
+        </div>
+      </form>
     <br><br>
     <section class="u-clearfix u-grey-80 u-section-4" id="sec-fe43">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
