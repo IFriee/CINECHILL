@@ -1,3 +1,9 @@
+.deco {
+  text-align: center;
+  color: red;
+}
+
+
 .u-section-1 .u-sheet-1 {
   min-height: 207px;
 }
@@ -287,7 +293,4 @@
 .u-section-6 .u-table-cell-5 {
   background-image: none;
 
-}
-.deco{
-  text-align: center;
 }
