@@ -110,4 +110,26 @@ function redirect_if_connect($db) {
   header('Location: ../view/Espace-client.php');
   exit();
 }
+
+//-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+function afficher_film($db, $id){
+
+
+  //fonction pour prendre le nom du film
+  $query = "SELECT nom_film FROM film_tab WHERE id_film = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+  $user = $result[0];
+
+  return $user;
+}
 ?>
