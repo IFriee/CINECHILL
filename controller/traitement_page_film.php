@@ -4,11 +4,10 @@ include('../functions.php');
 include('../model/connection.php');
 include('../model/read.php');
 
-echo "salut";
-echo "</br>";
+
 $id = $_GET["id_film"];
-$nom_film = afficher_film($db, $id);
-echo "</br>";
-echo $nom_film["nom_film"];
+$_SESSION['info_film'] = afficher_info_film($db, $id);
+
+
 header('Location: ../view/films.php');
 ?>
