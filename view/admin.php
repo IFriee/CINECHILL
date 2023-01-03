@@ -72,24 +72,130 @@
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-2e03">
+
+    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-27bc">
+
       <div class="u-clearfix u-sheet u-sheet-1">
         <h3 class="u-custom-font u-text u-text-default u-text-1">Menu <span class="u-text-palette-2-base">ADMINISTRATEUR</span>
-        </h3>
-        <a href="commande-réussie.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">vers page commande réussie</a>
-        <a href="Login.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">vers page Login</a>
-        <a href="Register.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page Register</a>
-        <a href="films.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page film</a>
+        </h3><br><br>
+        
+        <div class="u-accordion u-expanded-width u-faq u-spacing-10 u-accordion-1">
+        <div class="u-accordion-item" style="text-align: center;">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span  class="u-accordion-link-text"> <h5 class="u-custom-font u-text u-text-default u-text-1"style="text-align: center;"> Acces rapide pages </h5></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div style="text-align: center;" class="fr-view u-clearfix u-rich-text u-text">
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="commande-réussie.php" >vers page commande réussie</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Login.php" >vers page Login</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Register.php">vers page Register</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="payement.php" >vers page modalite de payement</a>
 
-        <a href="payement.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page modalite de payement</a>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"> <h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion FILMS </h5></span>
+            </a>
+            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Supprimer affichage film </h5>
+                  <form action="/delete-film" method="POST">
+                    <label for="film-select">Sélectionnez le film à supprimer :</label><br>
+                    <select id="film-select" name="film-select">
+                      <option value="film1">Film 1</option>
+                      <option value="film2">Film 2</option>
+                      <option value="film3">Film 3</option>
+                      ...
+                    </select><br>
+                    <input type="submit" value="Supprimer le film">
+                  </form>
+                  <br><br>
+                  
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter film </h5>
+                  <form action="/add-film" method="POST">
+                    <label for="film-name">Nom du film :</label><br>
+                    <input type="text" id="film-name" name="film-name"><br>
+                    <label for="film-duration">Durée du film :</label><br>
+                    <input type="text" id="film-duration" name="film-duration"><br>
+                    <label for="film-genre">Genre du film :</label><br>
+                    <input type="text" id="film-genre" name="film-genre"><br>
+                    <label for="film-image">URL de l'image du film :</label><br>
+                    <input type="text" id="film-image" name="film-image"><br>
+                    <label for="film-video">URL de la vidéo du film :</label><br>
+                    <input type="text" id="film-video" name="film-video"><br>
+                    <label for="film-summary">Résumé du film :</label><br>
+                    <textarea id="film-summary" name="film-summary"></textarea><br>
+                    <label for="film-author">Auteur du film :</label><br>
+                    <input type="text" id="film-author" name="film-author"><br>
+                    <label for="film-release-date">Date de sortie du film :</label><br>
+                    <input type="date" id="film-release-date" name="film-release-date"><br>
+                    <input type="submit" value="Ajouter le film">
+                  </form>
 
-      </div>
-    </section>
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
-        </p>
-      </div></footer>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"><h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion USERS </h5></span>
+            </a>
+            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                <form action="/delete-user" method="POST">
+                  <label for="user-id">ID de l'utilisateur à supprimer :</label><br>
+                  <input type="number" id="user-id" name="user-id"><br>
+                  <input type="submit" value="Supprimer l'utilisateur">
+                </form>
+
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 </body></html>

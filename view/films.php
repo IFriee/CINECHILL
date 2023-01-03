@@ -246,7 +246,7 @@ form .user-details .input-box{
                 <td class="u-border-1 u-border-grey-30 u-border-no-bottom u-border-no-top u-grey-50 u-table-cell u-table-cell-3">Genre:</td>
               </tr>
               <tr style="height: 45px;">
-                <td class="u-border-2 u-border-grey-30 u-table-cell"> Top Gun: Maverick</td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?php echo $nom_film["nom_film"]; ?></td>
                 <td class="u-border-2 u-border-grey-30 u-table-cell"> 2h 11m</td>
                 <td class="u-border-2 u-border-grey-30 u-table-cell">Action, Aventure, Drame</td>
               </tr>
