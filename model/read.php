@@ -113,11 +113,14 @@ function redirect_if_connect($db) {
 
 //-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-function afficher_film($db, $id){
+function afficher_info_film($db, $id){
 
 
   //fonction pour prendre le nom du film
-  $query = "SELECT nom_film FROM film_tab WHERE id_film = (:id)";
+  $query = "SELECT nom_film, auteur_film, duree_film, date_sortie_film, nom_genre  
+            FROM film_tab 
+            INNER JOIN genre_tab ON id_genre = fk_genre_film
+            WHERE id_film = (:id)";
   $query_params = array(':id' => $id);
   try
   {

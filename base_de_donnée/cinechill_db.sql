@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 20 déc. 2022 à 13:32
+-- Généré le : mar. 03 jan. 2023 à 17:03
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -54,7 +54,8 @@ CREATE TABLE `film_tab` (
 --
 
 INSERT INTO `film_tab` (`id_film`, `nom_film`, `auteur_film`, `duree_film`, `fk_genre_film`, `date_sortie_film`) VALUES
-(1, 'pretty women', 'louis', '01:30:00', 1, '2012-11-04');
+(1, 'pretty women', 'louis', '01:30:00', 1, '2012-11-04'),
+(2, 'Top Gun Maverick', 'Joseph Kosinski', '02:11:00', 2, '2022-05-25');
 
 -- --------------------------------------------------------
 
@@ -73,18 +74,20 @@ CREATE TABLE `genre_tab` (
 
 INSERT INTO `genre_tab` (`id_genre`, `nom_genre`) VALUES
 (1, 'romance'),
-(2, 'romance');
+(2, 'action');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `image_tab`
+-- Structure de la table `info_page_tab`
 --
 
-CREATE TABLE `image_tab` (
-  `id_image` int(11) NOT NULL,
-  `fk_film_image` int(11) DEFAULT NULL,
-  `nom_image` varchar(50) DEFAULT NULL
+CREATE TABLE `info_page_tab` (
+  `id_info_page` int(11) NOT NULL,
+  `fk_film_info_page` int(11) DEFAULT NULL,
+  `url_info_page` varchar(255) DEFAULT NULL,
+  `image_info_page` varchar(255) DEFAULT NULL,
+  `resume_info_page` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -110,7 +113,8 @@ CREATE TABLE `projection_tab` (
   `id_projection` int(11) NOT NULL,
   `fk_salle_projection` int(11) DEFAULT NULL,
   `fk_film_projection` int(11) DEFAULT NULL,
-  `horraire_projection` datetime DEFAULT NULL
+  `horraire_projection` datetime DEFAULT NULL,
+  `prix_ticket_projection` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -143,18 +147,6 @@ INSERT INTO `salle_tab` (`id_salle`, `nombre_place_salle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `url_tab`
---
-
-CREATE TABLE `url_tab` (
-  `id_url` int(11) NOT NULL,
-  `fk_film_url` int(11) DEFAULT NULL,
-  `nom_url` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `user_tab`
 --
 
@@ -174,7 +166,8 @@ CREATE TABLE `user_tab` (
 --
 
 INSERT INTO `user_tab` (`id_user`, `nom_user`, `prenom_user`, `pseudo_user`, `password_user`, `mail_user`, `date_naissance_user`, `fidelite_user`) VALUES
-(1, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$I8BN7QdJV1Z60BfgxiN7gu3.J5QoCDnGsrh62tlnWIDsXouQKXAOC', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0);
+(2, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$TYpG6juC3ietLyoQo8sX2ujxnzNEAeriiNYyAJwaq6JvlwWmK0v9C', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0),
+(4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0);
 
 --
 -- Index pour les tables déchargées
@@ -202,11 +195,11 @@ ALTER TABLE `genre_tab`
   ADD PRIMARY KEY (`id_genre`);
 
 --
--- Index pour la table `image_tab`
+-- Index pour la table `info_page_tab`
 --
-ALTER TABLE `image_tab`
-  ADD PRIMARY KEY (`id_image`),
-  ADD KEY `fk_film_image` (`fk_film_image`);
+ALTER TABLE `info_page_tab`
+  ADD PRIMARY KEY (`id_info_page`),
+  ADD KEY `fk_film_info_page` (`fk_film_info_page`);
 
 --
 -- Index pour la table `place_count_tab`
@@ -230,13 +223,6 @@ ALTER TABLE `salle_tab`
   ADD PRIMARY KEY (`id_salle`);
 
 --
--- Index pour la table `url_tab`
---
-ALTER TABLE `url_tab`
-  ADD PRIMARY KEY (`id_url`),
-  ADD KEY `fk_film_url` (`fk_film_url`);
-
---
 -- Index pour la table `user_tab`
 --
 ALTER TABLE `user_tab`
@@ -257,7 +243,7 @@ ALTER TABLE `commande_tab`
 -- AUTO_INCREMENT pour la table `film_tab`
 --
 ALTER TABLE `film_tab`
-  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `genre_tab`
@@ -266,10 +252,10 @@ ALTER TABLE `genre_tab`
   MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `image_tab`
+-- AUTO_INCREMENT pour la table `info_page_tab`
 --
-ALTER TABLE `image_tab`
-  MODIFY `id_image` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `info_page_tab`
+  MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `place_count_tab`
@@ -290,16 +276,10 @@ ALTER TABLE `salle_tab`
   MODIFY `id_salle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT pour la table `url_tab`
---
-ALTER TABLE `url_tab`
-  MODIFY `id_url` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `user_tab`
 --
 ALTER TABLE `user_tab`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
@@ -319,10 +299,10 @@ ALTER TABLE `film_tab`
   ADD CONSTRAINT `film_tab_ibfk_1` FOREIGN KEY (`fk_genre_film`) REFERENCES `genre_tab` (`id_genre`);
 
 --
--- Contraintes pour la table `image_tab`
+-- Contraintes pour la table `info_page_tab`
 --
-ALTER TABLE `image_tab`
-  ADD CONSTRAINT `image_tab_ibfk_1` FOREIGN KEY (`fk_film_image`) REFERENCES `film_tab` (`id_film`);
+ALTER TABLE `info_page_tab`
+  ADD CONSTRAINT `info_page_tab_ibfk_1` FOREIGN KEY (`fk_film_info_page`) REFERENCES `film_tab` (`id_film`);
 
 --
 -- Contraintes pour la table `place_count_tab`
@@ -336,12 +316,6 @@ ALTER TABLE `place_count_tab`
 ALTER TABLE `projection_tab`
   ADD CONSTRAINT `projection_tab_ibfk_1` FOREIGN KEY (`fk_salle_projection`) REFERENCES `salle_tab` (`id_salle`),
   ADD CONSTRAINT `projection_tab_ibfk_2` FOREIGN KEY (`fk_film_projection`) REFERENCES `film_tab` (`id_film`);
-
---
--- Contraintes pour la table `url_tab`
---
-ALTER TABLE `url_tab`
-  ADD CONSTRAINT `url_tab_ibfk_1` FOREIGN KEY (`fk_film_url`) REFERENCES `film_tab` (`id_film`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
