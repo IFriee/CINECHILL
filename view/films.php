@@ -225,7 +225,7 @@ form .user-details .input-box{
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-video u-video-contain u-video-1">
           <div class="embed-responsive embed-responsive-1">
-            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/wFVid4OdyLg?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/598NnroP42s?loop=1&fs=0&modestbranding=1" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
@@ -246,7 +246,7 @@ form .user-details .input-box{
                 <td class="u-border-1 u-border-grey-30 u-border-no-bottom u-border-no-top u-grey-50 u-table-cell u-table-cell-3">Genre:</td>
               </tr>
               <tr style="height: 45px;">
-                <td class="u-border-2 u-border-grey-30 u-table-cell"> Top Gun: Maverick</td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?php echo $nom_film["nom_film"]; ?></td>
                 <td class="u-border-2 u-border-grey-30 u-table-cell"> 2h 11m</td>
                 <td class="u-border-2 u-border-grey-30 u-table-cell">Action, Aventure, Drame</td>
               </tr>
