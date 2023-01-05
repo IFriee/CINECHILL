@@ -1,3 +1,12 @@
+
+
+.imglogo{
+    width: 40%;
+    height: auto;
+    margin-left: 34%;
+    margin-top: 30px;
+}
+
 .present{
     text-align: center;
     font-family: Roboto;
@@ -7,27 +16,29 @@
 
 .titre {
     margin-top: 50px;
-    font-size: 2.40rem;
+    font-size: 2.20rem;
     font-family: Anton;
-    text-align: center;
+    text-align: left;
     color: #343434;
+    margin-left: 70px;
   }
 
 
+.resumcommande{
+  margin-left: 70px;
+  text-align: left;
+}
+.resumcommande h4{
+  color: #db545a;
+
+}
+
 
 .decoup {
-    margin-top: 50px;
     font-size: 1rem;
     text-align: center;
     color: #343434;
   }
-
-
-
-
-
-
-
 
 
 
