@@ -45,8 +45,7 @@ $user = afficher_pseudo_connecte($db);
     Vous devrez le présenter à l'entrée pour pouvoir entrer dans la salle de cinéma.
 </p>
 
-
-<p class="decoup">Découpez le</p>
+<p class="decoup">Découpez le ticket ci dessous</p>
 <p>---------------------------------------------------------------------------------------------------------------------------------------- </p>
 
 

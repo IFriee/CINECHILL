@@ -1,3 +1,18 @@
+<?php
+include('../model/connection.php');
+include('../model/read.php');
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,7 +107,9 @@
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Register.php">vers page Register</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="payement.php" >vers page modalite de payement</a><br>
-                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/user_tab.php" >vers page tab users</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/user_tab.php" >vers page tab users</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a>
+
                     <br>
                   </p>
                 </div>
@@ -156,7 +173,7 @@
                 <form action="/delete-user" method="POST">
                   <label for="user-id">ID de l'utilisateur à supprimer :</label><br>
                   <input type="number" id="user-id" name="user-id"><br>
-                  <input type="submit" value="Supprimer l'utilisateur">
+                  <input type="submit" value="Supprimer l'utilisateur" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
                 </form>
 
                     <br>
