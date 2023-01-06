@@ -1,6 +1,9 @@
 <?php
 include('../model/connection.php');
-include('../model/read.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  delete_user($db);
+}
 ?>
 
 
