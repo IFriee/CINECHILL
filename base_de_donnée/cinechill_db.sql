@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 03 jan. 2023 à 17:03
+-- Généré le : sam. 07 jan. 2023 à 14:46
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -46,16 +46,17 @@ CREATE TABLE `film_tab` (
   `auteur_film` varchar(50) DEFAULT NULL,
   `duree_film` time DEFAULT NULL,
   `fk_genre_film` int(11) DEFAULT NULL,
-  `date_sortie_film` date DEFAULT NULL
+  `date_sortie_film` date DEFAULT NULL,
+  `fk_info_page_film` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `film_tab`
 --
 
-INSERT INTO `film_tab` (`id_film`, `nom_film`, `auteur_film`, `duree_film`, `fk_genre_film`, `date_sortie_film`) VALUES
-(1, 'pretty women', 'louis', '01:30:00', 1, '2012-11-04'),
-(2, 'Top Gun Maverick', 'Joseph Kosinski', '02:11:00', 2, '2022-05-25');
+INSERT INTO `film_tab` (`id_film`, `nom_film`, `auteur_film`, `duree_film`, `fk_genre_film`, `date_sortie_film`, `fk_info_page_film`) VALUES
+(1, 'Top Gun : Maverick', 'Joseph Kosinski', '02:11:00', 2, '2022-05-25', 1),
+(2, 'Avatar : la voie de l\'eau', 'James Cameron', '03:12:00', 2, '2023-01-14', 2);
 
 -- --------------------------------------------------------
 
@@ -84,11 +85,18 @@ INSERT INTO `genre_tab` (`id_genre`, `nom_genre`) VALUES
 
 CREATE TABLE `info_page_tab` (
   `id_info_page` int(11) NOT NULL,
-  `fk_film_info_page` int(11) DEFAULT NULL,
   `url_info_page` varchar(255) DEFAULT NULL,
   `image_info_page` varchar(255) DEFAULT NULL,
   `resume_info_page` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `info_page_tab`
+--
+
+INSERT INTO `info_page_tab` (`id_info_page`, `url_info_page`, `image_info_page`, `resume_info_page`) VALUES
+(1, 'https://www.youtube.com/embed/qSqVVswa420', 'top_gun.jpg', 'Après plus de 30 ans de service en tant que l\'un des meilleurs aviateurs de la Marine, Pete Maverick Mitchell est à sa place, repoussant les limites en tant que pilote d\'essai courageux et esquivant l\'avancement de grade qui le mettrait à la terre. Entraînant de jeunes diplômés pour une mission spéciale, Maverick doit affronter les fantômes de son passé et ses peurs les plus profondes, aboutissant à une mission qui exige le sacrifice ultime de ceux qui choisissent de la piloter.'),
+(2, 'https://www.youtube.com/embed/d9MyW72ELq0', 'avatar.jpeg', 'Jake Sully et Ney\'tiri ont formé une famille et font tout pour rester aussi soudés que possible. Ils sont cependant contraints de quitter leur foyer et d\'explorer les différentes régions encore mystérieuses de Pandora. Lorsqu\'une ancienne menace refait surface, Jake va devoir mener une guerre difficile contre les humains.');
 
 -- --------------------------------------------------------
 
@@ -186,7 +194,8 @@ ALTER TABLE `commande_tab`
 --
 ALTER TABLE `film_tab`
   ADD PRIMARY KEY (`id_film`),
-  ADD KEY `fk_genre_film` (`fk_genre_film`);
+  ADD KEY `fk_genre_film` (`fk_genre_film`),
+  ADD KEY `fk_info_page_film` (`fk_info_page_film`);
 
 --
 -- Index pour la table `genre_tab`
@@ -198,8 +207,7 @@ ALTER TABLE `genre_tab`
 -- Index pour la table `info_page_tab`
 --
 ALTER TABLE `info_page_tab`
-  ADD PRIMARY KEY (`id_info_page`),
-  ADD KEY `fk_film_info_page` (`fk_film_info_page`);
+  ADD PRIMARY KEY (`id_info_page`);
 
 --
 -- Index pour la table `place_count_tab`
@@ -255,7 +263,7 @@ ALTER TABLE `genre_tab`
 -- AUTO_INCREMENT pour la table `info_page_tab`
 --
 ALTER TABLE `info_page_tab`
-  MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `place_count_tab`
@@ -296,13 +304,8 @@ ALTER TABLE `commande_tab`
 -- Contraintes pour la table `film_tab`
 --
 ALTER TABLE `film_tab`
-  ADD CONSTRAINT `film_tab_ibfk_1` FOREIGN KEY (`fk_genre_film`) REFERENCES `genre_tab` (`id_genre`);
-
---
--- Contraintes pour la table `info_page_tab`
---
-ALTER TABLE `info_page_tab`
-  ADD CONSTRAINT `info_page_tab_ibfk_1` FOREIGN KEY (`fk_film_info_page`) REFERENCES `film_tab` (`id_film`);
+  ADD CONSTRAINT `film_tab_ibfk_1` FOREIGN KEY (`fk_genre_film`) REFERENCES `genre_tab` (`id_genre`),
+  ADD CONSTRAINT `film_tab_ibfk_2` FOREIGN KEY (`fk_info_page_film`) REFERENCES `info_page_tab` (`id_info_page`);
 
 --
 -- Contraintes pour la table `place_count_tab`

@@ -140,23 +140,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <br><br>
                   
                   <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter film </h5>
-                  <form action="/add-film" method="POST">
+                  <form action="../controller/add_film.php" method="POST">
                     <label for="film-name">Nom du film :</label><br>
-                    <input type="text" id="film-name" name="film-name"><br>
+                    <input type="text" id="film-name" name="nom_film"><br>
                     <label for="film-duration">Durée du film :</label><br>
-                    <input type="text" id="film-duration" name="film-duration"><br>
+                    <input type="text" id="film-duration" name="duree_film"><br>
                     <label for="film-genre">Genre du film :</label><br>
-                    <input type="text" id="film-genre" name="film-genre"><br>
+                    <input type="text" id="film-genre" name="genre_film"><br>
                     <label for="film-image">URL de l'image du film :</label><br>
-                    <input type="text" id="film-image" name="film-image"><br>
+                    <input type="text" id="film-image" name="image_info_page"><br>
                     <label for="film-video">URL de la vidéo du film :</label><br>
-                    <input type="text" id="film-video" name="film-video"><br>
+                    <input type="text" id="film-video" name="url_info_page"><br>
                     <label for="film-summary">Résumé du film :</label><br>
-                    <textarea id="film-summary" name="film-summary"></textarea><br>
+                    <input type="text" id="film-video" name="resume_info_page"><br>
                     <label for="film-author">Auteur du film :</label><br>
-                    <input type="text" id="film-author" name="film-author"><br>
+                    <input type="text" id="film-author" name="auteur_film"><br>
                     <label for="film-release-date">Date de sortie du film :</label><br>
-                    <input type="date" id="film-release-date" name="film-release-date"><br>
+                    <input type="date" id="film-release-date" name="date_sortie_film"><br>
                     <input type="submit" value="Ajouter le film">
                   </form>
 

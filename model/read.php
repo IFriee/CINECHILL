@@ -117,9 +117,10 @@ function afficher_info_film($db, $id){
 
 
   //fonction pour prendre le nom du film
-  $query = "SELECT nom_film, auteur_film, duree_film, date_sortie_film, nom_genre  
+  $query = "SELECT nom_film, auteur_film, duree_film, date_sortie_film, nom_genre, url_info_page, image_info_page, resume_info_page  
             FROM film_tab 
             INNER JOIN genre_tab ON id_genre = fk_genre_film
+            INNER JOIN info_page_tab ON id_info_page = fk_info_page_film
             WHERE id_film = (:id)";
   $query_params = array(':id' => $id);
   try
@@ -138,5 +139,21 @@ function afficher_info_film($db, $id){
 
 
 //====================================================================
+
+//fonction pour verifier le nombre d'entrée dans info_page_tab
+function read_info_page($db){
+  $query = "SELECT COUNT(*) AS verif FROM info_page_tab";
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute();
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchall();
+  $result = $result[0];
+  return $result['verif'];
+}
 
 ?>
