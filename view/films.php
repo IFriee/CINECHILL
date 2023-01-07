@@ -225,7 +225,7 @@ form .user-details .input-box{
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-video u-video-contain u-video-1">
           <div class="embed-responsive embed-responsive-1">
-            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/598NnroP42s?loop=1&fs=0&modestbranding=1" frameborder="0" allowfullscreen=""></iframe>
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="<?=$_SESSION['info_film']['url_info_page']?>?loop=1&fs=0&modestbranding=1" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
@@ -246,9 +246,9 @@ form .user-details .input-box{
                 <td class="u-border-1 u-border-grey-30 u-border-no-bottom u-border-no-top u-grey-50 u-table-cell u-table-cell-3">Genre:</td>
               </tr>
               <tr style="height: 45px;">
-                <td class="u-border-2 u-border-grey-30 u-table-cell"><?php echo $_SESSION['info_film']['nom_film']; ?></td>
-                <td class="u-border-2 u-border-grey-30 u-table-cell"><?php echo $_SESSION['info_film']['duree_film']; ?></td>
-                <td class="u-border-2 u-border-grey-30 u-table-cell"><?php echo $_SESSION['info_film']['nom_genre']; ?></td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['nom_film']?></td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['duree_film']?></td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['nom_genre']?></td>
               </tr>
             </tbody>
           </table>
@@ -265,8 +265,8 @@ form .user-details .input-box{
               </div>
               <div class="u-align-left u-container-style u-grey-80 u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-palette-2-base u-text-1">Top Gun : Maverick</h2>
-                  <p class="u-text u-text-2"> Après plus de 30 ans de service en tant que l'un des meilleurs aviateurs de la Marine, Pete Maverick Mitchell est à sa place, repoussant les limites en tant que pilote d'essai courageux et esquivant l'avancement de grade qui le mettrait à la terre. Entraînant de jeunes diplômés pour une mission spéciale, Maverick doit affronter les fantômes de son passé et ses peurs les plus profondes, aboutissant à une mission qui exige le sacrifice ultime de ceux qui choisissent de la piloter.</p>
+                  <h2 class="u-text u-text-default u-text-palette-2-base u-text-1"><?=$_SESSION['info_film']['nom_film']?></h2>
+                  <p class="u-text u-text-2"> <?=$_SESSION['info_film']['resume_info_page']?></p>
                 </div>
               </div>
             </div>
