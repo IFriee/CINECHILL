@@ -4,7 +4,7 @@ include('../model/connection.php');
 
 
 if ($_SESSION['id_user'] == 1){
-  echo '<script> alert("Attention, tout ce que vous allez modifier est IRREVERSIBLE")</script>';}
+  echo 'Mode administrateur';}
 else{ 
   header('Location: erreur404.php');}
 ?>
@@ -114,7 +114,8 @@ else{
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="payement.php" >vers page modalite de payement</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/user_tab.php" >vers page tab users</a><br>
-                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="order.php" >vers page order</a>
 
                     <br>
                   </p>
