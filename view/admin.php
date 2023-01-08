@@ -1,9 +1,12 @@
 <?php
+session_start();
 include('../model/connection.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  delete_user($db);
-}
+
+if ($_SESSION['id_user'] == 1){
+  echo '<script> alert("Attention, tout ce que vous allez modifier est IRREVERSIBLE")</script>';}
+else{ 
+  header('Location: erreur404.php');}
 ?>
 
 
