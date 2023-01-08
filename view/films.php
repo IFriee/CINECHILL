@@ -261,7 +261,9 @@ form .user-details .input-box{
           <div class="u-layout" style="">
             <div class="u-layout-row" style="">
               <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1100" data-image-height="824">
+                <img src="images/<?=$_SESSION['info_film']['image_info_page']?>" width=100% height=100%>
                 <div class="u-container-layout u-valign-middle u-container-layout-1" src=""></div>
+
               </div>
               <div class="u-align-left u-container-style u-grey-80 u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">

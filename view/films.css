@@ -80,7 +80,6 @@
 
 .u-section-3 .u-image-1 {
   min-height: 590px;
-  background-image: url("images/avatar.jpeg");
   background-position: 50% 50%;
 }
 
@@ -184,7 +183,9 @@
   margin: 15px auto;
 }
 
-
+img {
+  object-fit: cover;
+}
 
 
 

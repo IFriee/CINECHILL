@@ -159,25 +159,25 @@ include "../model/read.php";
             <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-2" data-href="../controller/traitement_page_film.php?id_film=2" data-image-width="1200" data-image-height="1500" title="films">
               <div class="u-container-layout u-similar-container u-container-layout-2"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-3" data-image-width="1080" data-image-height="1600">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-3" data-href="../controller/traitement_page_film.php?id_film=3" data-image-width="1080" data-image-height="1600">
               <div class="u-container-layout u-similar-container u-container-layout-3"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-4" data-image-width="1000" data-image-height="1482">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-4" data-href="../controller/traitement_page_film.php?id_film=4" data-image-width="1000" data-image-height="1482">
               <div class="u-container-layout u-similar-container u-container-layout-4"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-5" data-image-width="1200" data-image-height="1200">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-5" data-href="../controller/traitement_page_film.php?id_film=5" data-image-width="1200" data-image-height="1200">
               <div class="u-container-layout u-similar-container u-container-layout-5"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-6" data-image-width="800" data-image-height="1200">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-6" data-href="../controller/traitement_page_film.php?id_film=6" data-image-width="800" data-image-height="1200">
               <div class="u-container-layout u-similar-container u-container-layout-6"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-7" data-image-width="1000" data-image-height="1481">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-7" data-href="../controller/traitement_page_film.php?id_film=7" data-image-width="1000" data-image-height="1481">
               <div class="u-container-layout u-similar-container u-container-layout-7"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-8" data-image-width="714" data-image-height="1113">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-8" data-href="../controller/traitement_page_film.php?id_film=8" data-image-width="714" data-image-height="1113">
               <div class="u-container-layout u-similar-container u-container-layout-8"></div>
             </div>
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-9" data-image-width="1000" data-image-height="1410">
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-9" data-href="../controller/traitement_page_film.php?id_film=9" data-image-width="1000" data-image-height="1410">
               <div class="u-container-layout u-similar-container u-container-layout-9"></div>
             </div>
           </div>
