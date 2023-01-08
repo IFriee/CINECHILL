@@ -96,6 +96,12 @@ $user = afficher_pseudo_connecte($db);
         <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo $user['pseudo_user']; ?></span>.
         </h1>
       </div>
+      <div class="admin">
+        <?php if ($_SESSION['id_user'] == 1){
+        echo '<span href="admin.php">MENU ADMINISTRATEUR</span>';
+      } ?>
+      </div>
+
     </section>
     <section class="u-clearfix u-section-2" id="sec-8bce">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
