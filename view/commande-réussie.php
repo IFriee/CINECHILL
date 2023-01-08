@@ -119,7 +119,7 @@ include "../model/read.php";
                 <th class="u-border-1 u-border-grey-50 u-table-cell"> Film</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Nombre de places</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Prix unitaire</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Point de fidelité</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Points de fidelité</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Date d' achat</th>
               </tr>
             </thead>
@@ -148,7 +148,7 @@ include "../model/read.php";
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-deb3">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Eliott <span class="u-text-palette-2-base">Wengler </span>&amp; Louis <span class="u-text-palette-2-base">Coppens </span>vous souhaites un bon <span class="u-text-palette-2-base">film </span>!
+        <h2 class="u-text u-text-default u-text-1">Eliott <span class="u-text-palette-2-base">Wengler </span>&amp; Louis <span class="u-text-palette-2-base">Coppens </span>vous souhaitent un bon <span class="u-text-palette-2-base">film </span>!
         </h2>
       </div>
     </section>

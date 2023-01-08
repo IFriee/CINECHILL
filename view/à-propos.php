@@ -89,7 +89,7 @@ include "../model/read.php";
                   <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="1024" data-image-height="1024" data-href="admin.php" title="admin"></div>
                   <div alt="" class="u-image u-image-circle u-image-2" src="" data-image-width="1125" data-image-height="1120" data-href="https://chat.openai.com/chat" data-target="_blank"></div>
                   <h2 class="u-custom-font u-text u-text-default u-text-1">à propos</h2>
-                  <p class="u-text u-text-2">Ce site est un exercice dans le cadre de nos études en informatique à l'ifosup de Wavre .<br>Rien n'est fonctionnel et le cinéma et le site sont fictifs.
+                  <p class="u-text u-text-2">Ce site est un exercice dans le cadre de nos études en informatique à l'Ifosup de Wavre .<br>Rien n'est fonctionnel et le cinéma et le site sont fictifs.
                   </p>
                 </div>
               </div>

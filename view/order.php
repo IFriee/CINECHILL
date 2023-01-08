@@ -94,17 +94,17 @@ $user = afficher_pseudo_connecte($db);
     <h3 style="text-align:center">Résumé de votre commande</h3><br>
         <div class="resumcommandeclient">
             <div class="infoclient">
-                <h4>Information client</h4>
+                <h4>Informations client</h4>
                 <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
-                <p>Prenom: <b><?php echo $user['prenom_user'] ?></b></p>
+                <p>Prénom: <b><?php echo $user['prenom_user'] ?></b></p>
                 <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
-                <p>Point de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+                <p>Points de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
                 <br>
             </div>
             <div class="infopayement">
-                <h4>Modalité de payement</h4>
-                <p>Type de carte de paiement : <b><?php  echo "à faire"   ?></b></p>
-                <p>Numéro de carte de paiement : <b><?php  echo "à faire"   ?></b></p>
+                <h4>Modalités de payement</h4>
+                <p>Type de carte de payement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Numéro de carte de payement : <b><?php  echo "à faire"   ?></b></p>
                 <p>Date d'expiration : <b><?php  echo "à faire"   ?></b></p>
                 <p>Code de sécurité : <b><?php  echo "****"   ?></b></p>
 

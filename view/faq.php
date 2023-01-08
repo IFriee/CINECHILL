@@ -82,7 +82,7 @@ include "../model/read.php";
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-27bc">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Foire aux questions</h2>
-        <p class="u-text u-text-2">Toutes nos questions récurentes sont ici !</p>
+        <p class="u-text u-text-2">Toutes nos questions récurrentes sont ici !</p>
         <div class="u-accordion u-expanded-width u-faq u-spacing-10 u-accordion-1">
           <div class="u-accordion-item">
             <a class="active u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-1" id="link-accordion-f600" aria-controls="accordion-f600" aria-selected="true">
@@ -120,7 +120,7 @@ include "../model/read.php";
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-3" id="link-accordion-854e" aria-controls="accordion-854e" aria-selected="false">
-              <span class="u-accordion-link-text">Comment crée un compte sur CineChill ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4a3a"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-4a3a" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+              <span class="u-accordion-link-text">Comment créer un compte sur CineChill ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4a3a"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-4a3a" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-3" id="accordion-854e" aria-labelledby="link-accordion-854e">
               <div class="u-container-layout u-container-layout-3">
@@ -132,7 +132,7 @@ include "../model/read.php";
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-4" id="link-db35" aria-controls="db35" aria-selected="false">
-              <span class="u-accordion-link-text">Mon systeme de payement ne fonctionne pas ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-83cb"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-83cb"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+              <span class="u-accordion-link-text">Mon système de payement ne fonctionne pas ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-83cb"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-83cb"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
 	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-4" id="db35" aria-labelledby="link-db35">
@@ -179,7 +179,7 @@ include "../model/read.php";
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-6" id="link-194c" aria-controls="194c" aria-selected="false">
-              <span class="u-accordion-link-text">Comment telecharger mon ticket ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0115"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-0115"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+              <span class="u-accordion-link-text">Comment télécharger mon ticket ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0115"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-0115"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
 	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-6" id="194c" aria-labelledby="link-194c">

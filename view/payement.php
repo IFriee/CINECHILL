@@ -82,7 +82,7 @@ include "../model/read.php";
       <div class="u-clearfix u-sheet u-sheet-1">
 
 <div class="container">
-  <div class="title">Modalité de payement</div>
+  <div class="title">Modalités de payement</div>
   <div class="content">
     <form action="#">
       <div class="user-details">
@@ -92,10 +92,10 @@ include "../model/read.php";
           <input type="password" placeholder="mdp123" required>
         </div>
       </div>
-      <p><b>Modalitée de payement :</b></p>
+      <p><b>Modalités de payement :</b></p>
       <div class="payment-details">
         <div class="input-box">
-          <span class="details">Type de carte de paiement</span>
+          <span class="details">Type de carte de payement</span>
           <select name="cardselect">
           <option value="Visa">Visa</option>
           <option value="MasterCard">Mastercard</option>
@@ -103,7 +103,7 @@ include "../model/read.php";
           </select>
         </div>
         <div class="input-box">
-          <span class="details">Numéro de carte de paiement</span>
+          <span class="details">Numéro de carte de payement</span>
           <input type="text" placeholder="1234 5678 9012 3456" required>
         </div>
         <div class="input-box">
@@ -117,7 +117,7 @@ include "../model/read.php";
       </div>
       
       <div class="button">
-        <input type="submit" value="Mise à jour des modalitées de payement">
+        <input type="submit" value="Mise à jour des modalités de payement">
       </div>
     </form>
   </div>
