@@ -295,11 +295,11 @@ form .user-details .input-box{
         <div class="user-details">
           <div class="input-box">
           <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
-        <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="0"><br>
+        <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="1"><br>
           </div>
           <div class="input-box">
           <label for="ticket-date">Date:</label>
-        <input type="date" id="ticket-date" name="ticket-date"><br>
+        <input type="datetime-local" id="ticket-date" name="ticket-date"><br>
           </div>
 
           <div class="input-box">
