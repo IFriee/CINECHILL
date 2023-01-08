@@ -1,11 +1,58 @@
+.resumcommandeclient h4 {
+    color: #db545a;
+  }
+  
+  .resumcommandeclient {
+    display: table;
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  .infoclient,
+  .infopayement {
+    display: table-row;
+  }
+  
+  .infoclient,
+  .infopayement {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  table.resumecommande {
+    margin: 0 auto; 
+    border-collapse: collapse; 
+  }
+  table.resumecommande th,
+  table.resumecommande td {
+    padding: 10px; 
+    border: 1px solid #999;
+    text-align: left; 
+  }
+  table.resumecommande th {
+    background-color: #ddd; 
+  }
+  
 
 
+  .btn-validate {
+    background-color: #ccc; /* Couleur de fond grise par défaut */
+    border: none; /* Pas de bordure */
+    color: white; /* Texte blanc */
+    padding: 15px 32px; /* Espacement intérieur */
+    text-align: center; /* Texte centré */
+    text-decoration: none; /* Pas de soulignement */
+    display: inline-block; /* Pour pouvoir mettre du contenu à côté du bouton */
+    font-size: 16px; /* Taille de police */
+    cursor: default; /* Curseur par défaut (flèche blanche) */
+  }
 
-.resumcommande{
-  margin-left: 70px;
-  text-align: center;
-}
-.resumcommande h4{
-  color: #db545a;
-
-}
+  /* Lorsque l'utilisateur entre le bon mot de passe, on change la couleur de fond du bouton en rouge */
+  .btn-validate.active {
+    background-color: rgb(216, 112, 112);
+  }

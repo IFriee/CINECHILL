@@ -91,23 +91,104 @@ $user = afficher_pseudo_connecte($db);
       </div></header>
 
     <body>
+    <h3 style="text-align:center">Résumé de votre commande</h3><br>
+        <div class="resumcommandeclient">
+            <div class="infoclient">
+                <h4>Information client</h4>
+                <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
+                <p>Prenom: <b><?php echo $user['prenom_user'] ?></b></p>
+                <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
+                <p>Point de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+                <br>
+            </div>
+            <div class="infopayement">
+                <h4>Modalité de payement</h4>
+                <p>Type de carte de paiement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Numéro de carte de paiement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Date d'expiration : <b><?php  echo "à faire"   ?></b></p>
+                <p>Code de sécurité : <b><?php  echo "****"   ?></b></p>
 
-        <div class="resumcommande">
-        <h3 style="text-align:center">Résumé de votre commande</h3><br>
-        <h4>Information client</h4>
-        <p>Numéro de commande : <b><?php  echo "à faire"   ?></b></p>
-        <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
-        <p>Prenom: <b><?php echo $user['prenom_user'] ?></b></p>
-        <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
-        <p>Point de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
-        <br>
-        <h4>Film réservé</h4>
-        <p>Nom du film : <b><?php  echo "à faire"   ?></b></p>
-        <p>Date de projection : <b><?php  echo "à faire"   ?></b></p>
-        <p>Heure de projection : <b><?php  echo "à faire"   ?></b></p>
-        <p>Salle de projection : <b><?php  echo "à faire"   ?></b></p>
-        <p>Prix de la place : <b><?php  echo "à faire"   ?></b></p>
+            </div>
+
+        </div>
+            <div class="infofilm">
+                <table class="resumecommande">
+                    <tr>
+                        <th colspan="2">Résumé de votre commande</th>
+                    </tr>
+                    <tr>
+                    <td>Numéro de commande</td>
+                    <td><b><?php  echo "à faire"   ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Nom du film</td>
+                        <td><b><?php echo "Avatar : Le dernier maitre de l'eau gazeuse" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Date de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Heure de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Salle de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la place</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la tva (21%)</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                </table>
+                <div class="validate">
+                <form>
+                    <label for="password">Mot de passe :</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    </form>
+
+                    <!-- Bouton de validation de la commande, grisé par défaut -->
+                    <button class="btn-validate" disabled>Valider la commande</button>
+
+                    <!-- Script JavaScript pour activer le bouton lorsque le mot de passe est correct -->
+                    <script>
+                    // Récupère le formulaire et le bouton
+                    var form = document.querySelector('form');
+                    var btn = document.querySelector('.btn-validate');
+
+                    // Ajoute un écouteur d'événement sur la soumission du formulaire
+                    form.addEventListener('submit', function(event) {
+                        // Empêche l'envoi du formulaire
+                        event.preventDefault();
+
+                        // Récupère la valeur du mot de passe
+                        var password = form.password.value;
+
+                        // Vérifie si le mot de passe est correct
+                        if (password === 'motdepasse') {
+                        // Active le bouton
+                        btn.disabled = false;
+                        btn.classList.add('active');
+                        }
+                    });
+                    </script>
+                    </div>
+
+
+            </div>
+
+        <br><br><br><br>
+            <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
+        </p>
+      </div></footer>
   
-
-</div>
-    </body>
+</body></html>
