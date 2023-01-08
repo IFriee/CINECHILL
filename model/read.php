@@ -156,4 +156,10 @@ function read_info_page($db){
   return $result['verif'];
 }
 
+
+
+
+
+
+
 ?>

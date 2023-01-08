@@ -96,7 +96,11 @@ include "../model/read.php";
       <div class="payment-details">
         <div class="input-box">
           <span class="details">Type de carte de paiement</span>
-          <input type="text" placeholder="Visa" required>
+          <select name="cardselect">
+          <option value="Visa">Visa</option>
+          <option value="MasterCard">Mastercard</option>
+          <option value="AmericanExpress">American Express</option>
+          </select>
         </div>
         <div class="input-box">
           <span class="details">Numéro de carte de paiement</span>

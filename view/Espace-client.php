@@ -98,7 +98,7 @@ $user = afficher_pseudo_connecte($db);
       </div>
       <div class="admin">
         <?php if ($_SESSION['id_user'] == 1){
-        echo '<a href="admin.php">MENU ADMINISTRATEUR</a>';
+        echo '<a href="admin.php"><u>MENU ADMINISTRATEUR</u></a>';
       } ?>
       </div>
 
