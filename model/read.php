@@ -158,8 +158,37 @@ function read_info_page($db){
 
 
 
+function read_nom_film($db){
+  $query = "SELECT nom_film
+            FROM film_tab";
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute();
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
 
+  return $result;
+}
 
+function read_id_salle($db){
+  $query = "SELECT id_salle
+            FROM salle_tab";
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute();
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
 
 
 ?>

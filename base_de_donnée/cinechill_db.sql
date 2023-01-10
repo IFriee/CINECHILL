@@ -193,7 +193,7 @@ CREATE TABLE `user_tab` (
 --
 
 INSERT INTO `user_tab` (`id_user`, `nom_user`, `prenom_user`, `pseudo_user`, `password_user`, `mail_user`, `date_naissance_user`, `fidelite_user`) VALUES
-(1, 'Admin','Admin','The_Administrator,'$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy','cinechill@ifosup.wavre.be','1999-07-03',0),
+(1, 'Admin','Admin','The_Administrator','$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy','cinechill@ifosup.wavre.be','1999-07-03',0),
 (2, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$TYpG6juC3ietLyoQo8sX2ujxnzNEAeriiNYyAJwaq6JvlwWmK0v9C', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0),
 (4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0);
 
