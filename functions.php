@@ -1,7 +1,6 @@
 <?php
 
 
-
 //________________________________LOGIN/REGISTER VERIF_____________________
 
 function Afficher($string){
@@ -132,8 +131,20 @@ function nbr_place_achete(){
   //return nombre TOTAL de place acheté
 }
 
+function menu_film($db){
+  $nom_film = read_nom_film($db);
+  for($i = 1; $i <= count($nom_film); $i++){
+    echo "<option value='".$i."'>".$nom_film[$i-1]["nom_film"]."</option>";
+  }
+  return $nom_film;
+}
 
-
-
+function menu_salle($db){
+  $id_salle = read_id_salle($db);
+  for($i = 1; $i <= count($id_salle); $i++){
+    echo "<option value='".$i."'>".$id_salle[$i-1]["id_salle"]."</option>";
+  }
+  return $id_salle;
+}
 
 ?>

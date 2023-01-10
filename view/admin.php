@@ -1,7 +1,9 @@
 <?php
 session_start();
 include('../model/connection.php');
-
+include ("../model/read.php");
+include ("../model/insert.php");
+include ("../functions.php");
 
 if ($_SESSION['id_user'] == 1){
   echo '<script> alert("Attention, tout ce que vous allez modifier est IRREVERSIBLE")</script>';}
@@ -126,7 +128,8 @@ else{
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
               <span class="u-accordion-link-text"> <h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion FILMS </h5></span>
             </a>
-            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+            <div style="text-align: cen
+            ter;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
               <div class="u-container-layout u-container-layout-2">
                 <div class="fr-view u-clearfix u-rich-text u-text">
                   <h5 class="u-custom-font u-text u-text-default u-text-1">Supprimer affichage film </h5>
@@ -189,6 +192,102 @@ else{
             </div>
           </div>
 
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"><h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion PROJECTION </h5></span>
+            </a>
+            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <?php
+                include('../model/connection.php');
+                $query = "SELECT id_projection, fk_salle_projection, nom_film, horraire_projection, prix_ticket_projection 
+                          FROM projection_tab
+                          INNER JOIN film_tab ON id_film = fk_film_projection";
+                $stmt = $db->prepare($query);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+
+                if (count($result) > 0) {
+                  // Affichage des données de chaque enregistrement dans un tableau
+                  echo "<table>";
+                  echo "<tr>";
+                  echo "<th>ID</th>";
+                  echo "<th>salle</th>";
+                  echo "<th>film</th>";
+                  echo "<th>horraire</th>";
+                  echo "<th>prix</th>";
+                  foreach ($result as $row) {
+                    echo "<tr>";
+                    echo "<td>" . $row["id_projection"] . "</td>";
+                    echo "<td>" . $row["fk_salle_projection"] . "</td>";
+                    echo "<td>" . $row["nom_film"] . "</td>";
+                    echo "<td>" . $row["horraire_projection"] . "</td>";
+                    echo "<td>" . $row["prix_ticket_projection"] . " €</td>";
+                    echo "</tr>";
+                    }
+                    echo "</table>";
+                    } else {
+                    echo "Aucun enregistrement trouvé";
+                    }
+                ?>
+
+                <style>
+                  table {
+                  font-family: arial, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                  background-color: #dddddd;
+                }
+
+                .table-header {
+                  font-weight: bold;
+                  background-color: #333333;
+                  color: white;
+                }</style>
+
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                <form action="/delete-user" method="POST">
+                  <label for="projection-id">Projection à supprimer :</label><br>
+                  <input type="number" id="user-id" name="id_projection" min="1"><br>
+                  <input type="submit" value="Supprimer la projection" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                </form>
+
+                </form>
+                  <br><br>
+                  
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter film </h5>
+                  <form action="../controller/add_projection.php" method="POST">
+                    <label for="salle_projection">salle de projection :</label><br>
+                    <select id="projection-select" name="salle_projection">
+                      <?php menu_salle($db); ?>
+                    </select><br>
+                    <label for="nom_film">nom du film :</label><br>
+                    <select id="projection-select" name="nom_film">
+                      <?php menu_film($db); ?>
+                    </select><br>
+                    <label for="horraire_projection">horraire :</label><br>
+                    <input type="datetime-local" id="projection-horraire" name="horraire_projection"><br>
+                    <label for="film-image">prix de la projection :</label><br>
+                    <input type="text" id="film-image" name="prix_projection"><br>
+                    <input type="submit" value="Ajouter la projection">
+                  </form>
+
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
 
 
@@ -221,4 +320,5 @@ else{
 
 
   
-</body></html>
+  </body>
+</html>

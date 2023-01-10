@@ -82,6 +82,22 @@ function add_user($db, $nom, $prenom, $pseudo, $password, $mail, $date_naissance
         die("Failed query : " . $ex->getMessage());
     }
 }
+
+function add_projection($db, $salle, $film, $horraire, $prix){
+    $query = "INSERT INTO projection_tab (fk_salle_projection, fk_film_projection, horraire_projection, prix_ticket_projection) 
+    VALUES(:fk_salle_projection, :fk_film_projection, :horraire_projection, :prix_ticket_projection)";
+    $query_params = array(':fk_salle_projection'=>$salle,
+                          ':fk_film_projection'=>$film,
+                          ':horraire_projection'=>$horraire,
+                          ':prix_ticket_projection'=>$prix);
+    try{
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }
+}
 //echo add_info1($db);
 //echo add_info2($db);
 ?>
