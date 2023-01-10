@@ -98,14 +98,14 @@ $user = afficher_pseudo_connecte($db);
       </div>
       <div class="admin">
         <?php if ($_SESSION['id_user'] == 1){
-        echo '<a href="admin.php">MENU ADMINISTRATEUR</a>';
+        echo '<a href="admin.php"><u>MENU ADMINISTRATEUR</u></a>';
       } ?>
       </div>
 
     </section>
     <section class="u-clearfix u-section-2" id="sec-8bce">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h4 class="u-custom-font u-text u-text-default u-text-1">Vos données personelles</h4>
+        <h4 class="u-custom-font u-text u-text-default u-text-1">Vos données personnelles</h4>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-d35a">
@@ -171,7 +171,7 @@ $user = afficher_pseudo_connecte($db);
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "3" //.nbr_film() ?></h1>
-                <p class="u-text u-text-2">Films déja vu chez nous !</p>
+                <p class="u-text u-text-2">Films déja vus chez nous !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -183,7 +183,7 @@ $user = afficher_pseudo_connecte($db);
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
                 <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "9" //.($_POST['prenom_user']) ?></h1>
-                <p class="u-text u-text-default u-text-6">Places achetée</p>
+                <p class="u-text u-text-default u-text-6">Places achetées</p>
               </div>
             </div>
           </div>
@@ -209,8 +209,8 @@ $user = afficher_pseudo_connecte($db);
             <thead class="u-grey-50 u-table-header u-table-header-1">
               <tr style="height: 80px;">
                 <th class="u-grey-40 u-table-cell u-table-cell-6">Film</th>
-                <th class="u-grey-40 u-table-cell u-table-cell-6">Nbrs de places</th>
-                <th class="u-grey-40 u-table-cell u-table-cell-6">Point de fidelité gagné</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Nbre de places</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Points de fidelité gagnés</th>
                 <th class="u-grey-40 u-table-cell u-table-cell-6">Date</th>
                 <th class="u-grey-40 u-table-cell u-table-cell-6">Prix total de commande</th>
               </tr>

@@ -82,7 +82,7 @@ include "../model/read.php";
       <div class="u-clearfix u-sheet u-sheet-1">
 <br><br>
 <div class="container">
-  <div class="title">Crée un compte</div>
+  <div class="title">Créer un compte</div>
   <div class="content">
     <form action="../controller/traitement_inscription.php" method="post">
       <div class="user-details">
@@ -116,7 +116,7 @@ include "../model/read.php";
         </div>
       </div>
 
-      <p> Déjà inscrit? <a href="login.php">Cliques ici</a></p>
+      <p> Déjà inscrit? <a href="login.php">Clique ici</a></p>
 
         <?php
           if (isset($_SESSION['erreur'])){

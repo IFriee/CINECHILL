@@ -3,7 +3,10 @@ session_start();
 include "../model/connection.php";
 include "../model/read.php";
 
+$user = afficher_pseudo_connecte($db);
+
 ?>
+
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
@@ -11,13 +14,19 @@ include "../model/read.php";
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Login</title>
+    <title>Espace client</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Login.css" media="screen">
+<link rel="stylesheet" href="order.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400">
+    
+    
+    
+    
+    
     
     
     <script type="application/ld+json">{
@@ -27,9 +36,11 @@ include "../model/read.php";
 		"logo": "images/Plandetravail1.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Login">
+    <meta property="og:title" content="Espace client">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+    <style>
+    </style>
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
@@ -78,46 +89,104 @@ include "../model/read.php";
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-c4bb">
-      <div class="u-clearfix u-sheet u-sheet-1">
-      <br><br>
 
-          <div class="container">
-    <div class="title">S'identifier</div>
-    <div class="content">
-      <form action="../controller/traitement_login.php" method="post">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Pseudo</span>
-            <input name="pseudo" type="text" placeholder="The_Black_Mamba" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Mot de passe</span>
-            <input name="password" type="password" placeholder="mdp123" required>
-          </div>
+    <body>
+    <h3 style="text-align:center">Résumé de votre commande</h3><br>
+        <div class="resumcommandeclient">
+            <div class="infoclient">
+                <h4>Informations client</h4>
+                <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
+                <p>Prénom: <b><?php echo $user['prenom_user'] ?></b></p>
+                <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
+                <p>Points de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+                <br>
+            </div>
+            <div class="infopayement">
+                <h4>Modalités de payement</h4>
+                <p>Type de carte de payement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Numéro de carte de payement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Date d'expiration : <b><?php  echo "à faire"   ?></b></p>
+                <p>Code de sécurité : <b><?php  echo "****"   ?></b></p>
+
+            </div>
+
         </div>
-        
-        <p> Pas encore inscrit? <a href="register.php">Clique ici</a></p>
+            <div class="infofilm">
+                <table class="resumecommande">
+                    <tr>
+                        <th colspan="2">Résumé de votre commande</th>
+                    </tr>
+                    <tr>
+                    <td>Numéro de commande</td>
+                    <td><b><?php  echo "à faire"   ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Nom du film</td>
+                        <td><b><?php echo "Avatar : Le dernier maitre de l'eau gazeuse" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Date de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Heure de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Salle de projection</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la place</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la tva (21%)</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><b><?php echo "à faire" ?></b></td>
+                    </tr>
+                </table>
+                <div class="validate">
+                <form>
+                    <label for="password">Mot de passe :</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    </form>
+
+                    <!-- Bouton de validation de la commande, grisé par défaut -->
+                    <button class="btn-validate" disabled>Valider la commande</button>
+
+                    <!-- Script JavaScript pour activer le bouton lorsque le mot de passe est correct -->
+                    <script>
+                    // Récupère le formulaire et le bouton
+                    var form = document.querySelector('form');
+                    var btn = document.querySelector('.btn-validate');
+
+                    // Ajoute un écouteur d'événement sur la soumission du formulaire
+                    form.addEventListener('submit', function(event) {
+                        // Empêche l'envoi du formulaire
+                        event.preventDefault();
+
+                        // Récupère la valeur du mot de passe
+                        var password = form.password.value;
+
+                        // Vérifie si le mot de passe est correct
+                        if (password === 'motdepasse') {
+                        // Active le bouton
+                        btn.disabled = false;
+                        btn.classList.add('active');
+                        }
+                    });
+                    </script>
+                    </div>
 
 
-        <?php
-          if (isset($_SESSION['erreur'])){
-            echo '<div class="error-message">'.$_SESSION['erreur'].'</div>';
-          }
-               
-         ?>
-        <div class="button">
-          <input type="submit" value="Se connecter">
-        </div>
-      </form>
-    </div>
-  </div>
+            </div>
 
-      </div>
-    </section>
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
+        <br><br><br><br>
+            <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
         </p>
       </div></footer>

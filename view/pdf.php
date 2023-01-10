@@ -27,9 +27,9 @@ $user = afficher_pseudo_connecte($db);
   <h4>Information client</h4>
   <p>Numéro de commande : <b><?php  echo "à faire"   ?></b></p>
   <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
-  <p>Prenom: <b><?php echo $user['prenom_user'] ?></b></p>
+  <p>Prénom: <b><?php echo $user['prenom_user'] ?></b></p>
   <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
-  <p>Point de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+  <p>Points de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
   <br>
   <h4>Film réservé</h4>
   <p>Nom du film : <b><?php  echo "à faire"   ?></b></p>

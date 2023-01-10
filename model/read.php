@@ -157,6 +157,7 @@ function read_info_page($db){
 }
 
 
+
 function read_nom_film($db){
   $query = "SELECT nom_film
             FROM film_tab";
@@ -188,5 +189,6 @@ function read_id_salle($db){
 
   return $result;
 }
+
 
 ?>
