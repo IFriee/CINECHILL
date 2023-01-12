@@ -98,6 +98,23 @@ function add_projection($db, $salle, $film, $horraire, $prix){
         die("Failed query : " . $ex->getMessage());
     }
 }
+
+function add_commande($db, $user, $projection, $date){
+    $query = "INSERT INTO commande_tab (fk_user_commande, fk_projection_commande, 
+                          date_commande) 
+              VALUES(:fk_user_commande, :fk_projection_commande, :date_commande)";
+
+    $query_params = array(':fk_user_commande'=>$user,
+                          ':fk_projection_commande'=>$projection,
+                          ':date_commande'=>$date);
+    try{
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }
+}
 //echo add_info1($db);
 //echo add_info2($db);
 ?>

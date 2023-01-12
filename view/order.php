@@ -122,7 +122,7 @@ $user = afficher_pseudo_connecte($db);
                     </tr>
                     <tr>
                         <td>Nom du film</td>
-                        <td><b><?php echo "Avatar : Le dernier maitre de l'eau gazeuse" ?></b></td>
+                        <td><b><?=read_film_commande($db, $_SESSION['info_commande']['id_commande'])?></b></td>
                     </tr>
                     <tr>
                         <td>Date de projection</td>

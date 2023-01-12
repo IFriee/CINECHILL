@@ -284,7 +284,7 @@ form .user-details .input-box{
       <div class="container">
         <div class="title">Réservez ici</div>
           <div class="content">
-            <form action="order.php" method="POST">
+            <form action="../controller/traitement_commande.php" method="POST">
               <div class="user-details">
                 <div class="input-box">
                   <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
