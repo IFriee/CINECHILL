@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 08 jan. 2023 à 13:22
+-- Généré le : jeu. 12 jan. 2023 à 14:25
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -144,6 +144,14 @@ CREATE TABLE `projection_tab` (
   `prix_ticket_projection` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `projection_tab`
+--
+
+INSERT INTO `projection_tab` (`id_projection`, `fk_salle_projection`, `fk_film_projection`, `horraire_projection`, `prix_ticket_projection`) VALUES
+(1, 5, 4, '2023-01-25 20:45:00', 8),
+(2, 1, 1, '2023-01-27 18:00:00', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -193,7 +201,7 @@ CREATE TABLE `user_tab` (
 --
 
 INSERT INTO `user_tab` (`id_user`, `nom_user`, `prenom_user`, `pseudo_user`, `password_user`, `mail_user`, `date_naissance_user`, `fidelite_user`) VALUES
-(1, 'Admin','Admin','The_Administrator','$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy','cinechill@ifosup.wavre.be','1999-07-03',0),
+(1, 'Admin', 'Admin', 'The_Administrator', '$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy', 'cinechill@ifosup.wavre.be', '1999-07-03', 0),
 (2, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$TYpG6juC3ietLyoQo8sX2ujxnzNEAeriiNYyAJwaq6JvlwWmK0v9C', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0),
 (4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0);
 
@@ -295,7 +303,7 @@ ALTER TABLE `place_count_tab`
 -- AUTO_INCREMENT pour la table `projection_tab`
 --
 ALTER TABLE `projection_tab`
-  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `salle_tab`
