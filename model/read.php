@@ -211,4 +211,41 @@ function read_projection($db, $id){
   return $result;
 }
 
+function read_commande($db){
+  $query = "SELECT id_commande, fk_user_commande, fk_projection_commande, 
+                   date_commande
+            FROM commande_tab
+            ORDER BY id_commande DESC LIMIT 1";
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute();
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
+
+function read_film_commande($db, $id){
+  $query = "SELECT nom_film
+            FROM commande_tab
+            INNER JOIN projection_tab ON fk_projection_commande = id_projection
+            INNER JOIN film_tab ON fk_film_projection = id_film
+            WHERE id_commande = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result[0]['nom_film'];
+}
 ?>

@@ -150,7 +150,7 @@ function menu_salle($db){
 function menu_projection($db, $id){
   $projection = read_projection($db, $id);
   for($i = 1; $i <= count($projection); $i++){
-    echo "<option value='".$i."'>".$projection[$i-1]["horraire_projection"]."</option>";
+    echo "<option value='".$projection[$i-1]["id_projection"]."'>".$projection[$i-1]["horraire_projection"]."</option>";
   }
   return $projection;
 }
