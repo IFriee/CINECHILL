@@ -39,7 +39,10 @@
   }
   
 
-
+.validate{
+  text-align: center;
+  align-items: center;
+}
   .btn-validate {
     background-color: #ccc; /* Couleur de fond grise par défaut */
     border: none; /* Pas de bordure */

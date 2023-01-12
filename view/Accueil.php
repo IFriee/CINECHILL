@@ -89,7 +89,7 @@ include ("../model/read.php");
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
-    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-8b61" data-image-width="1400" data-image-height="700" data-target="_blank">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-8b61" data-image-width="1400" data-image-height="700"  data-href="../controller/traitement_page_film.php?id_film=11">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1"> Space Jam (1996)</h2>
         <p class="u-large-text u-text u-text-variant u-text-2">Pour les fans de Space Jam, une rediffusion spéciale sera prévue le 30.01.23</p>
