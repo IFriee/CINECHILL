@@ -2,6 +2,7 @@
 session_start();
 include "../model/connection.php";
 include "../model/read.php";
+include "../functions.php";
 
 ?>
 
@@ -280,48 +281,31 @@ form .user-details .input-box{
       <br><br><br>
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-a19f">
-      
-
-
-
-
-
-
-
       <div class="container">
-    <div class="title">Réservez ici</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-          <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
-        <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="1"><br>
-          </div>
-          <div class="input-box">
-          <label for="ticket-date">Date:</label>
-        <input type="datetime-local" id="ticket-date" name="ticket-date"><br>
-          </div>
-
-          <div class="input-box">
-          <label for="ticket-time">Horaire:</label>
-          <select id="ticket-time" name="ticket-time">
-          <option value="15:00">15h</option>
-          <option value="17:00">17h</option>
-          <option value="21:30">21h30</option>
-          </select><br>
-          </div>
-
-
-        </div>
-
-        <div class="button">
-          <input type="submit" value="Réserver">
-        </div>
-      </form>
-
-
-
-
+        <div class="title">Réservez ici</div>
+          <div class="content">
+            <form action="order.php" method="POST">
+              <div class="user-details">
+                <div class="input-box">
+                  <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
+                  <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" placeholder="nombre de ticket" min="1"><br>
+                </div>
+                <div class="input-box">
+                  <label for="ticket-date">Date:</label>
+                  <br>
+                  <select id="ticket-time" name="ticket-time" style="width:300px; height:45px; ">
+                  <?php menu_projection($db, $_SESSION['id_film']); ?>
+                </div>
+                <br><br><br>
+                <div class="input-box">
+                  <div class="button">
+                    <input type="submit" value="Réserver">
+                  </div>
+                </div>
+              </div>
+            </form>
+        </div>  
+      </div>
     </section>
     <br><br><br>
     

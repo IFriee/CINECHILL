@@ -153,7 +153,7 @@ $user = afficher_pseudo_connecte($db);
                 <form>
                     <label for="password">Mot de passe :</label><br>
                     <input type="password" id="password" name="password"><br>
-                    </form>
+                </form>
 
                     <!-- Bouton de validation de la commande, grisé par défaut -->
                     <button class="btn-validate" disabled>Valider la commande</button>

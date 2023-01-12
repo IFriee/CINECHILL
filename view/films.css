@@ -187,7 +187,9 @@ img {
   object-fit: cover;
 }
 
-
+.button {
+  float: right;
+}
 
 
 

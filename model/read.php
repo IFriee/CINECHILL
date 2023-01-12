@@ -117,7 +117,8 @@ function afficher_info_film($db, $id){
 
 
   //fonction pour prendre le nom du film
-  $query = "SELECT nom_film, auteur_film, duree_film, date_sortie_film, nom_genre, url_info_page, image_info_page, resume_info_page  
+  $query = "SELECT nom_film, auteur_film, duree_film, date_sortie_film, nom_genre,
+                   url_info_page, image_info_page, resume_info_page  
             FROM film_tab 
             INNER JOIN genre_tab ON id_genre = fk_genre_film
             INNER JOIN info_page_tab ON id_info_page = fk_info_page_film
@@ -190,5 +191,24 @@ function read_id_salle($db){
   return $result;
 }
 
+function read_projection($db, $id){
+  $query = "SELECT id_projection, fk_salle_projection,
+                   horraire_projection, prix_ticket_projection
+            FROM projection_tab
+            INNER JOIN film_tab ON id_film = fk_film_projection
+            WHERE fk_film_projection = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
 
 ?>
