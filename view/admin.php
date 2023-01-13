@@ -118,13 +118,14 @@ if (isset($_SESSION['message'])){
               <div class="u-container-layout u-container-layout-2">
                 <div style="text-align: center;" class="fr-view u-clearfix u-rich-text u-text">
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="commande-réussie.php" >vers page commande réussie</a><br>
-                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Login.php" >vers page Login</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Login.php" >vers page Login</a>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Register.php">vers page Register</a><br>
-                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="payement.php" >vers page modalite de payement</a><br>
-                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/user_tab.php" >vers page tab users</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/user_tab.php" >vers page tab users</a>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="order.php" >vers page order</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="../model/projection_tab.php" >vers page projection tab</a><br>
 
                     <br>
                   </p>
@@ -192,6 +193,7 @@ if (isset($_SESSION['message'])){
                   <input type="number" id="user-id" name="user-id"><br>
                   <input type="submit" value="Supprimer l'utilisateur" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
                 </form>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" target="_blank" href="../model/user_tab.php" >Liste d'utilisateur</a>
 
                     <br>
                   </p>
@@ -221,7 +223,7 @@ if (isset($_SESSION['message'])){
                   echo "<th>ID</th>";
                   echo "<th>salle</th>";
                   echo "<th>film</th>";
-                  echo "<th>horraire</th>";
+                  echo "<th>horaire</th>";
                   echo "<th>prix</th>";
                   foreach ($result as $row) {
                     echo "<tr>";

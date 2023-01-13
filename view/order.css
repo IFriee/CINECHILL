@@ -38,13 +38,6 @@
     background-color: #ddd; 
   }
 
-  div.validate {
-      display: block;
-      margin-left: 40%;
-      margin-right: auto;
-      width: 50%;
-  }
-
   .validate .u-btn-1 {
     text-transform: uppercase;
     background-image: none;

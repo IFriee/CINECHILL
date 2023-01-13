@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 12 jan. 2023 à 14:25
--- Version du serveur : 10.4.25-MariaDB
--- Version de PHP : 8.1.10
+-- Généré le : jeu. 12 jan. 2023 à 16:24
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,7 +63,8 @@ INSERT INTO `film_tab` (`id_film`, `nom_film`, `auteur_film`, `duree_film`, `fk_
 (6, 'Thor: Love and Thunder', '	Taika Waititi', '01:59:00', 2, '2022-07-13', 6),
 (7, 'Uncharted', '	Ruben Fleischer', '01:56:00', 5, '2022-02-16', 7),
 (8, 'Basket case 2', 'Frank Henenlotter', '01:30:00', 7, '1990-03-02', 8),
-(9, 'Long Shot', 'Franklin Martin', '01:33:00', 4, '2013-08-09', 9);
+(9, 'Long Shot', 'Franklin Martin', '01:33:00', 4, '2013-08-09', 9),
+(11, 'Space Jam (1996)', 'Joe Pytka', '89:00:00', 8, '1996-07-30', 11);
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,8 @@ INSERT INTO `genre_tab` (`id_genre`, `nom_genre`) VALUES
 (4, 'drame'),
 (5, 'aventure'),
 (6, 'science-fiction'),
-(7, 'horreur');
+(7, 'horreur'),
+(8, 'comique');
 
 -- --------------------------------------------------------
 
@@ -115,7 +117,8 @@ INSERT INTO `info_page_tab` (`id_info_page`, `url_info_page`, `image_info_page`,
 (6, 'https://www.youtube.com/embed/tgB1wUcmbbw', 'thor-love-and-thunder.jpg', 'Thor se lance dans un voyage différent de tout ce qu\'il a connu jusqu\'à présent : une quête de paix intérieure. Cependant, sa retraite est interrompue par Gorr le boucher des dieux, un tueur galactique qui cherche l\'extinction des dieux. Pour combattre la menace, Thor fait appel à l\'aide du roi Valkyrie, de Korg et de Jane Foster. Ensemble, ils se lancent dans une aventure cosmique déchirante pour découvrir le mystère de la vengeance du Boucher des Dieux.'),
 (7, 'https://www.youtube.com/embed/eHp3MbsCbMg', 'Uncharted.jfif', 'Le chasseur de trésors Victor Sully Sullivan recrute Nathan Drake pour l\'aider à récupérer une fortune vieille de 500 ans amassée par l\'explorateur Ferdinand Magellan. Ce qui commence comme un cambriolage devient rapidement une course de globe-trotters pour atteindre le prix avant que l\'impitoyable Santiago Moncada ne puisse mettre la main dessus.'),
 (8, 'https://www.youtube.com/embed/Tqe6NomPSpE', '._V1_.jpg', 'Duane Bradley arrive à Manhattan tout en portant un mystérieux sac en osier. Ce qu\'il contient? Son frère jumeau siamois, Belial, affreusement mutilé. Que veut-il? Se venger des chirurgiens qui les ont séparés.'),
-(9, 'https://www.youtube.com/embed/BAktlde9UTk', 'long-shot.jpg', 'Dans l\'utérus, le cordon ombilical de Laue était enroulé autour de son cou. Le manque de circulation dans le bras retenu par le cordon signifiait qu\'il se terminait juste en dessous du coude. Laue a continué à faire face à l\'adversité; son père est mort quand il était au collège. Ancien athlète et entraîneur des jeunes, son père avait du mal à accepter le handicap de Kevin. Sa famille et la perte de son père sont devenues des facteurs de motivation pour conduire Kevin dans son parcours pour devenir l\'une des rares élites à jouer au basketball de Division I.');
+(9, 'https://www.youtube.com/embed/BAktlde9UTk', 'long-shot.jpg', 'Dans l\'utérus, le cordon ombilical de Laue était enroulé autour de son cou. Le manque de circulation dans le bras retenu par le cordon signifiait qu\'il se terminait juste en dessous du coude. Laue a continué à faire face à l\'adversité; son père est mort quand il était au collège. Ancien athlète et entraîneur des jeunes, son père avait du mal à accepter le handicap de Kevin. Sa famille et la perte de son père sont devenues des facteurs de motivation pour conduire Kevin dans son parcours pour devenir l\'une des rares élites à jouer au basketball de Division I.'),
+(11, 'https://www.youtube.com/embed/oKNy-MWjkcU?modestbranding=1', 'space-jam-2-trailer-1.png', 'Il s\'agit d\'un cauchemar: les Nerdlucks, de méchants extraterrestres aux allures de gnomes, viennent de capturer les héros de dessins animés préférés pour redorer le blason du \"Pic des Abrutis,\" leur parc d\'attractions qui n\'attire plus grand monde! Avant de baisser les bras, les pauvres Bugs Bunny, Daffy Duck, Speedy Gonzales, Titi et consorts sollicitent une requête: jouer leur avenir lors d\'un match de basket.');
 
 -- --------------------------------------------------------
 
@@ -150,7 +153,9 @@ CREATE TABLE `projection_tab` (
 
 INSERT INTO `projection_tab` (`id_projection`, `fk_salle_projection`, `fk_film_projection`, `horraire_projection`, `prix_ticket_projection`) VALUES
 (1, 5, 4, '2023-01-25 20:45:00', 8),
-(2, 1, 1, '2023-01-27 18:00:00', 6);
+(2, 1, 1, '2023-01-27 18:00:00', 8),
+(3, 1, 1, '2023-01-27 18:01:00', 8),
+(9, 10, 2, '2023-01-30 20:00:00', 8);
 
 -- --------------------------------------------------------
 
@@ -203,7 +208,13 @@ CREATE TABLE `user_tab` (
 INSERT INTO `user_tab` (`id_user`, `nom_user`, `prenom_user`, `pseudo_user`, `password_user`, `mail_user`, `date_naissance_user`, `fidelite_user`) VALUES
 (1, 'Admin', 'Admin', 'The_Administrator', '$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy', 'cinechill@ifosup.wavre.be', '1999-07-03', 0),
 (2, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$TYpG6juC3ietLyoQo8sX2ujxnzNEAeriiNYyAJwaq6JvlwWmK0v9C', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0),
-(4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0);
+(3, 'Wengler', 'Eliott', 'IFriee', '$2y$10$27Jt.jOT0HV3IEQ4qawW/OYtL3ho7NM6Bb36fsP5VJSpudmZgqryW', 'eliott.wengler@hotmail.fr', '1999-07-03', 0),
+(4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0),
+(5, 'Tstusers', 'Testuserus', 'FantasyPotato', '$2y$10$pK75GIoGvO0v6RVvN2Vei.I1lHTw75r14ZqlQsjJN7C0to6hDQK.e', 'hirsty83@speeddataanalytics.com', '1999-07-30', 0),
+(6, 'Random', 'Random', 'RealityNight', '$2y$10$aLOwfs.6uJvOOwGrLVQJFO1.W10mELDBviqjHE/4MeH53fkVDYkJ.', 'jiigga@onlinecmail.com', '1999-07-03', 0),
+(8, 'Random', 'Random', 'PredatorPoke', '$2y$10$z7Fc1NHSlwrtIYdvj6a0POHjhh8PLEeYCs6AHyU/8CCd1/d.qYC4W', 'rockroot@toped888.com', '1999-07-03', 0),
+(9, 'Randomize', 'Randomize', 'VifOne', '$2y$10$YZwcUFeJ7voiEijdaas5kublPMt/u1XzsYaYlcoTJsE9rV7DfZU6a', 'polar2@alvinneo.com', '1999-07-03', 0),
+(10, 'Randm', 'Random', 'CrazyBurger', '$2y$10$pWuLkC4dY2FafXu2bjAIzup0F.0hFrpIF.HaUnFChQasLQGOXqbkm', 'cscp195214@disipulo.com', '1999-07-03', 0);
 
 --
 -- Index pour les tables déchargées
@@ -279,19 +290,19 @@ ALTER TABLE `commande_tab`
 -- AUTO_INCREMENT pour la table `film_tab`
 --
 ALTER TABLE `film_tab`
-  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `genre_tab`
 --
 ALTER TABLE `genre_tab`
-  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `info_page_tab`
 --
 ALTER TABLE `info_page_tab`
-  MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `place_count_tab`
@@ -303,7 +314,7 @@ ALTER TABLE `place_count_tab`
 -- AUTO_INCREMENT pour la table `projection_tab`
 --
 ALTER TABLE `projection_tab`
-  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `salle_tab`
@@ -315,7 +326,7 @@ ALTER TABLE `salle_tab`
 -- AUTO_INCREMENT pour la table `user_tab`
 --
 ALTER TABLE `user_tab`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
