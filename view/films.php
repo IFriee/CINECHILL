@@ -152,12 +152,12 @@ include "../functions.php";
               <div class="user-details">
                 <div class="input-box">
                   <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
-                  <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" placeholder="nombre de ticket" min="1"><br>
+                  <input type="number" id="basic-ticket-quantity" name="nb_place" placeholder="nombre de ticket" min="1"><br>
                 </div>
                 <div class="input-box">
                   <label for="ticket-date">Date:</label>
                   <br>
-                  <select id="ticket-time" name="ticket-time" style="width:300px; height:45px; ">
+                  <select id="ticket-time" name="projection" style="width:300px; height:45px; ">
                   <?php menu_projection($db, $_SESSION['id_film']); ?>
                 </div>
                 <br><br><br>

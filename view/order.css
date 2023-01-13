@@ -37,25 +37,20 @@
   table.resumecommande th {
     background-color: #ddd; 
   }
-  
 
-.validate{
-  text-align: center;
-  align-items: center;
+  .validate .u-btn-1 {
+    text-transform: uppercase;
+    background-image: none;
+    color: white;
+    border-style: none;
+    background-color: rgb(219, 84, 90);
+    font-weight: 700;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.2);
+    margin: 32px auto 49px;
+    padding: 15px 23px;
+    width: 40%;
 }
-  .btn-validate {
-    background-color: #ccc; /* Couleur de fond grise par défaut */
-    border: none; /* Pas de bordure */
-    color: white; /* Texte blanc */
-    padding: 15px 32px; /* Espacement intérieur */
-    text-align: center; /* Texte centré */
-    text-decoration: none; /* Pas de soulignement */
-    display: inline-block; /* Pour pouvoir mettre du contenu à côté du bouton */
-    font-size: 16px; /* Taille de police */
-    cursor: default; /* Curseur par défaut (flèche blanche) */
-  }
 
-  /* Lorsque l'utilisateur entre le bon mot de passe, on change la couleur de fond du bouton en rouge */
-  .btn-validate.active {
-    background-color: rgb(216, 112, 112);
-  }
+.validate .u-btn-1:hover {
+  background-color: rgb(214, 59, 66);
+}

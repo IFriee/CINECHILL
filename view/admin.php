@@ -8,7 +8,14 @@ include ("../functions.php");
 if ($_SESSION['id_user'] == 1){
   echo 'Mode administrateur';}
 else{ 
-  header('Location: erreur404.php');}
+  header('Location: erreur404.php');
+}
+
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('salle occupé');</script>";
+  unset($_SESSION['message']);
+}
+
 ?>
 
 
@@ -231,6 +238,7 @@ else{
                     } else {
                     echo "Aucun enregistrement trouvé";
                     }
+
                 ?>
 
                 <style>
@@ -273,7 +281,7 @@ else{
                       <?php menu_salle($db); ?>
                     </select><br>
                     <label for="nom_film">nom du film :</label><br>
-                    <select id="projection-select" name="nom_film">
+                    <select id="projection-select" name="id_film">
                       <?php menu_film($db); ?>
                     </select><br>
                     <label for="horraire_projection">horraire :</label><br>

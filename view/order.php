@@ -2,6 +2,7 @@
 session_start();
 include "../model/connection.php";
 include "../model/read.php";
+include('../functions.php');
 
 $user = afficher_pseudo_connecte($db);
 
@@ -122,67 +123,45 @@ $user = afficher_pseudo_connecte($db);
                     </tr>
                     <tr>
                         <td>Nom du film</td>
-                        <td><b><?=read_film_commande($db, $_SESSION['info_commande']['id_commande'])?></b></td>
+                        <td><b><?=$_SESSION['info_commande']['nom_film']?></b></td>
                     </tr>
                     <tr>
                         <td>Date de projection</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=date_format_fr($_SESSION['info_commande']['horraire_projection'])?></b></td>
                     </tr>
                     <tr>
                         <td>Heure de projection</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=date_format_hour($_SESSION['info_commande']['horraire_projection']) ?></b></td>
                     </tr>
                     <tr>
                         <td>Salle de projection</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=$_SESSION['info_commande']['fk_salle_projection'] ?></b></td>
                     </tr>
                     <tr>
                         <td>Prix de la place</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
                     </tr>
                     <tr>
                         <td>Prix de la tva (21%)</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=$_SESSION['info_commande']['prix_ticket_projection']*0.21?> €</b></td>
+                    </tr>
+                    <tr>
+                        <td>nombre de place</td>
+                        <td><b><?=$_SESSION['info_commande']['nombre_place_commande']?></b></td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td><b><?php echo "à faire" ?></b></td>
+                        <td><b><?=$_SESSION['info_commande']['nombre_place_commande']*$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
                     </tr>
                 </table>
+                <br><br><br>
                 <div class="validate">
-                <form>
-                    <label for="password">Mot de passe :</label><br>
-                    <input type="password" id="password" name="password"><br>
-                </form>
-
-                    <!-- Bouton de validation de la commande, grisé par défaut -->
-                    <button class="btn-validate" disabled>Valider la commande</button>
-
-                    <!-- Script JavaScript pour activer le bouton lorsque le mot de passe est correct -->
-                    <script>
-                    // Récupère le formulaire et le bouton
-                    var form = document.querySelector('form');
-                    var btn = document.querySelector('.btn-validate');
-
-                    // Ajoute un écouteur d'événement sur la soumission du formulaire
-                    form.addEventListener('submit', function(event) {
-                        // Empêche l'envoi du formulaire
-                        event.preventDefault();
-
-                        // Récupère la valeur du mot de passe
-                        var password = form.password.value;
-
-                        // Vérifie si le mot de passe est correct
-                        if (password === 'motdepasse') {
-                        // Active le bouton
-                        btn.disabled = false;
-                        btn.classList.add('active');
-                        }
-                    });
-                    </script>
-                    </div>
-
-
+                    
+                    <form action="commande-réussie.php">
+                        <input class="validate u-btn-1" type="submit" value="Réserver"><br>
+                    </form>
+                    
+                </div>
             </div>
 
         <br><br><br><br>

@@ -99,14 +99,16 @@ function add_projection($db, $salle, $film, $horraire, $prix){
     }
 }
 
-function add_commande($db, $user, $projection, $date){
+function add_commande($db, $user, $projection, $date, $nb_place){
+    //ajout de la commande 
     $query = "INSERT INTO commande_tab (fk_user_commande, fk_projection_commande, 
-                          date_commande) 
-              VALUES(:fk_user_commande, :fk_projection_commande, :date_commande)";
+                          date_commande, nombre_place_commande) 
+              VALUES(:fk_user_commande, :fk_projection_commande, :date_commande, :nombre_place_commande)";
 
     $query_params = array(':fk_user_commande'=>$user,
                           ':fk_projection_commande'=>$projection,
-                          ':date_commande'=>$date);
+                          ':date_commande'=>$date,
+                          ':nombre_place_commande'=>$nb_place);
     try{
         $stmt = $db->prepare($query);
         $result = $stmt->execute($query_params);
@@ -114,6 +116,25 @@ function add_commande($db, $user, $projection, $date){
     catch(PDOException $ex){
         die("Failed query : " . $ex->getMessage());
     }
+}
+
+function add_place_count($db, $place_total, $place_left, $projection){
+    //ajout des infos dans place_count
+
+    $query = "INSERT INTO place_count_tab (total_place_count, left_place_count, 
+                          fk_projection_place_count) 
+              VALUES(:total_place_count, :left_place_count, :fk_projection_place_count)";
+
+    $query_params = array(':total_place_count'=>$place_total,
+                          ':left_place_count'=>$place_left,
+                          ':fk_projection_place_count'=>$projection);
+    try{
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }  
 }
 //echo add_info1($db);
 //echo add_info2($db);

@@ -150,8 +150,40 @@ function menu_salle($db){
 function menu_projection($db, $id){
   $projection = read_projection($db, $id);
   for($i = 1; $i <= count($projection); $i++){
-    echo "<option value='".$projection[$i-1]["id_projection"]."'>".$projection[$i-1]["horraire_projection"]."</option>";
+    $year = substr($projection[$i-1]["horraire_projection"], 0, 4);
+    $month = substr($projection[$i-1]["horraire_projection"], 5, 2);
+    $day = substr($projection[$i-1]["horraire_projection"], 8, 2);
+    $hour = substr($projection[$i-1]["horraire_projection"], 11, 2);
+    $minute = substr($projection[$i-1]["horraire_projection"], 14, 2);
+    $horaire = $day."/".$month."/".$year." ".$hour.":".$minute;
+
+
+    echo "<option value='".$projection[$i-1]["id_projection"]."'>".$horaire." salle ".$projection[$i-1]["fk_salle_projection"]." </option>";
   }
   return $projection;
+}
+
+function date_format_fr($date){
+  $year = substr($date, 0, 4);
+  $month = substr($date, 5, 2);
+  $day = substr($date, 8, 2);
+  $date_format = $day."/".$month."/".$year;
+  echo $date_format; 
+}
+
+function date_format_hour($date){
+  $hour = substr($date, 11, 2);
+  $minute = substr($date, 14, 2);
+  $hour_format = $hour.":".$minute;
+  echo $hour_format;
+  
+}
+
+//-------------------------------------------------------------------------------
+
+function conversion_string_heure($duree_film){
+  $hour = substr($duree_film['duree_film'], 0, 2);
+  $minute = substr($duree_film['duree_film'], 3, 2);
+  return (strtotime("+ ".$hour." hours ".$minute." minutes") - strtotime("now")) + 15;
 }
 ?>
