@@ -9,9 +9,9 @@ date_default_timezone_set('Europe/Paris');
 $date = date('d/m/y');
 
 
-//add_commande($db, $_SESSION['id_user'], $_POST['ticket-time'], $date);
+//add_commande($db, $_SESSION['id_user'], $_POST['projection'], $date, $_POST['nb_place']);
 $com = read_commande($db);
-$_SESSION['info_commande'] = $com[0];
+$_SESSION['info_commande'] = read_info_commande($db, $com[0]['id_commande']);
 
 header('Location: ../view/order.php');
 ?>

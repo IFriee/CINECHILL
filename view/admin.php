@@ -8,7 +8,14 @@ include ("../functions.php");
 if ($_SESSION['id_user'] == 1){
   echo 'Mode administrateur';}
 else{ 
-  header('Location: erreur404.php');}
+  header('Location: erreur404.php');
+}
+
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('salle occupé');</script>";
+  unset($_SESSION['message']);
+}
+
 ?>
 
 
@@ -200,7 +207,6 @@ else{
             <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
               <div class="u-container-layout u-container-layout-2">
                 <?php
-                include('../model/connection.php');
                 $query = "SELECT id_projection, fk_salle_projection, nom_film, horraire_projection, prix_ticket_projection 
                           FROM projection_tab
                           INNER JOIN film_tab ON id_film = fk_film_projection";
@@ -230,6 +236,7 @@ else{
                     } else {
                     echo "Aucun enregistrement trouvé";
                     }
+
                 ?>
 
                 <style>
@@ -272,7 +279,7 @@ else{
                       <?php menu_salle($db); ?>
                     </select><br>
                     <label for="nom_film">nom du film :</label><br>
-                    <select id="projection-select" name="nom_film">
+                    <select id="projection-select" name="id_film">
                       <?php menu_film($db); ?>
                     </select><br>
                     <label for="horraire_projection">horraire :</label><br>
