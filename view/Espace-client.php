@@ -7,6 +7,17 @@ include "../model/read.php";
 
 $user = afficher_pseudo_connecte($db);
 
+// nombre de film visionné
+$nb_film_vu['nb_film'] = read_nb_commande($db, $_SESSION['id_user']);
+$nb_film_vu = $nb_film_vu['nb_film'];
+
+$array_place_achete = read_nb_place($db, $_SESSION['id_user']);
+$nb_place_achete = 0;
+foreach ($array_place_achete as $key => $value) {
+  foreach ($value as $key => $value) {
+    $nb_place_achete += $value;
+  }
+}
 ?>
 
 
@@ -170,19 +181,19 @@ $user = afficher_pseudo_connecte($db);
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "3" //.nbr_film() ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$nb_film_vu['nb_film']?></h1>
                 <p class="u-text u-text-2">Films déja vus chez nous !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo $user['fidelite_user'];  ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$user['fidelite_user']?></h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "9" //.($_POST['prenom_user']) ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$nb_place_achete?></h1>
                 <p class="u-text u-text-default u-text-6">Places achetées</p>
               </div>
             </div>

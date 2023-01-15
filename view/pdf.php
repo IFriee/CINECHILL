@@ -2,7 +2,7 @@
 session_start();
 include "../model/connection.php";
 include "../model/read.php";
-$user = afficher_pseudo_connecte($db);
+include('../functions.php');
 
 ?>
 
@@ -25,18 +25,18 @@ $user = afficher_pseudo_connecte($db);
 <div class="resumcommande">
   <h3 style="text-align:center">Résumé de votre commande</h3>
   <h4>Information client</h4>
-  <p>Numéro de commande : <b><?php  echo "à faire"   ?></b></p>
-  <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
-  <p>Prénom: <b><?php echo $user['prenom_user'] ?></b></p>
-  <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
-  <p>Points de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+  <p>Numéro de commande : <b><?=$_SESSION['info_commande']['id_commande']?></b></p>
+  <p>Nom: <b><?=$_SESSION['user_info']['nom_user'] ?></b></p>
+  <p>Prénom: <b><?=$_SESSION['user_info']['prenom_user'] ?></b></p>
+  <p>Email: <b><?=$_SESSION['user_info']['mail_user']?></b></p>
+  <p>Points de fidelité total: <b><?=$_SESSION['user_info']['fidelite_user']?></b></p>
   <br>
   <h4>Film réservé</h4>
-  <p>Nom du film : <b><?php  echo "à faire"   ?></b></p>
-  <p>Date de projection : <b><?php  echo "à faire"   ?></b></p>
-  <p>Heure de projection : <b><?php  echo "à faire"   ?></b></p>
-  <p>Salle de projection : <b><?php  echo "à faire"   ?></b></p>
-  <p>Prix de la place : <b><?php  echo "à faire"   ?></b></p>
+  <p>Nom du film : <b><?=$_SESSION['info_reservation']['nom_film']?></b></p>
+  <p>Date de projection : <b><?=date_format_fr($_SESSION['info_reservation']['horraire_projection'])?></b></p>
+  <p>Heure de projection : <b><?=date_format_hour($_SESSION['info_reservation']['horraire_projection'])?></b></p>
+  <p>Salle de projection : <b><?=$_SESSION['info_reservation']['fk_salle_projection']?></b></p>
+  <p>Prix de la place : <b><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</b></p>
   
 
 </div>
@@ -62,7 +62,7 @@ $user = afficher_pseudo_connecte($db);
       <span>Film</span>
     </div>
     <div class="name">
-      <h2><?php echo $user['prenom_user']." ".$user['nom_user'];?></h2>
+      <h2><?php echo $_SESSION['user_info']['prenom_user']." ".$_SESSION['user_info']['nom_user'];?></h2>
       <span>Nom</span>
     </div>
     <div class="seat">
@@ -70,15 +70,15 @@ $user = afficher_pseudo_connecte($db);
       <span>siege</span>
     </div>
     <div class="time">
-      <h2>12:00</h2>
+      <h2><?=date_format_hour($_SESSION['info_reservation']['horraire_projection'])?></h2>
       <span>heure</span>
     </div>
     <div class="date">
-        <h2>03/07</h2>
+        <h2><?=date_format_fr($_SESSION['info_reservation']['horraire_projection'])?></h2>
         <span>Date</span>
     </div>
     <div class="room">
-      <h2>3</h2>
+      <h2><?=$_SESSION['info_reservation']['fk_salle_projection']?></h2>
       <span>Salle</span>
     </div>
     
@@ -90,7 +90,7 @@ $user = afficher_pseudo_connecte($db);
       <span>siege</span>
     </div>
     <div class="salle">
-      <h2>4</h2>
+      <h2><?=$_SESSION['info_reservation']['fk_salle_projection']?></h2>
       <span>salle</span>
     </div>
 

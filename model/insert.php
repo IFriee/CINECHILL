@@ -136,6 +136,8 @@ function add_place_count($db, $place_total, $place_left, $projection){
         die("Failed query : " . $ex->getMessage());
     }  
 }
+
+
 //echo add_info1($db);
 //echo add_info2($db);
 ?>

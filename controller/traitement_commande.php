@@ -5,13 +5,16 @@ include('../model/connection.php');
 include('../model/read.php');
 include('../model/insert.php');
 
-date_default_timezone_set('Europe/Paris');
-$date = date('d/m/y');
+if (!isset($_SESSION['id_user'])) {
+    unset($_SESSION['erreur']);
+    header('Location: ../view/Login.php');
+    exit();
+  }
 
+unset($_SESSION['info_reservation']);
 
-//add_commande($db, $_SESSION['id_user'], $_POST['projection'], $date, $_POST['nb_place']);
-$com = read_commande($db);
-$_SESSION['info_commande'] = read_info_commande($db, $com[0]['id_commande']);
+$_SESSION['info_reservation'] = read_projection_commande($db, $_POST['projection']);
+$_SESSION['info_reservation']['nombre_place_commande'] = $_POST['nb_place'];
 
 header('Location: ../view/order.php');
 ?>

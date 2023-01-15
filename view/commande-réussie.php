@@ -1,8 +1,9 @@
 <?php 
 session_start();
+
 include "../model/connection.php";
 include "../model/read.php";
-
+include('../functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +96,7 @@ include "../model/read.php";
       <div class="u-align-center u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Téléchargez ici votre ticket</h2>
         <p class="u-text u-text-2">Vous pouvez soit imprimer votre ticket soit le montrer sur votre téléphone au gichet.</p>
-        <a href="pdf.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1">Votre ticket PDF</a>
+        <a href="pdf.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1" target="_blank">Votre ticket PDF</a>
       </div>
     </section>
     <section class="u-clearfix u-section-3" id="sec-5594">
@@ -118,27 +119,28 @@ include "../model/read.php";
               <tr style="height: 29px;">
                 <th class="u-border-1 u-border-grey-50 u-table-cell"> Film</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Nombre de places</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Prix unitaire</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Prix</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Points de fidelité</th>
                 <th class="u-border-1 u-border-grey-50 u-table-cell">Date d' achat</th>
               </tr>
             </thead>
             <tbody class="u-table-body u-table-body-1">
               <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#Avatar,la vois de l'eau</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#3</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#8</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#3</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#15/11/22</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['nom_film']?></td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
+                  <?=date_format_fr($_SESSION['info_commande']['date_commande'])?></td>
               </tr>
              
               <tr style="height: 46px;">
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-21">
                   <span style="font-weight: 700;"> TOTAL</span>
                 </td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-22">#6</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-23">#25</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-24">#18</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-22"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-23"><?=$_SESSION['info_reservation']['prix_ticket_projection']*$_SESSION['info_commande']['nombre_place_commande']?> €</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-24"><?=$_SESSION['info_commande']['nombre_place_commande']*5?></td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-25">/////</td>
               </tr>
             </tbody>

@@ -91,11 +91,10 @@ function afficher_pseudo_connecte($db) {
       die("Failed query : " . $ex->getMessage());
   }
   $result = $stmt->fetchAll();
-  $user = $result[0];
 
   // Affiche le tableau des informations de l'utilisateur 
   //print_r($user);
-  return $user;
+  return $result[0];
 }
 
 //-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -211,6 +210,26 @@ function read_projection($db, $id){
   return $result;
 }
 
+function read_projection_commande($db, $id){
+  $query = "SELECT id_projection, fk_salle_projection, nom_film,
+                   horraire_projection, prix_ticket_projection
+            FROM projection_tab
+            INNER JOIN film_tab ON id_film = fk_film_projection
+            WHERE id_projection = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result[0];
+}
+
 //recuperer l'id de la dernière projection enregistrer
 function read_last_projection($db){
   $query = "SELECT COUNT(*) AS verif FROM projection_tab";
@@ -246,7 +265,7 @@ function verify_projection($db){
 
 function read_commande($db){
   $query = "SELECT id_commande, fk_user_commande, fk_projection_commande, 
-                   date_commande
+                   date_commande, nombre_place_commande
             FROM commande_tab
             ORDER BY id_commande DESC LIMIT 1";
   try
@@ -259,17 +278,15 @@ function read_commande($db){
   }
   $result = $stmt->fetchAll();
 
-  return $result;
+  return $result[0];
 }
 
-function read_info_commande($db, $id){
-  $query = "SELECT nom_film, horraire_projection, fk_salle_projection, 
-                   prix_ticket_projection, nombre_place_commande
-            FROM commande_tab
-            INNER JOIN projection_tab ON fk_projection_commande = id_projection
-            INNER JOIN film_tab ON fk_film_projection = id_film
-            WHERE id_commande = (:id)";
-  $query_params = array(':id' => $id);
+
+function read_left_place($db, $projection){
+  $query = "SELECT left_place_count
+            FROM place_count_tab
+            WHERE fk_projection_place_count = (:projection)";
+  $query_params = array(':projection' => $projection);
   try
   {
       $stmt = $db->prepare($query);
@@ -282,4 +299,41 @@ function read_info_commande($db, $id){
 
   return $result[0];
 }
+
+function read_nb_commande($db, $user){
+  $query = "SELECT COUNT(id_commande) AS nb_film
+            FROM commande_tab
+            WHERE fk_user_commande = (:user)";
+  $query_params = array(':user' => $user);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result[0];
+}
+
+function read_nb_place($db, $user){
+  $query = "SELECT nombre_place_commande
+            FROM commande_tab
+            WHERE fk_user_commande = (:user)";
+  $query_params = array(':user' => $user);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
+
 ?>
