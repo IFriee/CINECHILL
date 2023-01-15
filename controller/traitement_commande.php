@@ -5,7 +5,11 @@ include('../model/connection.php');
 include('../model/read.php');
 include('../model/insert.php');
 
-redirect_if_connect($db);
+if (!isset($_SESSION['id_user'])) {
+    unset($_SESSION['erreur']);
+    header('Location: ../view/Login.php');
+    exit();
+  }
 
 date_default_timezone_set('Europe/Paris');
 $date = date('d/m/y');
