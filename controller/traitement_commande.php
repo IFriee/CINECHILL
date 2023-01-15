@@ -5,6 +5,8 @@ include('../model/connection.php');
 include('../model/read.php');
 include('../model/insert.php');
 
+redirect_if_connect($db);
+
 date_default_timezone_set('Europe/Paris');
 $date = date('d/m/y');
 
