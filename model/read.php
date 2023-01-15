@@ -211,6 +211,26 @@ function read_projection($db, $id){
   return $result;
 }
 
+function read_projection_commande($db, $id){
+  $query = "SELECT id_projection, fk_salle_projection, nom_film,
+                   horraire_projection, prix_ticket_projection
+            FROM projection_tab
+            INNER JOIN film_tab ON id_film = fk_film_projection
+            WHERE id_projection = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result[0];
+}
+
 //recuperer l'id de la dernière projection enregistrer
 function read_last_projection($db){
   $query = "SELECT COUNT(*) AS verif FROM projection_tab";
@@ -259,15 +279,12 @@ function read_commande($db){
   }
   $result = $stmt->fetchAll();
 
-  return $result;
+  return $result[0];
 }
 
 function read_info_commande($db, $id){
-  $query = "SELECT nom_film, horraire_projection, fk_salle_projection, 
-                   prix_ticket_projection, nombre_place_commande
+  $query = "SELECT nombre_place_commande, date_commande
             FROM commande_tab
-            INNER JOIN projection_tab ON fk_projection_commande = id_projection
-            INNER JOIN film_tab ON fk_film_projection = id_film
             WHERE id_commande = (:id)";
   $query_params = array(':id' => $id);
   try

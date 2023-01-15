@@ -123,41 +123,41 @@ $user = afficher_pseudo_connecte($db);
                     </tr>
                     <tr>
                         <td>Nom du film</td>
-                        <td><b><?=$_SESSION['info_commande']['nom_film']?></b></td>
+                        <td><b><?=$_SESSION['info_reservation']['nom_film']?></b></td>
                     </tr>
                     <tr>
                         <td>Date de projection</td>
-                        <td><b><?=date_format_fr($_SESSION['info_commande']['horraire_projection'])?></b></td>
+                        <td><b><?=date_format_fr($_SESSION['info_reservation']['horraire_projection'])?></b></td>
                     </tr>
                     <tr>
                         <td>Heure de projection</td>
-                        <td><b><?=date_format_hour($_SESSION['info_commande']['horraire_projection']) ?></b></td>
+                        <td><b><?=date_format_hour($_SESSION['info_reservation']['horraire_projection']) ?></b></td>
                     </tr>
                     <tr>
                         <td>Salle de projection</td>
-                        <td><b><?=$_SESSION['info_commande']['fk_salle_projection'] ?></b></td>
+                        <td><b><?=$_SESSION['info_reservation']['fk_salle_projection'] ?></b></td>
                     </tr>
                     <tr>
                         <td>Prix de la place</td>
-                        <td><b><?=$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
+                        <td><b><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</b></td>
                     </tr>
                     <tr>
                         <td>Prix de la tva (21%)</td>
-                        <td><b><?=$_SESSION['info_commande']['prix_ticket_projection']*0.21?> €</b></td>
+                        <td><b><?=$_SESSION['info_reservation']['prix_ticket_projection']*0.21?> €</b></td>
                     </tr>
                     <tr>
                         <td>nombre de place</td>
-                        <td><b><?=$_SESSION['info_commande']['nombre_place_commande']?></b></td>
+                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']?></b></td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td><b><?=$_SESSION['info_commande']['nombre_place_commande']*$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
+                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']*$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
                     </tr>
                 </table>
                 <br><br><br>
                 <div class="validate">
                     
-                    <form action="commande-réussie.php">
+                    <form action="../controller/confirmation_reservation.php">
                         <input class="validate u-btn-1" type="submit" value="Réserver"><br>
                     </form>
                     

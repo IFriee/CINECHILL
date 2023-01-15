@@ -39,6 +39,9 @@
   }
 
   .validate .u-btn-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     background-image: none;
     color: white;
@@ -46,9 +49,9 @@
     background-color: rgb(219, 84, 90);
     font-weight: 700;
     box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.2);
-    margin: 32px auto 49px;
+    margin: 2px auto 49px;
     padding: 15px 23px;
-    width: 40%;
+    width: 20%;
 }
 
 .validate .u-btn-1:hover {
