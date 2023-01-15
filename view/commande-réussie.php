@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include "../model/connection.php";
 include "../model/read.php";
 include('../functions.php');
@@ -95,7 +96,7 @@ include('../functions.php');
       <div class="u-align-center u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Téléchargez ici votre ticket</h2>
         <p class="u-text u-text-2">Vous pouvez soit imprimer votre ticket soit le montrer sur votre téléphone au gichet.</p>
-        <a href="pdf.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1">Votre ticket PDF</a>
+        <a href="pdf.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1" target="_blank">Votre ticket PDF</a>
       </div>
     </section>
     <section class="u-clearfix u-section-3" id="sec-5594">
@@ -128,14 +129,9 @@ include('../functions.php');
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['nom_film']?></td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">#3</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <?php 
-
-                  //date_format_fr();
-                  var_dump($_SESSION['info_commande']);
-
-                ?></td>
+                  <?=date_format_fr($_SESSION['info_commande']['date_commande'])?></td>
               </tr>
              
               <tr style="height: 46px;">
@@ -144,7 +140,7 @@ include('../functions.php');
                 </td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-22"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-23"><?=$_SESSION['info_reservation']['prix_ticket_projection']*$_SESSION['info_commande']['nombre_place_commande']?> €</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-24">#18</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-24"><?=$_SESSION['info_commande']['nombre_place_commande']*5?></td>
                 <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-25">/////</td>
               </tr>
             </tbody>

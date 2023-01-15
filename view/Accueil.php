@@ -2,7 +2,11 @@
 session_start();
 include ("../model/connection.php");
 include ("../model/read.php");
-
+unset($_SESSION["info_film"]);
+unset($_SESSION["info_reservation"]);
+unset($_SESSION["id_film"]);
+unset($_SESSION['user_info']);
+unset($_SESSION['info_commande']);
 ?>
 
 <!DOCTYPE html>

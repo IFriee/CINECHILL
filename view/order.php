@@ -151,7 +151,7 @@ $user = afficher_pseudo_connecte($db);
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']*$_SESSION['info_commande']['prix_ticket_projection']?> €</b></td>
+                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']*$_SESSION['info_reservation']['prix_ticket_projection']?> €</b></td>
                     </tr>
                 </table>
                 <br><br><br>
