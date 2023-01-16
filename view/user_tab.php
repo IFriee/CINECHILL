@@ -1,29 +1,31 @@
 <?php
 
 
-include('connection.php');
+include("../model/read.php");
+$result = afficheallusers($db);
 
-$query = "SELECT * FROM projection_tab";
-$stmt = $db->prepare($query);
-$stmt->execute();
-$result = $stmt->fetchAll();
 
 if (count($result) > 0) {
   // Affichage des données de chaque enregistrement dans un tableau
   echo "<table>";
   echo "<tr>";
   echo "<th>ID</th>";
-  echo "<th>salle</th>";
-  echo "<th>film</th>";
-  echo "<th>horaire</th>";
-  echo "<th>prix</th>";
+  echo "<th>Nom</th>";
+  echo "<th>Prénom</th>";
+  echo "<th>Pseudo</th>";
+  echo "<th>Email</th>";
+  echo "<th>Date de naissance</th>";
+  echo "<th>Points de fidélité</th>";
+  echo "</tr>";
   foreach ($result as $row) {
     echo "<tr>";
-    echo "<td>" . $row["id_projection"] . "</td>";
-    echo "<td>" . $row["fk_salle_projection"] . "</td>";
-    echo "<td>" . $row["nom_film"] . "</td>";
-    echo "<td>" . $row["horaire_projection"] . "</td>";
-    echo "<td>" . $row["prix_ticket_projection"] . " €</td>";
+    echo "<td>" . $row["id_user"] . "</td>";
+    echo "<td>" . $row["nom_user"] . "</td>";
+    echo "<td>" . $row["prenom_user"] . "</td>";
+    echo "<td>" . $row["pseudo_user"] . "</td>";
+    echo "<td>" . $row["mail_user"] . "</td>";
+    echo "<td>" . $row["date_naissance_user"] . "</td>";
+    echo "<td>" . $row["fidelite_user"] . "</td>";
     echo "</tr>";
     }
     echo "</table>";
