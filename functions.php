@@ -163,7 +163,7 @@ function menu_projection($db, $id){
   return $projection;
 }
 
-<<<<<<< Updated upstream
+
 function menu_historique_commande($db, $id){
   $historique = read_info_commande($db, $id);
   
@@ -181,7 +181,7 @@ function menu_historique_commande($db, $id){
 
 
 // fonction de format date et heure
-=======
+
 function menu_historique_commande($db){
   $id_salle = read_id_salle($db);
   for($i = 1; $i <= count($id_salle); $i++){
