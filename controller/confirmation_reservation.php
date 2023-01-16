@@ -7,8 +7,16 @@ include('../model/insert.php');
 include('../model/update.php');
 
 
+// lire le nombre de places restante
+$nb_left_place = read_left_place($db, $_SESSION['info_reservation']['nombre_place_commande']);
+if ($nb_left_place < $_SESSION['info_reservation']['left_place_count']){
+	$_SESSION['message'] = 'projection sold out';
+	header('Location: ../view/films.php');
+ 	exit();
+}
+
 // ajouter la nouvelle commande
-$date = date('d/m/y');
+$date = date('Y-m-d');
 add_commande($db, $_SESSION['id_user'], $_SESSION['info_reservation']['id_projection'], $date, $_SESSION['info_reservation']['nombre_place_commande']);
 
 

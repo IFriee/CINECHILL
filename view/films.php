@@ -4,6 +4,10 @@ include "../model/connection.php";
 include "../model/read.php";
 include "../functions.php";
 
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('salle occupé');</script>";
+  unset($_SESSION['message']);
+}
 ?>
 
 

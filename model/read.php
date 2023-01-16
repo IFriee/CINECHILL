@@ -281,6 +281,27 @@ function read_commande($db){
   return $result[0];
 }
 
+function read_info_commande($db, $id){
+  $query = "SELECT id_commande, fk_user_commande, fk_projection_commande, prix_ticket_projection, nom_film, 
+                   date_commande, nombre_place_commande
+            FROM commande_tab
+            INNER JOIN projection_tab ON id_projection = fk_projection_commande
+            INNER JOIN film_tab ON id_film = fk_film_projection
+            WHERE fk_user_commande = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
+
 
 function read_left_place($db, $projection){
   $query = "SELECT left_place_count
