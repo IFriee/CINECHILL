@@ -155,7 +155,7 @@ if (isset($_SESSION['message'])){
             <form action="../controller/traitement_commande.php" method="POST">
               <div class="user-details">
                 <div class="input-box">
-                  <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
+                  <label for="basic-ticket-quantity">Nombre de places:</label>
                   <input type="number" id="basic-ticket-quantity" name="nb_place" placeholder="nombre de ticket" min="1" required><br>
                 </div>
                 <div class="input-box">

@@ -201,7 +201,7 @@ foreach ($array_place_achete as $key => $value) {
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
                 <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$nb_place_achete?></h1>
-                <p class="u-text u-text-default u-text-6">Places achetées</p>
+                <p class="u-text u-text-default u-text-6">Places achetées !</p>
               </div>
             </div>
           </div>

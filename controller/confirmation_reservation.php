@@ -27,10 +27,9 @@ if ($nb_left_place < $_SESSION['info_reservation']['left_place_count']){
 
 // ajouter la nouvelle commande
 $date = date('Y-m-d');
-<<<<<<< Updated upstream
-=======
+
 var_dump($date);
->>>>>>> Stashed changes
+
 add_commande($db, $_SESSION['id_user'], $_SESSION['info_reservation']['id_projection'], $date, $_SESSION['info_reservation']['nombre_place_commande']);
 
 
