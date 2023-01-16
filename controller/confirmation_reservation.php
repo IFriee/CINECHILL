@@ -6,9 +6,31 @@ include('../model/read.php');
 include('../model/insert.php');
 include('../model/update.php');
 
+// retirer le nombre de places acheté aux nombres de places disponibles
+$nb_left_place = read_left_place($db, $_SESSION['info_reservation']['id_projection']);
+
+var_dump($nb_left_place['left_place_count']);
+
+if ($nb_left_place['left_place_count'] < $_SESSION['info_reservation']['nombre_place_commande']){
+	$_SESSION['message'] = 'projection pleine';
+	header('Location: ../view/films.php');
+	exit();
+}
+
+// lire le nombre de places restante
+$nb_left_place = read_left_place($db, $_SESSION['info_reservation']['nombre_place_commande']);
+if ($nb_left_place < $_SESSION['info_reservation']['left_place_count']){
+	$_SESSION['message'] = 'projection sold out';
+	header('Location: ../view/films.php');
+ 	exit();
+}
 
 // ajouter la nouvelle commande
-$date = date('d/m/y');
+$date = date('Y-m-d');
+<<<<<<< Updated upstream
+=======
+var_dump($date);
+>>>>>>> Stashed changes
 add_commande($db, $_SESSION['id_user'], $_SESSION['info_reservation']['id_projection'], $date, $_SESSION['info_reservation']['nombre_place_commande']);
 
 
@@ -24,10 +46,9 @@ $_SESSION['user_info'] = afficher_pseudo_connecte($db);
 $_SESSION['info_commande'] = read_commande($db);
 
 
-// retirer le nombre de places acheté aux nombres de places disponibles
-$nb_left_place = read_left_place($db, $_SESSION['info_commande']['fk_projection_commande']);
 update_place_count($db, $_SESSION['info_commande']['fk_projection_commande'], $nb_left_place['left_place_count'], $_SESSION['info_reservation']['nombre_place_commande']);
 
 
 header('Location: ../view/commande-réussie.php');
+exit();
 ?>

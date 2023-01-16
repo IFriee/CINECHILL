@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 16 jan. 2023 à 13:40
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 7.3.33
+-- Généré le : lun. 16 jan. 2023 à 14:52
+-- Version du serveur : 10.4.25-MariaDB
+-- Version de PHP : 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `commande_tab` (
   `id_commande` int(11) NOT NULL,
   `fk_user_commande` int(11) DEFAULT NULL,
   `fk_projection_commande` int(11) DEFAULT NULL,
-  `date_commande` datetime DEFAULT NULL,
+  `date_commande` date DEFAULT NULL,
   `nombre_place_commande` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,10 +40,10 @@ CREATE TABLE `commande_tab` (
 --
 
 INSERT INTO `commande_tab` (`id_commande`, `fk_user_commande`, `fk_projection_commande`, `date_commande`, `nombre_place_commande`) VALUES
-(1, 1, 2, '2013-01-23 00:00:00', 2),
-(2, 1, 1, '2015-01-23 00:00:00', 3),
-(3, 1, 3, '2015-01-23 00:00:00', 2),
-(4, 3, 2, '2016-01-23 00:00:00', 9);
+(1, 1, 2, '2013-01-23', 2),
+(2, 1, 1, '2015-01-23', 3),
+(3, 1, 3, '2015-01-23', 2),
+(4, 3, 2, '2016-01-23', 9);
 
 -- --------------------------------------------------------
 

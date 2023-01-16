@@ -163,6 +163,41 @@ function menu_projection($db, $id){
   return $projection;
 }
 
+<<<<<<< Updated upstream
+function menu_historique_commande($db, $id){
+  $historique = read_info_commande($db, $id);
+  
+  
+  foreach ($historique as $value) {
+      echo '<tr style="height: 51px;">
+              <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">'.$value['nom_film'].'</td>
+              <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">'.$value['nombre_place_commande'].'</td>
+              <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">'.($value['nombre_place_commande']*5).'</td>
+              <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">';date_format_fr($value['date_commande']); echo '</td>
+              <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">'.$value['nombre_place_commande']*$value['prix_ticket_projection'].' €</td>
+            </tr>';
+  }
+}
+
+
+// fonction de format date et heure
+=======
+function menu_historique_commande($db){
+  $id_salle = read_id_salle($db);
+  for($i = 1; $i <= count($id_salle); $i++){
+    echo '<tr style="height: 51px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Avatar : La vois de l\'eau</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">03/06/21</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
+          </tr>';
+  }
+  return $id_salle;
+}
+
+
+>>>>>>> Stashed changes
 function date_format_fr($date){
   $year = substr($date, 0, 4);
   $month = substr($date, 5, 2);

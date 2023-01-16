@@ -2,7 +2,14 @@
 session_start();
 include "../model/connection.php";
 include "../model/read.php";
+include('../functions.php');
 
+
+unset($_SESSION["info_film"]);
+unset($_SESSION["info_reservation"]);
+unset($_SESSION["id_film"]);
+unset($_SESSION['user_info']);
+unset($_SESSION['info_commande']);
 //appeler la fonction ici comme ça elle n'est pas appeler a chaque fois q'on utilise le read
 
 $user = afficher_pseudo_connecte($db);
@@ -227,21 +234,7 @@ foreach ($array_place_achete as $key => $value) {
               </tr>
             </thead>
             <tbody class="u-table-body">
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Avatar : La vois de l'eau</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">03/06/21</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
-              </tr>
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Ajout de </td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">lignes automatique</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">avec les</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">dernieres commandes</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">;)</td>
-              </tr>
-              
+              <?=menu_historique_commande($db, $_SESSION['id_user'])?>
             </tbody>
           </table>
         </div>

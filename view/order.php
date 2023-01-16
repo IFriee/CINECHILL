@@ -5,7 +5,7 @@ include "../model/read.php";
 include('../functions.php');
 
 $user = afficher_pseudo_connecte($db);
-
+unset($_SESSION['message']);
 ?>
 
 
