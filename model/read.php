@@ -336,4 +336,24 @@ function read_nb_place($db, $user){
   return $result;
 }
 
+//+==================================================================
+
+function afficheallusers($db){
+  $query = "SELECT * FROM user_tab";
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $result = $stmt->fetchAll();
+  return $result;
+}
+
+
+function afficheallprojection($db){
+  $query = "SELECT * FROM projection_tab";
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $result = $stmt->fetchAll();
+}
+
+
+
 ?>

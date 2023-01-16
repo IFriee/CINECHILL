@@ -58,7 +58,7 @@ include('../functions.php');
     <span>n°0000345</span>
     </div>
     <div class="title">
-      <h2>Top Gun: Maverick</h2>
+      <h2><?php echo $_SESSION['info_reservation']['nom_film'] ?></h2>
       <span>Film</span>
     </div>
     <div class="name">
