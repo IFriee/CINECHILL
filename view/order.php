@@ -158,7 +158,7 @@ $user = afficher_pseudo_connecte($db);
                 <div class="validate">
                     
                     <form action="../controller/confirmation_reservation.php">
-                        <input class="validate u-btn-1" type="submit" value="Réserver"><br>
+                        <input class="u-btn-1" type="submit" value="Réserver"><br>
                     </form>
                     
                 </div>
