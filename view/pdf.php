@@ -55,7 +55,7 @@ include('../functions.php');
   <div class="card cardLeft">
     <h1 >CineChill.</h1>
     <div class="numerocommande">
-    <span>n°0000345</span>
+    <span>n°0000<?=$_SESSION['info_commande']['id_commande']?></span>
     </div>
     <div class="title">
       <h2><?php echo $_SESSION['info_reservation']['nom_film'] ?></h2>
@@ -86,12 +86,12 @@ include('../functions.php');
   <div class="card cardRight">
     <div class="eye"><b>CC.</b></div>
     <div class="number">
-      <h3>156</h3>
-      <span>siege</span>
-    </div>
-    <div class="salle">
       <h2><?=$_SESSION['info_reservation']['fk_salle_projection']?></h2>
-      <span>salle</span>
+      <span>SALLE</span>
+    </div>
+    <div class="place">
+      <h3><?=$_SESSION['info_reservation']['nombre_place_commande']?></h3>
+      <span>place(s)</span>
     </div>
 
   </div>
