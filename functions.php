@@ -1,6 +1,5 @@
 <?php
 
-
 //________________________________LOGIN/REGISTER VERIF_____________________
 
 function Afficher($string){
@@ -188,5 +187,38 @@ function conversion_string_heure($duree_film){
   $hour = substr($duree_film['duree_film'], 0, 2);
   $minute = substr($duree_film['duree_film'], 3, 2);
   return (strtotime("+ ".$hour." hours ".$minute." minutes") - strtotime("now")) + 15;
+}
+
+
+//========================Modalité payement==================
+
+function checkpayement($id, $paymentType, $cardNumber, $expirationDate, $securityCode) {
+
+  // Vérifier le type de carte de paiement
+  if (!in_array($paymentType, ['Visa', 'Mastercard', 'American Express'])) {
+    $_SESSION['message'] = 'Type de carte de paiement non valide';
+    return false;
+  }
+
+  // Vérifier le numéro de carte de paiement
+  if (!preg_match('/^\d{4} \d{4} \d{4} \d{4}$/', $cardNumber)) {
+    $_SESSION['message'] = 'Numéro de carte de paiement non valide';
+    return false;
+  }
+
+  // Vérifier la date d'expiration
+  if (!preg_match('/^\d{2}\/\d{4}$/', $expirationDate)) {
+    $_SESSION['message'] = "Date d'expiration non valide";
+    return false;
+  }
+
+  // Vérifier le code de sécurité
+  if (!preg_match('/^\d{3}$/', $securityCode)) {
+    $_SESSION['message'] = 'Code de sécurité non valide';
+    return false;
+  }
+
+  // Si toutes les vérifications ont réussi, retourner un message de succès avec une probabilité de 50%
+  return true;
 }
 ?>

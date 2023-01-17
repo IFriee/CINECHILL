@@ -10,6 +10,12 @@ unset($_SESSION["info_reservation"]);
 unset($_SESSION["id_film"]);
 unset($_SESSION['user_info']);
 unset($_SESSION['info_commande']);
+
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('".$_SESSION['message']."');</script>";
+  unset($_SESSION['message']);
+}
+
 //appeler la fonction ici comme ça elle n'est pas appeler a chaque fois q'on utilise le read
 
 $user = afficher_pseudo_connecte($db);

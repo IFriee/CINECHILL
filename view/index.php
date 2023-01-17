@@ -7,7 +7,7 @@ unset($_SESSION["info_reservation"]);
 unset($_SESSION["id_film"]);
 unset($_SESSION['user_info']);
 unset($_SESSION['info_commande']);
-unset($_SESSION['message']);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +30,10 @@ unset($_SESSION['message']);
     
     
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "CINECHILL",
-		"logo": "images/Plandetravail1.png"
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "CINECHILL",
+    "logo": "images/Plandetravail1.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Accueil">
