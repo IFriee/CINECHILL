@@ -111,25 +111,6 @@ function verifier_email($email){
 
 //________________________________HISTORIQUE COMMANDE ET PETIT SCRIPTS_____________________
 
-function point_de_fidelite($fidelite_user){
-// 1 pt de fidel = 1 euros, à 100 points 1 place gratuite
-// faire un champ prix par projection / dans la table projection 
-
-
-}
-
-
-function nbr_film($nbr_total){
-  //return nombre TOTAL de film déja vu
-  $nbr_total = 42;
-  return $nbr_total;
-  
-}
-
-
-function nbr_place_achete(){
-  //return nombre TOTAL de place acheté
-}
 
 function menu_film($db){
   $nom_film = read_nom_film($db);

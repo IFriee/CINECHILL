@@ -126,6 +126,7 @@ if (isset($_SESSION['message'])){
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a><br>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="order.php" >vers page order</a>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="projection_tab.php" >vers page projection tab</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Popcorn_Ticket.php" >vers page PopCorn Ticket</a><br>
 
                     <br>
                   </p>
