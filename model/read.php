@@ -373,6 +373,7 @@ function afficheallprojection($db){
   $stmt = $db->prepare($query);
   $stmt->execute();
   $result = $stmt->fetchAll();
+  return $result;
 }
 
 

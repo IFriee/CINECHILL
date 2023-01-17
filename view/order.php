@@ -118,9 +118,7 @@ unset($_SESSION['message']);
                         <th colspan="2">Résumé de votre commande</th>
                     </tr>
                     <tr>
-                    <td>Numéro de commande</td>
-                    <td><b><?php  echo "à faire"   ?></b></td>
-                    </tr>
+
                     <tr>
                         <td>Nom du film</td>
                         <td><b><?=$_SESSION['info_reservation']['nom_film']?></b></td>
@@ -158,7 +156,7 @@ unset($_SESSION['message']);
                 <div class="validate">
                     
                     <form action="../controller/confirmation_reservation.php">
-                        <input class="validate u-btn-1" type="submit" value="Réserver"><br>
+                        <input class="u-btn-1" type="submit" value="Réserver"><br>
                     </form>
                     
                 </div>

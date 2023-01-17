@@ -35,7 +35,7 @@
         <p id="resultat">Mot : </p>
         <p id="coups">Nombre de coups restants : 8</p>
         <script>
-        // Mettre ici votre code JavaScript
+        
             const mots = ['cinechill', 'eliott'];
             let mot = mots[Math.floor(Math.random() * mots.length)];
             let motAffiche = '';

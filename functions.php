@@ -111,25 +111,6 @@ function verifier_email($email){
 
 //________________________________HISTORIQUE COMMANDE ET PETIT SCRIPTS_____________________
 
-function point_de_fidelite($fidelite_user){
-// 1 pt de fidel = 1 euros, à 100 points 1 place gratuite
-// faire un champ prix par projection / dans la table projection 
-
-
-}
-
-
-function nbr_film($nbr_total){
-  //return nombre TOTAL de film déja vu
-  $nbr_total = 42;
-  return $nbr_total;
-  
-}
-
-
-function nbr_place_achete(){
-  //return nombre TOTAL de place acheté
-}
 
 function menu_film($db){
   $nom_film = read_nom_film($db);
@@ -164,6 +145,11 @@ function menu_projection($db, $id){
 }
 
 
+
+
+// fonction de format date et heure
+
+
 function menu_historique_commande($db, $id){
   $historique = read_info_commande($db, $id);
   
@@ -180,24 +166,6 @@ function menu_historique_commande($db, $id){
 }
 
 
-// fonction de format date et heure
-
-function menu_historique_commande($db){
-  $id_salle = read_id_salle($db);
-  for($i = 1; $i <= count($id_salle); $i++){
-    echo '<tr style="height: 51px;">
-            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Avatar : La vois de l\'eau</td>
-            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
-            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
-            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">03/06/21</td>
-            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">40</td>
-          </tr>';
-  }
-  return $id_salle;
-}
-
-
->>>>>>> Stashed changes
 function date_format_fr($date){
   $year = substr($date, 0, 4);
   $month = substr($date, 5, 2);

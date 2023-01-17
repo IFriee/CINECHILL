@@ -16,17 +16,14 @@ include('../functions.php');
     <title>commande réussie</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="commande-réussie.css" media="screen">
+<link rel="stylesheet" href="commandreussie2.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400">
     
-    
-    
-    
-    
-    
+  
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -39,6 +36,15 @@ include('../functions.php');
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
+
+      <!-- partial:index.partial.html -->
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+    <!-- partial -->
+
+
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
           <img src="images/Plandetravail1.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -85,6 +91,10 @@ include('../functions.php');
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
+
+
+
+
     <section class="u-align-center u-clearfix u-section-1" id="sec-4776">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1" data-animation-name="pulse" data-animation-duration="4250" data-animation-direction="" data-animation-delay="750">
@@ -160,5 +170,5 @@ include('../functions.php');
         <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
         </p>
       </div></footer>
-  
-</body></html>
+
+
