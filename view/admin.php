@@ -12,7 +12,7 @@ else{
 }
 
 if (isset($_SESSION['message'])){
-  echo "<script type='text/javascript'>alert('salle occupé');</script>";
+  echo "<script type='text/javascript'>alert('".$_SESSION['message']."');</script>";
   unset($_SESSION['message']);
 }
 
@@ -189,9 +189,9 @@ if (isset($_SESSION['message'])){
             <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
               <div class="u-container-layout u-container-layout-2">
                 <div class="fr-view u-clearfix u-rich-text u-text">
-                <form action="/delete-user" method="POST">
+                <form action="../controller/traitement_delete.php" method="POST">
                   <label for="user-id">ID de l'utilisateur à supprimer :</label><br>
-                  <input type="number" id="user-id" name="user-id"><br>
+                  <input type="number" id="user-id" name="user-id" required><br>
                   <input type="submit" value="Supprimer l'utilisateur" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
                 </form>
                 <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" target="_blank" href="user_tab.php" >Liste d'utilisateur</a>
@@ -266,16 +266,16 @@ if (isset($_SESSION['message'])){
                 }</style>
 
                 <div class="fr-view u-clearfix u-rich-text u-text">
-                <form action="/delete-user" method="POST">
+                <form action="../controller/traitement_delete.php" method="POST">
                   <label for="projection-id">Projection à supprimer :</label><br>
-                  <input type="number" id="user-id" name="id_projection" min="1"><br>
-                  <input type="submit" value="Supprimer la projection" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                  <input type="number" id="user-id" name="id_projection" min="1" required><br>
+                  <input type="submit" value="Supprimer la projection" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette projection ?');">
                 </form>
 
                 </form>
                   <br><br>
                   
-                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter film </h5>
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter projection </h5>
                   <form action="../controller/add_projection.php" method="POST">
                     <label for="salle_projection">salle de projection :</label><br>
                     <select id="projection-select" name="salle_projection">

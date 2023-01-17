@@ -232,7 +232,9 @@ function read_projection_commande($db, $id){
 
 //recuperer l'id de la dernière projection enregistrer
 function read_last_projection($db){
-  $query = "SELECT COUNT(*) AS verif FROM projection_tab";
+  $query = "SELECT id_projection 
+            FROM projection_tab
+            ORDER BY id_projection DESC LIMIT 1";
   try
   {
       $stmt = $db->prepare($query);
@@ -242,8 +244,7 @@ function read_last_projection($db){
       die("Failed query : " . $ex->getMessage());
   }
   $result = $stmt->fetchall();
-  $result = $result[0];
-  return $result['verif'];
+  return $result[0];
 }
 
 //verifier si la salle est occuper par un film 
@@ -261,6 +262,27 @@ function verify_projection($db){
   $result = $stmt->fetchall();
   return $result;
 }
+
+
+function read_commande_from_projection($db, $id){
+  $query = "SELECT id_commande
+            FROM commande_tab
+            INNER JOIN projection_tab ON id_projection = fk_projection_commande
+            WHERE id_projection = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  return $result;
+}
+
 
 
 function read_commande($db){
