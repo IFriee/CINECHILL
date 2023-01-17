@@ -7,6 +7,7 @@ unset($_SESSION["info_reservation"]);
 unset($_SESSION["id_film"]);
 unset($_SESSION['user_info']);
 unset($_SESSION['info_commande']);
+
 ?>
 
 <!DOCTYPE html>

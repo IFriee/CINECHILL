@@ -7,6 +7,7 @@ include('../model/insert.php');
 include('../model/update.php');
 
 
+
 // lire le nombre de places restante
 $nb_left_place = read_left_place($db, $_SESSION['info_reservation']['nombre_place_commande']);
 if ($nb_left_place < $_SESSION['info_reservation']['left_place_count']){
