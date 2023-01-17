@@ -1,3 +1,33 @@
+<?php
+session_start();
+include('../model/connection.php');
+include ("../model/read.php");
+include ("../model/insert.php");
+include ("../functions.php");
+
+if ($_SESSION['id_user'] == 1){
+  echo 'Mode administrateur';}
+else{ 
+  header('Location: erreur404.php');
+}
+
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('".$_SESSION['message']."');</script>";
+  unset($_SESSION['message']);
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,24 +102,234 @@
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
-    <section class="u-clearfix u-section-1" id="sec-2e03">
+
+    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-27bc">
+
       <div class="u-clearfix u-sheet u-sheet-1">
         <h3 class="u-custom-font u-text u-text-default u-text-1">Menu <span class="u-text-palette-2-base">ADMINISTRATEUR</span>
-        </h3>
-        <a href="commande-réussie.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">vers page commande réussie</a>
-        <a href="Login.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">vers page Login</a>
-        <a href="Register.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page Register</a>
-        <a href="films.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page film</a>
+        </h3><br><br>
+        
+        <div class="u-accordion u-expanded-width u-faq u-spacing-10 u-accordion-1">
+        <div class="u-accordion-item" style="text-align: center;">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span  class="u-accordion-link-text"> <h5 class="u-custom-font u-text u-text-default u-text-1"style="text-align: center;"> Acces rapide pages </h5></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div style="text-align: center;" class="fr-view u-clearfix u-rich-text u-text">
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="commande-réussie.php" >vers page commande réussie</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Login.php" >vers page Login</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Register.php">vers page Register</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="films.php">vers page film</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="payement.php" >vers page modalite de payement</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="user_tab.php" >vers page tab users</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="pdf.php" >vers page pdf</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="order.php" >vers page order</a>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="projection_tab.php" >vers page projection tab</a><br>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" href="Popcorn_Ticket.php" >vers page PopCorn Ticket</a><br>
 
-        <a href="payement.php" class="u-border-2 u-border-grey-75 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">vers page modalite de payement</a>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"> <h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion FILMS </h5></span>
+            </a>
+            <div style="text-align: cen
+            ter;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Supprimer affichage film </h5>
+                  <form action="/delete-film" method="POST">
+                    <label for="film-select">Sélectionnez le film à supprimer :</label><br>
+                    <select id="film-select" name="film-select">
+                      <option value="film1">Film 1</option>
+                      <option value="film2">Film 2</option>
+                      <option value="film3">Film 3</option>
+                      ...
+                    </select><br>
+                    <input type="submit" value="Supprimer le film">
+                  </form>
+                  <br><br>
+                  
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter film </h5>
+                  <form action="../controller/add_film.php" method="POST">
+                    <label for="film-name">Nom du film :</label><br>
+                    <input type="text" id="film-name" name="nom_film"><br>
+                    <label for="film-duration">Durée du film :</label><br>
+                    <input type="text" id="film-duration" name="duree_film"><br>
+                    <label for="film-genre">Genre du film :</label><br>
+                    <input type="text" id="film-genre" name="genre_film"><br>
+                    <label for="film-image">URL de l'image du film :</label><br>
+                    <input type="text" id="film-image" name="image_info_page"><br>
+                    <label for="film-video">URL de la vidéo du film :</label><br>
+                    <input type="text" id="film-video" name="url_info_page"><br>
+                    <label for="film-summary">Résumé du film :</label><br>
+                    <input type="text" id="film-video" name="resume_info_page"><br>
+                    <label for="film-author">Auteur du film :</label><br>
+                    <input type="text" id="film-author" name="auteur_film"><br>
+                    <label for="film-release-date">Date de sortie du film :</label><br>
+                    <input type="date" id="film-release-date" name="date_sortie_film"><br>
+                    <input type="submit" value="Ajouter le film">
+                  </form>
 
-      </div>
-    </section>
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
-        </p>
-      </div></footer>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"><h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion USERS </h5></span>
+            </a>
+            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                <form action="../controller/traitement_delete.php" method="POST">
+                  <label for="user-id">ID de l'utilisateur à supprimer :</label><br>
+                  <input type="number" id="user-id" name="user-id" required><br>
+                  <input type="submit" value="Supprimer l'utilisateur" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">
+                </form>
+                <a class="u-btn u-btn-round u-button-style u-color-scheme-summer-time u-color-style-multicolor-1 u-palette-2-base u-radius-50 u-btn-1" target="_blank" href="user_tab.php" >Liste d'utilisateur</a>
+
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-2" id="link-accordion-72f4" aria-controls="accordion-72f4" aria-selected="false">
+              <span class="u-accordion-link-text"><h5 class="u-custom-font u-text u-text-default u-text-1"> Gestion PROJECTION </h5></span>
+            </a>
+            <div style="text-align: center;" class="u-accordion-pane u-container-style u-white u-accordion-pane-2" id="accordion-72f4" aria-labelledby="link-accordion-72f4">
+              <div class="u-container-layout u-container-layout-2">
+                <?php
+                $query = "SELECT id_projection, fk_salle_projection, nom_film, horraire_projection, prix_ticket_projection 
+                          FROM projection_tab
+                          INNER JOIN film_tab ON id_film = fk_film_projection";
+                $stmt = $db->prepare($query);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+
+                if (count($result) > 0) {
+                  // Affichage des données de chaque enregistrement dans un tableau
+                  echo "<table>";
+                  echo "<tr>";
+                  echo "<th>ID</th>";
+                  echo "<th>salle</th>";
+                  echo "<th>film</th>";
+                  echo "<th>horaire</th>";
+                  echo "<th>prix</th>";
+                  foreach ($result as $row) {
+                    echo "<tr>";
+                    echo "<td>" . $row["id_projection"] . "</td>";
+                    echo "<td>" . $row["fk_salle_projection"] . "</td>";
+                    echo "<td>" . $row["nom_film"] . "</td>";
+                    echo "<td>" . $row["horraire_projection"] . "</td>";
+                    echo "<td>" . $row["prix_ticket_projection"] . " €</td>";
+                    echo "</tr>";
+                    }
+                    echo "</table>";
+                    } else {
+                    echo "Aucun enregistrement trouvé";
+                    }
+
+                ?>
+
+                <style>
+                  table {
+                  font-family: arial, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                  background-color: #dddddd;
+                }
+
+                .table-header {
+                  font-weight: bold;
+                  background-color: #333333;
+                  color: white;
+                }</style>
+
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                <form action="../controller/traitement_delete.php" method="POST">
+                  <label for="projection-id">Projection à supprimer :</label><br>
+                  <input type="number" id="user-id" name="id_projection" min="1" required><br>
+                  <input type="submit" value="Supprimer la projection" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette projection ?');">
+                </form>
+
+                </form>
+                  <br><br>
+                  
+                  <h5 class="u-custom-font u-text u-text-default u-text-1">Ajouter projection </h5>
+                  <form action="../controller/add_projection.php" method="POST">
+                    <label for="salle_projection">salle de projection :</label><br>
+                    <select id="projection-select" name="salle_projection">
+                      <?php menu_salle($db); ?>
+                    </select><br>
+                    <label for="nom_film">nom du film :</label><br>
+                    <select id="projection-select" name="id_film">
+                      <?php menu_film($db); ?>
+                    </select><br>
+                    <label for="horraire_projection">horraire :</label><br>
+                    <input type="datetime-local" id="projection-horraire" name="horraire_projection"><br>
+                    <label for="film-image">prix de la projection :</label><br>
+                    <input type="text" id="film-image" name="prix_projection"><br>
+                    <input type="submit" value="Ajouter la projection">
+                  </form>
+
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-</body></html>
+  </body>
+</html>

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+include "../model/connection.php";
+include "../model/read.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +62,7 @@
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="Espace-client.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
+        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="../controller/if_connect.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
 	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
 	c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
 	c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
@@ -74,7 +82,7 @@
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-27bc">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1">Foire aux questions</h2>
-        <p class="u-text u-text-2">Toutes nos questions récurentes sont ici !</p>
+        <p class="u-text u-text-2">Toutes nos questions récurrentes sont ici !</p>
         <div class="u-accordion u-expanded-width u-faq u-spacing-10 u-accordion-1">
           <div class="u-accordion-item">
             <a class="active u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-1" id="link-accordion-f600" aria-controls="accordion-f600" aria-selected="true">
@@ -112,7 +120,7 @@
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-3" id="link-accordion-854e" aria-controls="accordion-854e" aria-selected="false">
-              <span class="u-accordion-link-text">Comment crée un compte sur CineChill ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4a3a"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-4a3a" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
+              <span class="u-accordion-link-text">Comment créer un compte sur CineChill ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 448 448" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4a3a"></use></svg><svg class="u-svg-content" viewBox="0 0 448 448" id="svg-4a3a" style=""><path d="m272 184c-4.417969 0-8-3.582031-8-8v-176h-80v176c0 4.417969-3.582031 8-8 8h-176v80h176c4.417969 0 8 3.582031 8 8v176h80v-176c0-4.417969 3.582031-8 8-8h176v-80zm0 0"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-3" id="accordion-854e" aria-labelledby="link-accordion-854e">
               <div class="u-container-layout u-container-layout-3">
@@ -124,7 +132,7 @@
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-4" id="link-db35" aria-controls="db35" aria-selected="false">
-              <span class="u-accordion-link-text">Mon systeme de payement ne fonctionne pas ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-83cb"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-83cb"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+              <span class="u-accordion-link-text">Mon système de payement ne fonctionne pas ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-83cb"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-83cb"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
 	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-4" id="db35" aria-labelledby="link-db35">
@@ -171,7 +179,7 @@
           </div>
           <div class="u-accordion-item">
             <a class="u-accordion-link u-active-white u-button-style u-hover-white u-white u-accordion-link-6" id="link-194c" aria-controls="194c" aria-selected="false">
-              <span class="u-accordion-link-text">Comment telecharger mon ticket ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0115"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-0115"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+              <span class="u-accordion-link-text">Comment télécharger mon ticket ?</span><span class="u-accordion-link-icon u-icon u-text-palette-2-base u-icon-6"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0115"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-0115"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
 	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
             </a>
             <div class="u-accordion-pane u-container-style u-white u-accordion-pane-6" id="194c" aria-labelledby="link-194c">

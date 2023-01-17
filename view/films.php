@@ -1,3 +1,16 @@
+<?php 
+session_start();
+include "../model/connection.php";
+include "../model/read.php";
+include "../functions.php";
+
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('salle occupé');</script>";
+  unset($_SESSION['message']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,142 +40,6 @@
     <meta property="og:title" content="films">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-
-
-
-  <style>
-    .container {
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-  margin: 0 auto;
-}
-.container .title{
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-
-.content form .user-details{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-form .user-details .input-box{
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-form .input-box span.details{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.user-details .input-box input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
-  border-color: #DB545A;;
-}
-
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .category label .dot{
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background: #d9d9d9;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
-   background: #9b59b6;
-   border-color: #d9d9d9;
- }
- form input[type="radio"]{
-   display: none;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   /*background: linear-gradient(135deg, #71b7e6, #9b59b6); */
-   background-color: #DB545A;
- }
- form .button input:hover{
-  /* transform: scale(0.99); */
-  /*background: linear-gradient(-135deg, #71b7e6, #9b59b6);*/
-  background-color: grey;
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
-}
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  form .category{
-    width: 100%;
-  }
-  .content form .user-details{
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-  .user-details::-webkit-scrollbar{
-    width: 5px;
-  }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
-  }
-}
-
-
-
-
-  </style>
-
-  
-
-
-
 
 
   </head>
@@ -196,7 +73,7 @@ form .user-details .input-box{
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="Espace-client.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
+        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="../controller/if_connect.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
 	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
 	c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
 	c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
@@ -217,7 +94,7 @@ form .user-details .input-box{
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-video u-video-contain u-video-1">
           <div class="embed-responsive embed-responsive-1">
-            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/giXco2jaZ_4?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="<?=$_SESSION['info_film']['url_info_page']?>?loop=1&fs=0&modestbranding=1" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
@@ -238,9 +115,9 @@ form .user-details .input-box{
                 <td class="u-border-1 u-border-grey-30 u-border-no-bottom u-border-no-top u-grey-50 u-table-cell u-table-cell-3">Genre:</td>
               </tr>
               <tr style="height: 45px;">
-                <td class="u-border-2 u-border-grey-30 u-table-cell"> Top Gun: Maverick</td>
-                <td class="u-border-2 u-border-grey-30 u-table-cell"> 2h 11m</td>
-                <td class="u-border-2 u-border-grey-30 u-table-cell">Action, Aventure, Drame</td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['nom_film']?></td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['duree_film']?></td>
+                <td class="u-border-2 u-border-grey-30 u-table-cell"><?=$_SESSION['info_film']['nom_genre']?></td>
               </tr>
             </tbody>
           </table>
@@ -253,12 +130,14 @@ form .user-details .input-box{
           <div class="u-layout" style="">
             <div class="u-layout-row" style="">
               <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1100" data-image-height="824">
+                <img src="images/<?=$_SESSION['info_film']['image_info_page']?>" width=100% height=100%>
                 <div class="u-container-layout u-valign-middle u-container-layout-1" src=""></div>
+
               </div>
               <div class="u-align-left u-container-style u-grey-80 u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-palette-2-base u-text-1">Top Gun : Maverick</h2>
-                  <p class="u-text u-text-2"> Après plus de 30 ans de service en tant que l'un des meilleurs aviateurs de la Marine, Pete Maverick Mitchell est à sa place, repoussant les limites en tant que pilote d'essai courageux et esquivant l'avancement de grade qui le mettrait à la terre. Entraînant de jeunes diplômés pour une mission spéciale, Maverick doit affronter les fantômes de son passé et ses peurs les plus profondes, aboutissant à une mission qui exige le sacrifice ultime de ceux qui choisissent de la piloter.</p>
+                  <h2 class="u-text u-text-default u-text-palette-2-base u-text-1"><?=$_SESSION['info_film']['nom_film']?></h2>
+                  <p class="u-text u-text-2"> <?=$_SESSION['info_film']['resume_info_page']?></p>
                 </div>
               </div>
             </div>
@@ -270,48 +149,31 @@ form .user-details .input-box{
       <br><br><br>
     </section>
     <section class="u-align-center u-clearfix u-section-5" id="sec-a19f">
-      
-
-
-
-
-
-
-
       <div class="container">
-    <div class="title">Réservez ici</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-          <label for="basic-ticket-quantity">Nombre de places (8 euros):</label>
-        <input type="number" id="basic-ticket-quantity" name="basic-ticket-quantity" min="0"><br>
-          </div>
-          <div class="input-box">
-          <label for="ticket-date">Date:</label>
-        <input type="date" id="ticket-date" name="ticket-date"><br>
-          </div>
-
-          <div class="input-box">
-          <label for="ticket-time">Horaire:</label>
-          <select id="ticket-time" name="ticket-time">
-          <option value="15:00">15h</option>
-          <option value="17:00">17h</option>
-          <option value="21:30">21h30</option>
-          </select><br>
-          </div>
-
-
-        </div>
-
-        <div class="button">
-          <input type="submit" value="Réserver">
-        </div>
-      </form>
-
-
-
-
+        <div class="title">Réservez ici</div>
+          <div class="content">
+            <form action="../controller/traitement_commande.php" method="POST">
+              <div class="user-details">
+                <div class="input-box">
+                  <label for="basic-ticket-quantity">Nombre de places:</label>
+                  <input type="number" id="basic-ticket-quantity" name="nb_place" placeholder="nombre de ticket" min="1" required><br>
+                </div>
+                <div class="input-box">
+                  <label for="ticket-date">Date:</label>
+                  <br>
+                  <select id="ticket-time" name="projection" style="width:300px; height:45px; " required>
+                  <?php menu_projection($db, $_SESSION['id_film']); ?>
+                </div>
+                <br><br><br>
+                <div class="input-button">
+                  <div class="button">
+                    <input type="submit" value="Réserver">
+                  </div>
+                </div>
+              </div>
+            </form>
+        </div>  
+      </div>
     </section>
     <br><br><br>
     

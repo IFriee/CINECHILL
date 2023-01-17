@@ -1,5 +1,10 @@
 <?php
 session_start();
-include('../connection.php');
+include "../model/connection.php";
+include "../model/read.php";
+
+
+
+redirect_if_connect($db)
 
 ?>

@@ -1,6 +1,30 @@
 <?php 
-include "../model/connection.php";
 session_start();
+include "../model/connection.php";
+include "../model/read.php";
+include('../functions.php');
+
+
+unset($_SESSION["info_film"]);
+unset($_SESSION["info_reservation"]);
+unset($_SESSION["id_film"]);
+unset($_SESSION['user_info']);
+unset($_SESSION['info_commande']);
+//appeler la fonction ici comme ça elle n'est pas appeler a chaque fois q'on utilise le read
+
+$user = afficher_pseudo_connecte($db);
+
+// nombre de film visionné
+$nb_film_vu['nb_film'] = read_nb_commande($db, $_SESSION['id_user']);
+$nb_film_vu = $nb_film_vu['nb_film'];
+
+$array_place_achete = read_nb_place($db, $_SESSION['id_user']);
+$nb_place_achete = 0;
+foreach ($array_place_achete as $key => $value) {
+  foreach ($value as $key => $value) {
+    $nb_place_achete += $value;
+  }
+}
 ?>
 
 
@@ -35,6 +59,8 @@ session_start();
     <meta property="og:title" content="Espace client">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+    <style>
+    </style>
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
@@ -66,7 +92,7 @@ session_start();
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="Espace-client.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
+        </nav><span class="u-hover-feature u-icon u-text-palette-2-base u-icon-1" data-href="../controller/if_connect.php" title="Espace client"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b948"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-b948" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
 	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
 	c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
 	c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
@@ -85,13 +111,19 @@ session_start();
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-34b5">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo "prenom_user"//.($_POST['prenom_user']) ?></span>.
+        <h1 class="u-align-left u-custom-font u-text u-title u-text-1">Votre espace client, <span class="u-text-palette-2-base"><?php echo $user['pseudo_user']; ?></span>.
         </h1>
       </div>
+      <div class="admin">
+        <?php if ($_SESSION['id_user'] == 1){
+        echo '<a href="admin.php"><u>MENU ADMINISTRATEUR</u></a>';
+      } ?>
+      </div>
+
     </section>
     <section class="u-clearfix u-section-2" id="sec-8bce">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h4 class="u-custom-font u-text u-text-default u-text-1">Vos données personelles</h4>
+        <h4 class="u-custom-font u-text u-text-default u-text-1">Vos données personnelles</h4>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-3" id="sec-d35a">
@@ -104,56 +136,72 @@ session_start();
               <col width="33%">
             </colgroup>
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+            <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Pseudo</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['pseudo_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
+              </tr>
               <tr style="height: 65px;">
                 <td class="u-table-cell">Nom</td>
-                <td class="u-table-cell"><?php echo "nom_user" //.($_POST['nom_user']) ?></td>
+                <td class="u-table-cell"><b><?php echo $user['nom_user'];  ?></b></td>
                 <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
                 <td class="u-grey-40 u-table-cell u-table-cell-4">Prénom</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-5"><?php echo "prenom_user" //.($_POST['prenom_user']) ?></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['prenom_user']; ?></b></td>
                 <td class="u-grey-40 u-table-cell u-table-cell-6"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Email</td>
-                <td class="u-table-cell"><?php echo "mail_user" //.($_POST['mail_user']) ?></td>
-                <td class="u-table-cell" ><u><a href="films.php">Modifier</a></u></td>
-              </tr>
-              <tr style="height: 59px;">
-                <td class="u-grey-40 u-table-cell u-table-cell-10">Moyen de payement</td>
-                <td class="u-grey-40 u-table-cell u-table-cell-11"><?php echo "pas encore de table crée" //.($_POST['prenom_user']) ?></td>
-                <td class="u-grey-40 u-table-cell u-table-cell-12"><u><a href="payement.php">Modifier</a></u></td>
+                <td class="u-table-cell">Date de naissance</td>
+                <td class="u-table-cell"><b><?php echo $user['date_naissance_user']; ?></b></td>
+                <td class="u-table-cell"></td>
               </tr>
               <tr style="height: 65px;">
-                <td class="u-table-cell">Mot de passe</td>
-                <td class="u-table-cell"><?php echo "password_user" //.($_POST['password_user']) ?></td>
-                <td class="u-table-cell"><u><a href="films.php">Modifier</a></u></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Email</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b><?php echo $user['mail_user']; ?></b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6" ><u><a href="erreur404.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 59px;">
+                <td class="u-table-cell">Moyen de payement</td>
+                <td class="u-table-cell"><b><?php echo "en cours" //.($_POST['prenom_user']) ?></b></td>
+                <td class="u-table-cell"><u><a href="payement.php">Modifier</a></u></td>
+              </tr>
+              <tr style="height: 65px;">
+                <td class="u-grey-40 u-table-cell u-table-cell-4">Mot de passe</td>
+                <td class="u-grey-40 u-table-cell u-table-cell-5"><b> ********* </b></td>
+                <td class="u-grey-40 u-table-cell u-table-cell-6"><u><a href="erreur404.php">Modifier</a></u></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
+    </form>
+    <br>
+    <div class="deco">
+      <a href="../model/logout.php"> <u>Se deconnecter </u></a>
+    </div>
+    <br><br>
     <section class="u-clearfix u-grey-80 u-section-4" id="sec-fe43">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "3" //.nbr_film() ?></h1>
-                <p class="u-text u-text-2">Films déja vu chez nous !</p>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-1" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$nb_film_vu['nb_film']?></h1>
+                <p class="u-text u-text-2">Films déja vus chez nous !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "5" //.($_POST['prenom_user']) ?></h1>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-3" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$user['fidelite_user']?></h1>
                 <p class="u-text u-text-default u-text-4">Points de fidelité !</p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?php echo "9" //.($_POST['prenom_user']) ?></h1>
-                <p class="u-text u-text-default u-text-6">Places achetée</p>
+                <h1 class="u-text u-text-default u-text-palette-2-base u-title u-text-5" data-animation-name="counter" data-animation-event="scroll" data-animation-duration="3000"><?=$nb_place_achete?></h1>
+                <p class="u-text u-text-default u-text-6">Places achetées !</p>
               </div>
             </div>
           </div>
@@ -178,42 +226,15 @@ session_start();
             </colgroup>
             <thead class="u-grey-50 u-table-header u-table-header-1">
               <tr style="height: 80px;">
-                <th class="u-grey-80 u-table-cell u-table-cell-1">Film</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-2">Nbrs de places</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-3">Point de fidelité gagné</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-4">Date</th>
-                <th class="u-grey-80 u-table-cell u-table-cell-5">Prix total de commande</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Film</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Nbre de places</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Points de fidelité gagnés</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Date</th>
+                <th class="u-grey-40 u-table-cell u-table-cell-6">Prix total de commande</th>
               </tr>
             </thead>
             <tbody class="u-table-body">
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Row 1</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">1 euros</td>
-              </tr>
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Row 2</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">1 euros</td>
-              </tr>
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Row 3</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">1 euros</td>
-              </tr>
-              <tr style="height: 51px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Row 4</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">1 euros</td>
-              </tr>
+              <?=menu_historique_commande($db, $_SESSION['id_user'])?>
             </tbody>
           </table>
         </div>

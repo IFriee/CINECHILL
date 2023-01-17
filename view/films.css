@@ -68,7 +68,9 @@
 
 .u-section-2 .u-table-cell-3 {
   background-image: none;
-}.u-section-3 .u-sheet-1 {
+}
+
+.u-section-3 .u-sheet-1 {
   min-height: 604px;
 }
 
@@ -78,7 +80,6 @@
 
 .u-section-3 .u-image-1 {
   min-height: 590px;
-  background-image: url("images/topgun-3acab88716c6d597663f7f87d418dbbf41543b54-s1100-c50.jpg");
   background-position: 50% 50%;
 }
 
@@ -182,9 +183,66 @@
   margin: 15px auto;
 }
 
+img {
+  object-fit: cover;
+}
+
+.button {
+  float: left;
+}
+.user-details{
+  text-align: center;
+}
 
 
+.container {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin: 0 auto;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 30px);
+}
+
+.user-details .input-box input{
+  text-align: center;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #DB545A;;
+}
+
+.input-button{
+  text-align: center;
+  margin-top: 10px;
+}
 
 
-
-
+ 

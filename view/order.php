@@ -1,29 +1,35 @@
 <?php 
 session_start();
-
 include "../model/connection.php";
 include "../model/read.php";
 include('../functions.php');
+
+$user = afficher_pseudo_connecte($db);
+unset($_SESSION['message']);
 ?>
 
+
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="fr">
-<head>
+<html style="font-size: 16px;" lang="fr"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>commande réussie</title>
+    <title>Espace client</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="commande-réussie.css" media="screen">
-<link rel="stylesheet" href="commandreussie2.css" media="screen">
+<link rel="stylesheet" href="order.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.1.5, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400">
     
-  
+    
+    
+    
+    
+    
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -31,20 +37,13 @@ include('../functions.php');
 		"logo": "images/Plandetravail1.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="commande réussie">
+    <meta property="og:title" content="Espace client">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
+    <style>
+    </style>
   </head>
   <body class="u-body u-xl-mode" data-lang="fr"><header class="u-clearfix u-header u-white" id="sec-fe4e" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
-
-      <!-- partial:index.partial.html -->
-    <div class="pyro">
-        <div class="before"></div>
-        <div class="after"></div>
-    </div>
-    <!-- partial -->
-
-
         <a href="Accueil.php" class="u-image u-logo u-image-1" data-image-width="1085" data-image-height="213" title="Accueil">
           <img src="images/Plandetravail1.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -92,83 +91,81 @@ include('../functions.php');
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path></svg></span>
       </div></header>
 
+    <body>
+    <h3 style="text-align:center">Résumé de votre commande</h3><br>
+        <div class="resumcommandeclient">
+            <div class="infoclient">
+                <h4>Informations client</h4>
+                <p>Nom: <b><?php echo $user['nom_user'] ?></b></p>
+                <p>Prénom: <b><?php echo $user['prenom_user'] ?></b></p>
+                <p>Email: <b><?php echo $user['mail_user'] ?></b></p>
+                <p>Points de fidelité total: <b><?php echo $user['fidelite_user'] ?></b></p>
+                <br>
+            </div>
+            <div class="infopayement">
+                <h4>Modalités de payement</h4>
+                <p>Type de carte de payement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Numéro de carte de payement : <b><?php  echo "à faire"   ?></b></p>
+                <p>Date d'expiration : <b><?php  echo "à faire"   ?></b></p>
+                <p>Code de sécurité : <b><?php  echo "****"   ?></b></p>
 
+            </div>
 
-
-    <section class="u-align-center u-clearfix u-section-1" id="sec-4776">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-text-1" data-animation-name="pulse" data-animation-duration="4250" data-animation-direction="" data-animation-delay="750">
-          <span class="u-text-palette-2-base">Bravo</span>, commande réussie !
-        </h1>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-section-2" id="sec-00e9">
-      <div class="u-align-center u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Téléchargez ici votre ticket</h2>
-        <p class="u-text u-text-2">Vous pouvez soit imprimer votre ticket soit le montrer sur votre téléphone au gichet.</p>
-        <a href="pdf.php" class="u-border-none u-btn u-button-style u-palette-2-base u-btn-1" target="_blank">Votre ticket PDF</a>
-      </div>
-    </section>
-    <section class="u-clearfix u-section-3" id="sec-5594">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h5 class="u-custom-font u-text u-text-default u-text-font u-text-1">Résumé de votre commande :</h5>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-section-4" id="sec-2fb6">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width u-table u-table-responsive u-table-1">
-          <table class="u-table-entity u-table-entity-1">
-            <colgroup>
-              <col width="15.4%">
-              <col width="15%">
-              <col width="17.8%">
-              <col width="23%">
-              <col width="28.8%">
-            </colgroup>
-            <thead class="u-grey-50 u-table-header u-table-header-1">
-              <tr style="height: 29px;">
-                <th class="u-border-1 u-border-grey-50 u-table-cell"> Film</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Nombre de places</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Prix</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Points de fidelité</th>
-                <th class="u-border-1 u-border-grey-50 u-table-cell">Date d' achat</th>
-              </tr>
-            </thead>
-            <tbody class="u-table-body u-table-body-1">
-              <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['nom_film']?></td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">5</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <?=date_format_fr($_SESSION['info_commande']['date_commande'])?></td>
-              </tr>
-             
-              <tr style="height: 46px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-21">
-                  <span style="font-weight: 700;"> TOTAL</span>
-                </td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-22"><?=$_SESSION['info_commande']['nombre_place_commande']?></td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-23"><?=$_SESSION['info_reservation']['prix_ticket_projection']*$_SESSION['info_commande']['nombre_place_commande']?> €</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-24"><?=$_SESSION['info_commande']['nombre_place_commande']*5?></td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-grey-80 u-table-cell u-table-cell-25">/////</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-section-5" id="sec-deb3">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Eliott <span class="u-text-palette-2-base">Wengler </span>&amp; Louis <span class="u-text-palette-2-base">Coppens </span>vous souhaitent un bon <span class="u-text-palette-2-base">film </span>!
-        </h2>
-      </div>
-    </section>
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
+            <div class="infofilm">
+                <table class="resumecommande">
+                    <tr>
+                        <th colspan="2">Résumé de votre commande</th>
+                    </tr>
+                    <tr>
+
+                    <tr>
+                        <td>Nom du film</td>
+                        <td><b><?=$_SESSION['info_reservation']['nom_film']?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Date de projection</td>
+                        <td><b><?=date_format_fr($_SESSION['info_reservation']['horraire_projection'])?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Heure de projection</td>
+                        <td><b><?=date_format_hour($_SESSION['info_reservation']['horraire_projection']) ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Salle de projection</td>
+                        <td><b><?=$_SESSION['info_reservation']['fk_salle_projection'] ?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la place</td>
+                        <td><b><?=$_SESSION['info_reservation']['prix_ticket_projection']?> €</b></td>
+                    </tr>
+                    <tr>
+                        <td>Prix de la tva (21%)</td>
+                        <td><b><?=$_SESSION['info_reservation']['prix_ticket_projection']*0.21?> €</b></td>
+                    </tr>
+                    <tr>
+                        <td>nombre de place</td>
+                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']?></b></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><b><?=$_SESSION['info_reservation']['nombre_place_commande']*$_SESSION['info_reservation']['prix_ticket_projection']?> €</b></td>
+                    </tr>
+                </table>
+                <br><br><br>
+                <div class="validate">
+                    
+                    <form action="../controller/confirmation_reservation.php">
+                        <input class="u-btn-1" type="submit" value="Réserver"><br>
+                    </form>
+                    
+                </div>
+            </div>
+
+        <br><br><br><br>
+            <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f4a6"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Owned by Eliott (IFriee) Wengler &amp; Louis (Thejazzman) Coppens<br>
         </p>
       </div></footer>
-
-
+  
+</body></html>
