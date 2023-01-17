@@ -25,7 +25,7 @@ foreach($verify as $row){
 add_projection($db, $_POST['salle_projection'], $_POST['id_film'], $_POST['horraire_projection'], $_POST['prix_projection']);
 $id_projection = read_last_projection($db);
 
-add_place_count($db, 200, 200, $id_projection);
+add_place_count($db, 200, 200, $id_projection['id_projection']);
 header('Location: ../view/admin.php');
 exit();
 ?>
