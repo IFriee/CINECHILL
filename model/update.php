@@ -31,4 +31,23 @@ function update_place_count($db, $projection, $nb_left_place, $nb_place) {
         die("Failed query : " . $ex->getMessage());
     }
 }
+
+function update_payement($db, $id, $paymentType, $cardNumber, $expirationDate, $securityCode) {
+    $query = "UPDATE payement_tab  
+              SET  type_payement = (:type_payement), numero_payement = (:numero_payement), date_expi_payement = (:date_expi_payement), 
+                          code_payement = (:code_payement)
+              WHERE fk_user_payement = (:fk_user_payement)";
+    $query_params = array(':type_payement'=>$paymentType,
+                          ':numero_payement'=>$cardNumber,
+                          ':date_expi_payement'=>$expirationDate,
+                          ':code_payement'=>$securityCode,
+                          ':fk_user_payement'=>$id);
+    try{
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }
+}
 ?>

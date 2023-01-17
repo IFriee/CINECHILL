@@ -2,7 +2,13 @@
 session_start();
 include "../model/connection.php";
 include "../model/read.php";
+include "../model/insert.php";
+include('../functions.php');
 
+if (isset($_SESSION['message'])){
+  echo "<script type='text/javascript'>alert('".$_SESSION['message']."');</script>";
+  unset($_SESSION['message']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,19 +90,19 @@ include "../model/read.php";
 <div class="container">
   <div class="title">Modalités de payement</div>
   <div class="content">
-    <form action="#">
+    <form action="../controller/traitement_payement.php" method="POST">
       <div class="user-details">
         
         <div class="input-box">
           <span class="details">Confirmez votre mot de passe</span>
-          <input type="password" placeholder="mdp123" required>
+          <input type="password" placeholder="mdp123" name="password" required>
         </div>
       </div>
       <p><b>Modalités de payement :</b></p>
       <div class="payment-details">
         <div class="input-box">
           <span class="details">Type de carte de payement</span>
-          <select name="cardselect">
+          <select name="paymentType">
           <option value="Visa">Visa</option>
           <option value="MasterCard">Mastercard</option>
           <option value="AmericanExpress">American Express</option>
@@ -104,15 +110,15 @@ include "../model/read.php";
         </div>
         <div class="input-box">
           <span class="details">Numéro de carte de payement</span>
-          <input type="text" placeholder="1234 5678 9012 3456" required>
+          <input type="text" placeholder="1234 5678 9012 3456" name="cardNumber" required>
         </div>
         <div class="input-box">
           <span class="details">Date d'expiration</span>
-          <input type="text" placeholder="01/2022" required>
+          <input type="text" placeholder="01/2022" name="expirationDate" required>
         </div>
         <div class="input-box">
           <span class="details">Code de sécurité</span>
-          <input type="password" placeholder="123" required>
+          <input type="password" placeholder="123" name="securityCode" required>
         </div>
       </div>
       

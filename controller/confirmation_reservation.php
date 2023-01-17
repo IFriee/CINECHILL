@@ -6,16 +6,6 @@ include('../model/read.php');
 include('../model/insert.php');
 include('../model/update.php');
 
-// retirer le nombre de places acheté aux nombres de places disponibles
-$nb_left_place = read_left_place($db, $_SESSION['info_reservation']['id_projection']);
-
-var_dump($nb_left_place['left_place_count']);
-
-if ($nb_left_place['left_place_count'] < $_SESSION['info_reservation']['nombre_place_commande']){
-	$_SESSION['message'] = 'projection pleine';
-	header('Location: ../view/films.php');
-	exit();
-}
 
 // lire le nombre de places restante
 $nb_left_place = read_left_place($db, $_SESSION['info_reservation']['nombre_place_commande']);

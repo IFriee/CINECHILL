@@ -137,7 +137,25 @@ function add_place_count($db, $place_total, $place_left, $projection){
     }  
 }
 
+function add_payement($db, $id, $paymentType, $cardNumber, $expirationDate, $securityCode){
 
+    $query = "INSERT INTO payement_tab (type_payement, numero_payement, date_expi_payement, 
+                          code_payement, fk_user_payement) 
+              VALUES(:type_payement, :numero_payement, :date_expi_payement, :code_payement, :fk_user_payement)";
+
+    $query_params = array(':type_payement'=>$paymentType,
+                          ':numero_payement'=>$cardNumber,
+                          ':date_expi_payement'=>$expirationDate,
+                          ':code_payement'=>$securityCode,
+                          ':fk_user_payement'=>$id);
+    try{
+        $stmt = $db->prepare($query);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        die("Failed query : " . $ex->getMessage());
+    }  
+}
 //echo add_info1($db);
 //echo add_info2($db);
 ?>

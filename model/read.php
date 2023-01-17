@@ -37,6 +37,26 @@ function login_verify($db, $pseudo, $password){
   return false;
 }
 
+function payement_verify($db, $password, $id){
+
+  $query = "SELECT password_user FROM user_tab WHERE id_user = (:id_user)";
+  $query_params = array(':id_user' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchall();
+  $PASS = $result[0]['password_user'];
+  if (password_verify($password, $PASS)){
+    return true;
+  }
+  return false;
+}
+
 //------------------------------------------------------------------------------------
 
 function pseudo_verify($db, $pseudo){
@@ -398,6 +418,22 @@ function afficheallprojection($db){
   return $result;
 }
 
+function read_payement_tab($db, $id){
+  $query = "SELECT fk_user_payement
+            FROM payement_tab
+            WHERE fk_user_payement = (:id)";
+  $query_params = array(':id' => $id);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
 
+  return $result[0];
+}
 
 ?>
