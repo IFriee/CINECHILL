@@ -187,6 +187,7 @@ foreach ($array_place_achete as $key => $value) {
     <div class="deco">
       <a href="../model/logout.php"> <u>Se deconnecter </u></a>
     </div>
+
     <br><br>
     <section class="u-clearfix u-grey-80 u-section-4" id="sec-fe43">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -212,8 +213,13 @@ foreach ($array_place_achete as $key => $value) {
             </div>
           </div>
         </div>
+        
       </div>
     </section>
+    <br>
+    <div class="popcorn">
+      <a href="Popcorn_ticket.php"> Change tes points de fidelité en Popcorn GRATUIT !</a>
+    </div>
     <section class="u-clearfix u-section-5" id="sec-9438">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-custom-font u-subtitle u-text u-text-default u-text-1">Historique des commandes</h2>
