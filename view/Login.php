@@ -3,6 +3,11 @@ session_start();
 include "../model/connection.php";
 include "../model/read.php";
 
+if (isset($_SESSION['message_inscription'])){
+  echo "<script type='text/javascript'>alert('".$_SESSION['message_inscription']."');</script>";
+  unset($_SESSION['message_inscription']);
+}
+
 ?>
 
 <!DOCTYPE html>

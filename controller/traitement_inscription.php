@@ -16,6 +16,7 @@ if (Verifier_nom_prenom($_POST['nom'], $_POST['prenom'])){
 					unset($_POST['password_verify']);
 					if(Verifier_date_naissance($_POST['date_naissance'])){
 						add_user($db, $_POST['nom'], $_POST['prenom'], $_POST['pseudo'], $hashed_password, $_POST['email'], $_POST['date_naissance']);
+						$_SESSION['message_inscription'] = "inscription réussie";
 						header('Location: ../view/Login.php');
 						exit();
 					}
