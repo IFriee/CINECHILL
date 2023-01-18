@@ -2,10 +2,10 @@
 
     //PAGE DE CONNECTION A LA DB
 
-    $username = "znbbiepelioo";
-    $password = "besgJsBstbP9";
-    $host = "znbbiepelioo.mysql.db";
-    $dbname = "znbbiepelioo";
+    $username = "root";
+    $password = "";
+    $host = "localhoest";
+    $dbname = "cinechill";
 
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
 
