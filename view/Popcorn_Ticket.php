@@ -18,20 +18,12 @@ include('../functions.php');
 </head>
 <body>
 <div class="popcorn">
-      <p>Popcorn Ticket</p>
-      <img class="imgpop" src="images/popcornticket.gif">
+      <p>Popcorn Ticket !!!!!!!!!!!!!PAS FONCTIONNEL!!!!!!!!!!!</p>
+      <a href="images/popcornticket.gif" download>Download Image</a>
+
+      <img class="imgpop" src="images/popcornticket.gif" download>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-  <script>
-    // Fonction de téléchargement du PDF
-    function downloadPDF() {
-      // Convertir le contenu de la page en PDF
-      html2pdf().from(document.body).save("TicketPopcornGratuit.pdf");
-    }
-    // Télécharger le PDF dès que la page est chargée
-    //downloadPDF();
-    // Rediriger l'utilisateur vers la page de redirection
-    //window.location.replace('commande-réussie.php');
-  </script>    
+    
 </body>
