@@ -17,11 +17,13 @@ include('../functions.php');
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400">
 </head>
 <body>
-    <div id="raffle-red" class="entry raffle">
-    <div class="no-scale">test</div>
-    <div class="img">
-    <img src="images/popcorn.png">
+<div class="popcorn">
+      <p>Popcorn Ticket !!!!!!!!!!!!!PAS FONCTIONNEL!!!!!!!!!!!</p>
+      <a href="images/popcornticket.gif" download>Download Image</a>
+
+      <img class="imgpop" src="images/popcornticket.gif" download>
     </div>
-    </div>
-        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    
 </body>

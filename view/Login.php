@@ -97,7 +97,7 @@ include "../model/read.php";
           </div>
         </div>
         
-        <p> Pas encore inscrit? <a href="register.php">Clique ici</a></p>
+        <p> Pas encore inscrit? <a href="Register.php">Clique ici</a></p>
 
 
         <?php

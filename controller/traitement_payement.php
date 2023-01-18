@@ -6,7 +6,7 @@ include('../model/read.php');
 include('../model/insert.php');
 include('../model/update.php');
 
-
+unset($_SESSION['message_payement']);
 $paymentType = $_POST['paymentType'];
 $cardNumber = $_POST['cardNumber'];
 $expirationDate = $_POST['expirationDate'];
@@ -33,6 +33,6 @@ if($if_exist['fk_user_payement'] != $_SESSION['id_user']){
 }
 
 
-header('Location: ../view/payement.php');
+header('Location: ../view/Espace-client.php');
 
 ?>
