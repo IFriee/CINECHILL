@@ -5,6 +5,7 @@ include "../model/read.php";
 include('../functions.php');
 
 $user = afficher_pseudo_connecte($db);
+$payement = read_info_payement($db);
 unset($_SESSION['message']);
 ?>
 
@@ -104,10 +105,10 @@ unset($_SESSION['message']);
             </div>
             <div class="infopayement">
                 <h4>Modalités de payement</h4>
-                <p>Type de carte de payement : <b><?php  echo "à faire"   ?></b></p>
-                <p>Numéro de carte de payement : <b><?php  echo "à faire"   ?></b></p>
-                <p>Date d'expiration : <b><?php  echo "à faire"   ?></b></p>
-                <p>Code de sécurité : <b><?php  echo "****"   ?></b></p>
+                <p>Type de carte de payement : <b><?=$payement['type_payement']?></b></p>
+                <p>Numéro de carte de payement : <b><?="**** **** **** ".substr($payement['numero_payement'], -4)?></b></p>
+                <p>Date d'expiration : <b><?=$payement['date_expi_payement']?></b></p>
+                <p>Code de sécurité : <b><?php  echo "***"   ?></b></p>
 
             </div>
 

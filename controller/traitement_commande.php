@@ -11,6 +11,13 @@ if (!isset($_SESSION['id_user'])) {
     exit();
   }
 
+$payement = read_info_payement($db);
+
+if ($payement == 0){
+    header('Location: ../view/payement.php');
+    exit();
+}
+
 unset($_SESSION['info_reservation']);
 
 $_SESSION['info_reservation'] = read_projection_commande($db, $_POST['projection']);

@@ -21,6 +21,7 @@ function delete_user($db, $id) {
 
   // Redirige l'utilisateur vers la page d'admin
   header("Location: ../view/admin.php");
+  exit();
 }
 
 
@@ -33,7 +34,7 @@ function delete_film($db, $id) {
   }
 
 
-  // Exécute une requête SQL pour supprimer l'utilisateur
+  // Exécute une requête SQL pour supprimer le film
   $query = "DELETE FROM film_tab WHERE id_film = (:post_id)";
   $query_params = array(':post_id' => $id);
   try {
@@ -45,12 +46,13 @@ function delete_film($db, $id) {
 
   // Redirige l'utilisateur vers la page d'admin
   header("Location: ../view/admin.php");
+  exit();
 }
 
 
 
 
-function delete_projection($db, $id) {
+function delete_place_count($db, $id) {
   // Vérifie si l'utilisateur a soumis le formulaire
   if (!isset($id)) {
     return;
@@ -64,9 +66,9 @@ function delete_projection($db, $id) {
   } catch (PDOException $ex) {
       die("Failed to run query: " . $ex->getMessage());
   }
+}
 
-
-  // Exécute une requête SQL pour supprimer l'utilisateur
+function delete_projection($db, $id)  {
   $query = "DELETE FROM projection_tab WHERE id_projection = (:post_id)";
   $query_params = array(':post_id' => $id);
   try {
@@ -76,9 +78,8 @@ function delete_projection($db, $id) {
       die("Failed to run query: " . $ex->getMessage());
   }
 
-  // Redirige l'utilisateur vers la page d'admin
   header("Location: ../view/admin.php");
+  exit();
 }
-
 
 ?>

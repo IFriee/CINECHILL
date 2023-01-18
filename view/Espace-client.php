@@ -16,8 +16,13 @@ if (isset($_SESSION['message'])){
   unset($_SESSION['message']);
 }
 
-//appeler la fonction ici comme ça elle n'est pas appeler a chaque fois q'on utilise le read
+if (isset($_SESSION['message_payement'])){
+  echo "<script type='text/javascript'>alert('".$_SESSION['message_payement']."');</script>";
+  unset($_SESSION['message_payement']);
+}
 
+//appeler la fonction ici comme ça elle n'est pas appeler a chaque fois q'on utilise le read
+$payement = read_info_payement($db);
 $user = afficher_pseudo_connecte($db);
 
 // nombre de film visionné
@@ -169,7 +174,14 @@ foreach ($array_place_achete as $key => $value) {
               </tr>
               <tr style="height: 59px;">
                 <td class="u-table-cell">Moyen de payement</td>
-                <td class="u-table-cell"><b><?php echo "en cours" //.($_POST['prenom_user']) ?></b></td>
+                <td class="u-table-cell"><b><?php 
+                  if ($payement == 0){
+                    echo "<p  style='color:red;' >INCOMPLET</p>";
+                  } else {
+                    echo "**** **** **** ".substr($payement['numero_payement'], -4);
+                  }
+                  
+              ?></b></td>
                 <td class="u-table-cell"><u><a href="payement.php">Modifier</a></u></td>
               </tr>
               <tr style="height: 65px;">

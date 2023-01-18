@@ -268,13 +268,15 @@ function read_last_projection($db){
 }
 
 //verifier si la salle est occuper par un film 
-function verify_projection($db){
+function verify_projection($db, $id){
   $query = "SELECT fk_salle_projection, horraire_projection
-            FROM projection_tab";
+            FROM projection_tab
+            where fk_salle_projection = (:id)";
+  $query_params = array(':id' => $id);
   try
   {
       $stmt = $db->prepare($query);
-      $result = $stmt->execute();
+      $result = $stmt->execute($query_params);
   }
   catch(PDOException $ex){
       die("Failed query : " . $ex->getMessage());
@@ -434,6 +436,30 @@ function read_payement_tab($db, $id){
   $result = $stmt->fetchAll();
 
   return $result[0];
+}
+
+function read_info_payement($db){
+  $query = "SELECT type_payement, numero_payement, date_expi_payement, 
+                   code_payement, fk_user_payement
+            FROM payement_tab
+            WHERE fk_user_payement = (:id)";
+  $query_params = array(':id' => $_SESSION['id_user']);
+  try
+  {
+      $stmt = $db->prepare($query);
+      $result = $stmt->execute($query_params);
+  }
+  catch(PDOException $ex){
+      die("Failed query : " . $ex->getMessage());
+  }
+  $result = $stmt->fetchAll();
+
+  if($result == NULL){
+    $_SESSION['message_payement'] = "Veuillez complèter votre moyen de paiement";
+    return 0;
+  } else {
+    return $result[0];    
+  }
 }
 
 ?>
