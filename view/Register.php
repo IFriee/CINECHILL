@@ -116,7 +116,7 @@ include "../model/read.php";
         </div>
       </div>
 
-      <p> Déjà inscrit? <a href="login.php">Clique ici</a></p>
+      <p> Déjà inscrit? <a href="Login.php">Clique ici</a></p>
 
         <?php
           if (isset($_SESSION['erreur'])){
