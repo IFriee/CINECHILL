@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 16 jan. 2023 à 14:52
+-- Généré le : mer. 18 jan. 2023 à 16:40
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -41,9 +41,11 @@ CREATE TABLE `commande_tab` (
 
 INSERT INTO `commande_tab` (`id_commande`, `fk_user_commande`, `fk_projection_commande`, `date_commande`, `nombre_place_commande`) VALUES
 (1, 1, 2, '2013-01-23', 2),
-(2, 1, 1, '2015-01-23', 3),
 (3, 1, 3, '2015-01-23', 2),
-(4, 3, 2, '2016-01-23', 9);
+(4, 3, 2, '2016-01-23', 9),
+(5, 1, 3, '2023-01-17', 2),
+(6, 1, 11, '2023-01-17', 2),
+(7, 1, 3, '2023-01-17', 2);
 
 -- --------------------------------------------------------
 
@@ -133,6 +135,28 @@ INSERT INTO `info_page_tab` (`id_info_page`, `url_info_page`, `image_info_page`,
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `payement_tab`
+--
+
+CREATE TABLE `payement_tab` (
+  `id_payement` int(11) NOT NULL,
+  `type_payement` varchar(100) NOT NULL,
+  `numero_payement` varchar(255) NOT NULL,
+  `date_expi_payement` varchar(10) NOT NULL,
+  `code_payement` int(11) NOT NULL,
+  `fk_user_payement` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `payement_tab`
+--
+
+INSERT INTO `payement_tab` (`id_payement`, `type_payement`, `numero_payement`, `date_expi_payement`, `code_payement`, `fk_user_payement`) VALUES
+(3, 'Visa', '1234 1234 1234 1234', '01/2022', 123, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `place_count_tab`
 --
 
@@ -148,9 +172,9 @@ CREATE TABLE `place_count_tab` (
 --
 
 INSERT INTO `place_count_tab` (`id_place_count`, `total_place_count`, `left_place_count`, `fk_projection_place_count`) VALUES
-(1, 200, 197, 1),
 (2, 200, 191, 2),
-(3, 200, 198, 3);
+(3, 200, 189, 3),
+(10, 200, 189, 11);
 
 -- --------------------------------------------------------
 
@@ -171,9 +195,9 @@ CREATE TABLE `projection_tab` (
 --
 
 INSERT INTO `projection_tab` (`id_projection`, `fk_salle_projection`, `fk_film_projection`, `horraire_projection`, `prix_ticket_projection`) VALUES
-(1, 1, 1, '2023-01-20 16:00:00', 8),
 (2, 1, 6, '2023-01-20 18:15:00', 8),
-(3, 7, 5, '2023-01-24 19:29:00', 8);
+(3, 7, 5, '2023-01-24 19:29:00', 8),
+(11, 1, 1, '2023-01-25 20:50:00', 8);
 
 -- --------------------------------------------------------
 
@@ -224,15 +248,14 @@ CREATE TABLE `user_tab` (
 --
 
 INSERT INTO `user_tab` (`id_user`, `nom_user`, `prenom_user`, `pseudo_user`, `password_user`, `mail_user`, `date_naissance_user`, `fidelite_user`) VALUES
-(1, 'Admin', 'Admin', 'The_Administrator', '$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy', 'cinechill@ifosup.wavre.be', '1999-07-03', 50),
+(1, 'Admin', 'Admin', 'The_Administrator', '$2y$10$ji8WJ.z2qG8YsLvZxHrcY.AHSDYJi1mr3elNKZmcGMxKZ7q3uXUHy', 'cinechill@ifosup.wavre.be', '1999-07-03', 80),
 (2, 'Coppens', 'Louis', 'Thejazzman', '$2y$10$TYpG6juC3ietLyoQo8sX2ujxnzNEAeriiNYyAJwaq6JvlwWmK0v9C', 'Louis.coppens.idb@gmail.com', '2000-07-26', 0),
 (3, 'Wengler', 'Eliott', 'IFriee', '$2y$10$27Jt.jOT0HV3IEQ4qawW/OYtL3ho7NM6Bb36fsP5VJSpudmZgqryW', 'eliott.wengler@hotmail.fr', '1999-07-03', 45),
 (4, 'Coppens', 'Louis', 'Thejazzman04', '$2y$10$7FFYIoFR9q/ZmXLJnJz/YO3qsCqcL1A0KlEAuL4mhjib.ppMEm7nK', 'Louis.cppns@gmail.com', '2000-07-26', 0),
 (5, 'Tstusers', 'Testuserus', 'FantasyPotato', '$2y$10$pK75GIoGvO0v6RVvN2Vei.I1lHTw75r14ZqlQsjJN7C0to6hDQK.e', 'hirsty83@speeddataanalytics.com', '1999-07-30', 0),
 (6, 'Random', 'Random', 'RealityNight', '$2y$10$aLOwfs.6uJvOOwGrLVQJFO1.W10mELDBviqjHE/4MeH53fkVDYkJ.', 'jiigga@onlinecmail.com', '1999-07-03', 0),
 (8, 'Random', 'Random', 'PredatorPoke', '$2y$10$z7Fc1NHSlwrtIYdvj6a0POHjhh8PLEeYCs6AHyU/8CCd1/d.qYC4W', 'rockroot@toped888.com', '1999-07-03', 0),
-(9, 'Randomize', 'Randomize', 'VifOne', '$2y$10$YZwcUFeJ7voiEijdaas5kublPMt/u1XzsYaYlcoTJsE9rV7DfZU6a', 'polar2@alvinneo.com', '1999-07-03', 0),
-(10, 'Randm', 'Random', 'CrazyBurger', '$2y$10$pWuLkC4dY2FafXu2bjAIzup0F.0hFrpIF.HaUnFChQasLQGOXqbkm', 'cscp195214@disipulo.com', '1999-07-03', 0);
+(9, 'Randomize', 'Randomize', 'VifOne', '$2y$10$YZwcUFeJ7voiEijdaas5kublPMt/u1XzsYaYlcoTJsE9rV7DfZU6a', 'polar2@alvinneo.com', '1999-07-03', 0);
 
 --
 -- Index pour les tables déchargées
@@ -265,6 +288,13 @@ ALTER TABLE `genre_tab`
 --
 ALTER TABLE `info_page_tab`
   ADD PRIMARY KEY (`id_info_page`);
+
+--
+-- Index pour la table `payement_tab`
+--
+ALTER TABLE `payement_tab`
+  ADD PRIMARY KEY (`id_payement`),
+  ADD KEY `fk_user_payement` (`fk_user_payement`);
 
 --
 -- Index pour la table `place_count_tab`
@@ -302,7 +332,7 @@ ALTER TABLE `user_tab`
 -- AUTO_INCREMENT pour la table `commande_tab`
 --
 ALTER TABLE `commande_tab`
-  MODIFY `id_commande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_commande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `film_tab`
@@ -323,16 +353,22 @@ ALTER TABLE `info_page_tab`
   MODIFY `id_info_page` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT pour la table `payement_tab`
+--
+ALTER TABLE `payement_tab`
+  MODIFY `id_payement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `place_count_tab`
 --
 ALTER TABLE `place_count_tab`
-  MODIFY `id_place_count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_place_count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `projection_tab`
 --
 ALTER TABLE `projection_tab`
-  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_projection` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `salle_tab`
@@ -363,6 +399,12 @@ ALTER TABLE `commande_tab`
 ALTER TABLE `film_tab`
   ADD CONSTRAINT `film_tab_ibfk_1` FOREIGN KEY (`fk_genre_film`) REFERENCES `genre_tab` (`id_genre`),
   ADD CONSTRAINT `film_tab_ibfk_2` FOREIGN KEY (`fk_info_page_film`) REFERENCES `info_page_tab` (`id_info_page`);
+
+--
+-- Contraintes pour la table `payement_tab`
+--
+ALTER TABLE `payement_tab`
+  ADD CONSTRAINT `payement_tab_ibfk_1` FOREIGN KEY (`fk_user_payement`) REFERENCES `user_tab` (`id_user`);
 
 --
 -- Contraintes pour la table `place_count_tab`
